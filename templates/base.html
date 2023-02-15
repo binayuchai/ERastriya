@@ -12,6 +12,7 @@
 
     </title>
     {% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock stylesheet %}
 
 </head>
@@ -24,6 +25,7 @@
 
 
     {% block script %}
+    <script src="{% static 'js/script.js' %}"></script>
     {% endblock script %}
 </body>
 </html>
