@@ -1,0 +1,29 @@
+{% extends 'base_html.html' %}
+{% load static %}
+{% block stylesheet %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'style.scss' %}">
+{% endblock stylesheet %}
+{% block maincontent %}
+
+   {% comment %} <!-- top part -->
+    <div class="top">
+        <div class="container">
+            <div class="flex">
+            <div class="date"> नेपाली समय १०:०९:५६ राती  बुधबार, फागुन ३, २०७९</div>
+            <div class="social-icon">
+                <!-- using social icon -->
+                <ul>
+                    <li><a href='https://www.Facebook.com/'>Facebook</a></li>
+                    <li><a href='https://www.youtube.com/'>Youtube</a></li>
+                    <li><a href='https://www.Whatsapp.com/'>Whatsapp</a></li>
+                    <li><a href='https://www.Tiktok.com/'>Tiktok</a></li>
+                    <li><a href='https://www.Instagram.com/'>Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div> {% endcomment %}
+
+{% endblock maincontent %}
