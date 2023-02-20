@@ -1,91 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 $brand:#0D47A1;
-$sec:#CF0000;
+$sec:#DF0D00;
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    min-height: 150vh;
-}
 .container{
     max-width: 1200px;
     margin: auto;
 }
-
 .flex{
     display: flex;
     justify-content: space-between;
 }
 .top{
-background:$brand;
-line-height: 50px;
-     .date{
-        color: #ccc;
+    background: $brand;
+    line-height: 45px;
+}
+.container{
+    .date{
+        color: #fff;
 
-     }
-     .social-icon{
+    }
+    .social-icon{
         ul{
             list-style: none;
             li{
                 display: inline;
                 a{
-                    color: #ffffff;
+                    color: #fff;
                     text-decoration: none;
-                    padding: 0 15px;
+                    padding: 0px 10px;
                 }
             }
         }
-     }
+    }
 }
-.ads{
-    margin-top: 7px;
+.py{
+    margin: 13px;
 }
-// styling navbar
 nav{
     background: $brand;
-    line-height: 50px;
-    ul{
-        list-style: none;
-        li{
-            display: inline;
-            span{
-                padding: 20px;
-                width: 10px;
-                color: #fff;
-            }
-            a{
-                text-decoration: none;
-                padding: 0 20px;
-                color: #fff;
-            
+    line-height: 45px;
+    .nav{
+        ul{
+            list-style: none;
+            li{
+                display: inline;
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 0px 20px;
                     font-weight: 600;
-                    font-family: 'Poppins', sans-serif;
-                &:hover{
-                    background:$sec;
-                    padding: 15px 25px;
-                    
+                    &:hover{
+                        background: $sec;
+                        padding: 14px 20px;
+                    }
                 }
             }
         }
     }
 }
-.search{
-    ul{
-        list-style: none;
-        li{
-            text-decoration: none;
-            padding: 21px;
-            color: #fff;
-            font-weight: 500;
-            font-family: 'Poppins', sans-serif;
+.btn{
+    padding: 4px 13px;
+    border: none;
+    border-radius: 17px;
+    margin: 10px;
+    color: $sec;
+    &:hover{
+        background: $sec;
+        color: #fff;
+         box-shadow: 2px 2px 5px 2px rgba(243, 7, 7, 0.3);
+    }
+}
+.block1{
+   .box{
+    border-bottom: 2px solid #ccc;
+    
+   }
+    
+.banner{
+    
+    
+    h3{
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        &:hover{
+            color:$sec;
             cursor: pointer;
-            &:hover{
-                background:$sec;
-                padding: 15px 25px;
-
-            }
         }
     }
+    .author{
+        text-align: center;
+        font-size: 25px;
+        &:hover{
+            color: $sec;
+            cursor: pointer;
+        }
+    }
+}
+
 }
