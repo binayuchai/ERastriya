@@ -31,6 +31,10 @@ $sec:#DF0D00;
                     color: #fff;
                     text-decoration: none;
                     padding: 0px 10px;
+                    font-size: 20px;
+                    &:hover{
+                        box-shadow: 2px 2px 5px 3px rgba(239, 232, 232, 0.3);
+                    }
                 }
             }
         }
@@ -51,10 +55,12 @@ nav{
                     text-decoration: none;
                     color: #fff;
                     padding: 0px 20px;
-                    font-weight: 600;
+                    font-weight:550;
+                    text-align: center;
                     &:hover{
                         background: $sec;
-                        padding: 14px 20px;
+                        padding: 5px 20px;
+                        
                     }
                 }
             }
@@ -62,8 +68,9 @@ nav{
     }
 }
 .btn{
-    padding: 4px 13px;
+    padding: 2px 13px;
     border: none;
+    background: #ccc;
     border-radius: 17px;
     margin: 10px;
     color: $sec;
@@ -80,7 +87,10 @@ nav{
    }
     
 .banner{
-    
+    p{
+        text-align: center;
+        font-size: 23px;
+    }
     
     h3{
         text-align: center;
@@ -90,6 +100,7 @@ nav{
             color:$sec;
             cursor: pointer;
         }
+        
     }
     .author{
         text-align: center;
@@ -102,3 +113,156 @@ nav{
 }
 
 }
+
+   .block2{
+    .box1{
+        border-bottom: 2px solid #ccc;
+    }
+    
+    .samachar{
+        width: 65%;
+        height: auto;
+        border-right: 1px solid #ccc;
+        h3{
+            background: #DF0D00;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+        }
+    
+    }
+    .LatestUpdate{
+        width: 30%;
+        height: auto;
+        h3{
+            background: #DF0D00;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+            }
+        }
+        .box{
+            background: #ccc;
+            
+            
+            h4{
+                font-size: 14px;
+                margin-left: 10px;
+                margin-top: 20px;
+            }
+        }
+   }
+   .block2{
+    .box1{
+        border-bottom: 2px solid #ccc;
+    }
+    
+    .samachar{
+        width: 75%;
+        height: auto;
+        border-right: 1px solid #ccc;
+        h3{
+            background: #DF0D00;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+        }
+    
+    }
+    .LatestUpdate{
+        width: 25%;
+        height: auto;
+        h3{
+            background: #DF0D00;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+            }
+        }
+        .box{
+            background: #ccc;
+            
+            
+            h4{
+                font-size: 14px;
+                margin-left: 10px;
+                margin-top: 20px;
+            }
+        }
+   }
+   .second-news {
+    margin-top: 10px;
+   }
+   .box2{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 15px;
+   }
+   .rajniti{
+    h3{
+        background: #DF0D00;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+    }
+   }
+   .kanun-news{
+    h3{
+        background: #DF0D00;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+    }
+   }
+.footer{
+    background: $brand;
+    height: 200px;
+    .address{
+        ul{
+            list-style: none;
+            li{
+                
+                    color: #fff;
+                    text-decoration: none;
+                
+            }
+        }
+   
+    }
+    .useful-links{
+        ul{
+            list-style: none;
+            li{
+                a{
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 20px;
+                    &:hover{
+                        box-shadow: 2px 2px 5px 3px rgba(239, 232, 232, 0.3);
+                        padding: 5px;
+                    }
+                    
+                }
+            }
+        }
+
+    }
+.socail-icon{
+    ul{
+        list-style: none;
+        li{
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 26px;
+                &:hover{
+                    box-shadow: 2px 2px 5px 3px rgba(239, 232, 232, 0.3);
+                    padding: 5px;
+                }
+                
+            }
+        }
+    }
+
+}
+}
+
