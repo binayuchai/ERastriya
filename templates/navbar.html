@@ -1,36 +1,61 @@
-<header >
-    <div class="container ">
-        <div class="flex py-5">
-        <a href="index.html">
-            <img width='180px' height='120px'src="img/logo.png" class="logo"/>
-            
-        </a>
-        <!-- Space for top ads -->
-        <div class="ads">
-            <img  width='100%'src="img/add.png"/>
-        </div>
-    </div>
-    </div>
-   </header>
-<nav>
+{% load static %}
+  <!-- top part -->
+  <div class="top">
     <div class="container flex">
-        <div>
+      <div class="date"> नेपाली समय ०९:१२:४८ राती  सोमबार, फागुन ८, २०७९</div>
+      <div class="social-icon">
         <ul>
-            <li class=""><a href="#"><i class="fa fa-home" aria-hidden="true"></i>गृह पृष्ट </a></li>
-            <li><a href="#">राजनीति  </a></li>
-            <li><a href="#">कानुन </a></li>
-            <li><a href="#">आर्थिक  </a></li>
-            <li><a href="#">शिक्षा </a></li>
-            <li><a href="#">खेलकुद  </a></li>
-            <li><a href="#">अन्य </a></li>
-        </ul>
+          <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
+          <li><a href="https://www.Facebook.com/"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a></li>
+          </ul>
+      </div>
     </div>
-    <!-- Search icon -->
-    <div class="search">
+  </div>
+
+  <!-- logo and first ad section -->
+  <header>
+    <div class="container flex">
+      <div class="logo">
+        <img width="170px" height="100px" src="{% static 'images/logo.png' %}"/>
+      </div>
+      <div class="ads py">
+        <img src="{% static 'images/add1.gif' %}"/>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container flex">
+      <div class="nav">
         <ul>
-            <li>Search</li>
-            <li>English</li>
+          <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>गृहपृष्ट</a></li>
+          <li><a href="news.html">समाचार </a></li>
+          <li><a href="politics.html">राजनीति </a></li>
+          <li><a href="law.html">कानुन </a></li>
+          <li><a href="sports.html">खेलकुद </a></li>
+          <li><a href="education.html">शिक्षा </a></li>
+          <li><a href="others.html">अन्य </a></li>
         </ul>
-    </div>
+      </div>
+      <!-- User module -->
+      <div class="user">
+        
+        <button class="btn">Search</button>
+        <button class="btn">English</button>
+        <div class="dropdown d-inline">
+          <ul class="dropdown-menu z-2">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
+          
+        </div>
+      </div>
     </div>
    </nav>
+   

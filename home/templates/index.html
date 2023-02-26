@@ -1,111 +1,189 @@
 {% extends 'base_html.html' %}
 {% load static %}
-{% block stylesheet %}
-
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" href="{% static 'style.scss' %}">
-{% endblock stylesheet %}
 {% block maincontent %}
 
-   {% comment %} <!-- top part -->
-    <div class="top">
-        <div class="container">
-            <div class="flex">
-            <div class="date"> नेपाली समय १०:०९:५६ राती  बुधबार, फागुन ३, २०७९</div>
-            <div class="social-icon">
-                <!-- using social icon -->
-                <ul>
-                    <li><a href='https://www.Facebook.com/'>Facebook</a></li>
-                    <li><a href='https://www.youtube.com/'>Youtube</a></li>
-                    <li><a href='https://www.Whatsapp.com/'>Whatsapp</a></li>
-                    <li><a href='https://www.Tiktok.com/'>Tiktok</a></li>
-                    <li><a href='https://www.Instagram.com/'>Instagram</a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-    </div> {% endcomment %}
-    <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erastriya</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-</head>
-<body>
-  <!-- top part -->
-  <div class="top">
-    <div class="container flex">
-      <div class="date"> नेपाली समय ०९:१२:४८ राती  सोमबार, फागुन ८, २०७९</div>
-      <div class="social-icon">
-        <ul>
-          <li><a href="https://www.youtube.com/">Youtube</a></li>
-          <li><a href="https://www.Facebook.com/">Facebook</a></li>
-          <li><a href="https://www.whatsapp.com/">whatsapp</a></li>
-          </ul>
-      </div>
-    </div>
-  </div>
-  <!-- logo and first ad section -->
-  <header>
-    <div class="container flex">
-      <div class="logo">
-        <img width="170px" height="100px" src="./img/logo.png"/>
-      </div>
-      <div class="ads py">
-        <img src="./img/add.gif"/>
-      </div>
-    </div>
-  </header>
-  <!-- Navigation -->
- <nav>
-  <div class="container flex">
-    <div class="nav">
-      <ul>
-        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>गृहपृष्ट</a></li>
-        <li><a href="samachar.html">समाचार </a></li>
-        <li><a href="">राजनीति </a></li>
-        <li><a href="">कानुन </a></li>
-        <li><a href="">खेलकुद </a></li>
-        <li><a href="">शिक्षा </a></li>
-        <li><a href="">अन्य </a></li>
-      </ul>
-    </div>
-    <!-- User module -->
-    <div class="user">
-      <button class="btn">User</button>
-      <button class="btn">Search</button>
-      <button class="btn">English</button>
-    </div>
-  </div>
- </nav>
  <!-- Banner news -->
- <section class="block1">
+ <section class="block1 mb-3">
   <div class="container">
     <div class="box">
-    <div class="advertisement py">
-      <img src="./img/add1.gif"/>
+    <div class="advertisement py z-0 position-relative">
+      <img src="{% static 'images/add1.gif' %}"/>
     </div>
     <div class="banner py">
       <h3>गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h3>
       
       <div class="author py"><h4>Erastriya</h4></div>
      
-      <img width="100%"src="./img/1.jpg"/>
+      <img class="img-fluid" style="width: 100%" src="{% static 'images/1.jpg' %}"/>
     </div>
   </div> 
     </div>
   </div>
-
  </section>
- <section class="block2">
-  
 
- </section>
-</body>
-</html> -->
+    <section class="block2 mt-3">
+      <div class="container ">
+        <div class="box2 py-3">
+        <div class="flex">
+            <div class="samachar">
+                <h3>समाचार</h3>
+                <div class="first-news d-flex gap-3 mt-3">
+                  <div class="card " style="width: 17rem;">
+                    <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                      <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                    </div>
+                  </div>
+                  <div class="card " style="width: 17rem;">
+                    <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                      <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                    </div>
+                  </div>
+                  <div class="card " style="width: 17rem;">
+                    <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                      <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="second-news ">
+                  <div class="card " style="width: 53rem;">
+                    <img src="{% static 'images/1.jpg' %}" class="card-img-top" style="height: 25rem;" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                      <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <!-- list of latest taja update  -->
+              <div class="LatestUpdate">
+                <h3>ताजा अपडेट </h3>      
+                <div class="latest-news mt-3">
+                  <ul class="list-group">
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li> 
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li> 
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                    <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
+                  </ul>
+                </div>
+              </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="block3 py">  
+      <div class="container">
+        <div class="box2">  
+        <div class="rajniti py-3">
+            <h3>राजनीति </h3>
+            <div class="first-news d-flex gap-5 mt-3">
+              <div class="card " style="width: 18rem;">
+                <img src="./img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                </div>
+              </div>
+              <div class="card " style="width: 18rem;">
+                <img src="./img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                </div>
+              </div>
+              <div class="card " style="width: 18rem;">
+                <img src="./img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                </div>
+              </div>
+              <div class="card " style="width: 18rem;">
+                <img src="./img/1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                </div>
+              </div>
+            </div>
+            <div class="second-news ">
+              <div class="card " style="width: 73rem;">
+                <img src="./img/1.jpg" class="card-img-top" style="height: 30rem;" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+ <section class="block4 py">  
+  <div class="container ">   
+  <div class="kanun-news">
+      <h3>कानुन</h3>
+      <div class="first-news d-flex gap-5">
+        <div class="card " style="width: 18rem;">
+          <img src="./img/1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+            <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+          </div>
+        </div>
+        <div class="card " style="width: 18rem;">
+          <img src="./img/1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+            <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+          </div>
+        </div>
+        <div class="card " style="width: 18rem;">
+          <img src="./img/1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+            <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+          </div>
+        </div>
+        <div class="card " style="width: 18rem;">
+          <img src="./img/1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+            <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+          </div>
+        </div>
+      </div>
+      <div class="second-news ">
+        <div class="card " style="width: 73rem;">
+          <img src="./img/1.jpg" class="card-img-top" style="height: 30rem;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+            <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+          </div>
+        </div>
+      </div>
+    </div>   
+    </div>
+  </div>
+</section>  
+
+
 
 {% endblock maincontent %}
