@@ -1,6 +1,7 @@
 from django.db import models
 from useraccount.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor.widgets import CKEditorWidget
 
 class TimeStampModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -39,7 +40,8 @@ class Post(TimeStampModel):
     Subtitle = models.CharField(max_length=250,blank=True,null=True)
     summary = models.TextField()
     content = RichTextUploadingField(blank=True,null=True)
-    dateline = models.DateTimeField()
+    dateline = models.DateField()
+    featured_image = models.ImageField(upload_to="post/images",blank=True,null=True)
     status = models.CharField(max_length=50,choices=Status.choices,default=Status.DRAFT)
 
 
