@@ -13,6 +13,8 @@
     </div>
   </div>
 
+  
+
   <!-- logo and first ad section -->
   <header>
     <div class="container flex">
@@ -20,7 +22,7 @@
         <img width="170px" height="100px" src="{% static 'images/logo.png' %}"/>
       </div>
       <div class="ads py">
-        <img src="{% static 'images/add1.gif' %}"/>
+        <img src="{% static 'images/add.gif' %}"/>
       </div>
     </div>
   </header>
@@ -28,16 +30,16 @@
 
 
   <!-- Navigation -->
-  <nav>
+  <nav id="nav-bar">
     <div class="container flex">
       <div class="nav">
         <ul>
           <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>गृहपृष्ट</a></li>
-          <li><a href="news.html">समाचार </a></li>
+          <li><a href="{% url 'post:news' %}">समाचार </a></li>
           <li><a href="{% url 'post:politics' %}">राजनीति </a></li>
-          <li><a href="law.html">कानुन </a></li>
-          <li><a href="sports.html">खेलकुद </a></li>
-          <li><a href="education.html">शिक्षा </a></li>
+          <li><a href="{% url 'post:law' %}">कानुन </a></li>
+          <li><a href="{% url 'post:sports' %}">खेलकुद </a></li>
+          <li><a href="{% url 'post:education' %}">शिक्षा </a></li>
           <li><a href="others.html">अन्य </a></li>
         </ul>
       </div>
@@ -46,7 +48,7 @@
         
         <button class="btn">Search</button>
         <button class="btn">English</button>
-        <div class="dropdown d-inline">
+        {% comment %} <div class="dropdown d-inline">
           <ul class="dropdown-menu z-2">
             <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" href="#">Signup</a></li>
@@ -54,7 +56,9 @@
           </ul>
           <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
           
-        </div>
+        </div> {% endcomment %}
+        <button class="btn"><i class="bi bi-person-circle"></i></button>
+
       </div>
     </div>
    </nav>

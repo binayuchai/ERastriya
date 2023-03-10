@@ -1,12 +1,14 @@
 {% extends 'base_html.html' %}
+
 {% load static %}
 {% block maincontent %}
+{% comment %} {% load my_filters %} {% endcomment %}
 
  <!-- Banner news -->
- <section class="block1 mb-3">
+ <section class="block1">
   <div class="container">
-    <div class="box">
-    <div class="advertisement py z-0 position-relative">
+    <div class="box-1">
+    <div class="advertisement">
       <img src="{% static 'images/add1.gif' %}"/>
     </div>
     <div class="banner py">
@@ -31,7 +33,7 @@
                   <div class="card " style="width: 17rem;">
                     <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
+                      <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
                       <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
                     </div>
                   </div>
@@ -40,6 +42,7 @@
                     <div class="card-body">
                       <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
                       <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+                      <a href="{% url 'post:politics' %}" class="stretched-link"></a>
                     </div>
                   </div>
                   <div class="card " style="width: 17rem;">
@@ -95,9 +98,7 @@
             <div class="first-news d-flex gap-5 mt-3">
               {% for rajniti  in politics %}
               <div class="card " style="width: 18rem;">
-                {% if rajniti.featured_image %}
-                <img src="{{ rajniti.featured_image.url }}" class="card-img-top" alt="{{ rajniti.title }}" width="250" height="250">
-                {% endif %}
+                {% comment %} <img src="{{ rajniti.content|safe|slice:':first:'|extract_image_src }}" class="card-img-top" alt="{{ rajniti.title }}" width="250" height="250"> {% endcomment %}
                 <div class="card-body">
                   <h5 class="card-title">{{ rajniti.title }}</h5>
                   <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>

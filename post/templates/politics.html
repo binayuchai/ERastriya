@@ -1,29 +1,190 @@
 {% extends 'base_html.html' %}
 {% block maincontent %}
-THis is politics page
+{% load static %}
 
-<section class="block-1 py1">
+ <!-- category news -->
+ <section class="block-1 py1">
   <div class="container">
       <div class="catName">
-          <h3>राजनीति  </h3>
+          <h3>राजनीति</h3>
       </div>
-      <div class="first-news d-flex gap-5 mt-3">
-        {% for rajniti  in politics %}
-        <div class="card " style="width: 18rem;">
-          {% if rajniti.featured_image %}
-          <img src="{{ rajniti.featured_image.url }}" class="card-img-top" alt="{{ rajniti.title }}" width="250" height="250">
-          {% endif %}
-          <div class="card-body">
-            <h5 class="card-title">{{ rajniti.title }}</h5>
-            <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-          </div>
+      
+     <div class="first-news-1 py1 d-flex row">
+      {% for rajniti  in politics %}
+      <div class="card bg-dark col-sm-6 col-md-4"">
+        {% if rajniti.featured_image %}
+        <img src="{{ rajniti.featured_image.url }}" class="card-img-top" alt="{{ rajniti.title }}" width="250" height="250">
+        {% endif %}
+        <div class="card-img-overlay align-items-end text-white">
+          <h5 class="card-title">{{ rajniti.title }}</h5>
+          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+          <a href="{% url 'post:detail' rajniti.id %}" class="stretched-link"></a>
+
+          <p class="card-text">Last updated 3 mins ago</p>
+
         </div>
-        {% endfor %}
+      </div>
+      {% endfor %}
+
+      
+        
+
+     </div>
+  </section>
+  <section class="block-3 py1">
+      <div class="container">
+          <div class="ads">
+              <img src="./img/add.gif"/>
+          </div>
+      </div>
+     </section>
+  <!-- Additional news -->
+     <section class="block-2 py1">
+      <div class="container flex">
+          <div class="news-list-2">
+              <h3>थप समाचार</h3>
+              <div class="additinal-news">
+                  <div class="card mb-3" style="width:40rem;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="additinal-news">
+                  <div class="card mb-3" style="width:40rem;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="additinal-news">
+                  <div class="card mb-3" style="width:40rem;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="additinal-news">
+                  <div class="card mb-3" style="width:40rem;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="additinal-news">
+                  <div class="card mb-3" style="width:40rem;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="additinal-news">
+                  <div class="card mb-3" style="width:40rem;">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              
+          </div>
+          <!-- Latest Updates -->
+       <div class="news-list-1">
+          <h3>ताजा अपडेट</h3>
+          <div class="card" style="width: 25rem;">
+              <img src="./img/1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h4>
+                <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू .......... ।</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+              </ul>
+              
+            </div>
+       </div>
 
       </div>
-    </div>
-  </div>
-</section>      
+
+     </section>
+     <!-- advertisement sections -->
+     <section class="block-3 py1">
+      <div class="container">
+          <div class="ads">
+              <img src="./img/add.gif"/>
+          </div>
+      </div>
+     </section>
+    
+
+
+ </section>
+
 
 {% endblock maincontent %}
 

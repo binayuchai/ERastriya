@@ -2,6 +2,8 @@ from django.db import models
 from useraccount.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.widgets import CKEditorWidget
+from django.utils.html import escape
+
 
 class TimeStampModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -48,5 +50,11 @@ class Post(TimeStampModel):
     def __str__(self):
         return self.title
 
+
+    # def image_tag(self):
+    #     return u'<img src="%s" />' % escape("post/images")
+    # image_tag.short_description = 'Image'
+    # image_tag.allow_tags = True
+       
 
     

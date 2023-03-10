@@ -1,0 +1,183 @@
+{% extends 'base_html.html' %}
+{% load static %}
+
+{% block maincontent %}
+    {% comment %} <small class="py">काठमाडाैं, फागुन १४</small>
+    <div class="first-news  gap-3">
+        <!-- details-page-ads -->
+        {% comment %} <section>
+        <div class="container">
+            <div class="ads">
+                <img width="100%" src="./img/hilltake.gif"/>
+            </div>
+        </div>{% endcomment %}
+        </section>
+         
+        <div class="container">
+            <div class="text-red m-3 p-2">
+            <h1>{{post.title}}</h1>
+            </div>
+
+        <img src="{{images}}" alt="" class="img-fluid" width="100%" height="30px">
+        <div class="mt-2 p-3 text-justify">
+            {{description}}
+        </div>
+        </div>
+
+
+        
+
+        <div class="text-center">
+        </div>
+        <section>
+
+            <div class="container">
+                <div class="ads">
+                    <img width="100%" src=""/>
+                </div>
+            </div>
+            </section>
+            <section class="py1">
+            <div class="container">
+                <div class="ads">
+                    <img width="100%" src=""/>
+                </div>
+            </div>
+            </section>
+            <!-- comment section -->
+            <div class="comment-area">
+            <div class="container">
+                <div class="comment py1">
+                <h3>प्रतिकिर्या </h3>
+                    <div class="box">
+                    <form >
+                        <div class="title"> <h4>Comment *</h4></div>
+                        
+                        <br>
+                        <input id="cmt"type="text"  required>
+                        <br>
+                        <label for="username"><h4>Username *</h4></label>
+                        <br>
+                        <input type="text" id="username" name="username" required><br>
+                        <label for="email"><h4>Email *</h4></label>
+                        <input type="text" id="email" name="email" required>
+                        <br>
+                        <button>POST</button>
+                        
+                    </form>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="additinal-news py1">
+            <h3>थप समाचार </h3>
+            <div class="card mb-3" style="width:40rem;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                        <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="additinal-news">
+                <div class="card mb-3" style="width:40rem;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            
+            <div class="additinal-news">
+                <div class="card mb-3" style="width:40rem;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="additinal-news">
+                <div class="card mb-3" style="width:40rem;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <section>
+                <div class="container">
+                    <div class="ads">
+                        <img width="100%" src="./img/hilltake.gif"/>
+                    </div>
+                </div>
+                </section>
+
+        </div>
+        
+        
+    </div>
+    </div>
+    <!-- list of latest taja update  -->
+    <div class="LatestUpdate">
+    <h3>ताजा अपडेट </h3>
+    
+    <div class="card" style="width: 20rem;">
+        <img src="./img/1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h4>
+            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू .......... ।</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
+        </ul>
+        
+        </div>
+        
+    </div>
+    </div>
+</div>
+</div>
+    
+
+
+{% endblock maincontent %}   
