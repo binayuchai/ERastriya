@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+{% endblock %}
+
+{% block sidebar %}
+    <div class="sidebar" style="position:fixed;z-index:100000;height:100%;top:0;left:0;">
+        {{ block.super }}
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script src="{% static 'js/custom.js' %}"></script>
+{% endblock %}
+

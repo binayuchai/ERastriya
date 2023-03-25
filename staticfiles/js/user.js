@@ -10,3 +10,11 @@ function(){
         navbar.classList.remove('sticky');
     }
 });
+
+// displaying nepali date
+
+let _mypatroDateFormat = 1;
+let _mypatroResponseType = 'html';
+let script = document.getElementById('display_date');
+script.src = 'https://mypatro.com/resources/nepali_date/nepali_date.js';
+document.head.appendChild(script);

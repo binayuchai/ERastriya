@@ -12,8 +12,8 @@
      <div class="first-news-1 py1 d-flex gap-5">
       {% for sport  in sports %}
       <div class="card bg-dark">
-        {% if sport.featured_image %}
-        <img src="{{ sport.featured_image.url }}" class="card-img-top" alt="{{ sport.title }}" width="250" height="250">
+        {% if sport.image %}
+        <img src="{{ sport.image.url }}" class="card-img-top" alt="{{ sport.title }}" width="250" height="250">
         {% endif %}
         <div class="card-img-overlay align-items-end text-white">
           <h5 class="card-title">{{ sport.title }}</h5>
@@ -74,7 +74,7 @@
                         </div>
                       </div>
                     </div>
-              </div>
+              </div>    
               <div class="additinal-news">
                   <div class="card mb-3" style="width:40rem;">
                       <div class="row g-0">
@@ -143,30 +143,8 @@
           </div>
           <!-- Latest Updates -->
        <div class="news-list-1">
-          <h3>ताजा अपडेट</h3>
-          <div class="card" style="width: 25rem;">
-              <img src="./img/1.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h4 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h4>
-                <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू .......... ।</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-                <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-              </ul>
-              
-            </div>
+        {% include 'latestnews.html' %}
+
        </div>
 
       </div>

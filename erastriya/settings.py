@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from decouple import config
+from post.jazmin import JAZZMIN_SETTINGS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +45,6 @@ INSTALLED_APPS = [
     'post',
     'ckeditor',
     'ckeditor_uploader',
-
 
 ]
 
@@ -129,7 +130,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
-    BASE_DIR / "staticfiles"
+    BASE_DIR / "staticfiles",
+    # os.path.join(BASE_DIR, 'node_modules/jazzmin/static'),
+
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -144,3 +147,9 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = 'media/'
+
+JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
+
+
+# # Use the MyAdminSite class as the default admin site
+# ADMIN_SITE = 'myadmin.MyAdminSite'

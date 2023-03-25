@@ -1,0 +1,29 @@
+<div class="LatestUpdate" style="width:100%;">
+    <h3>ताजा अपडेट </h3>  
+
+    <div class="latest-news mt-3">
+      <ul class="list-group">
+          {% for post in posts|slice:"8" %}
+          <li class="list-group-item border-0">
+
+
+            <div class="card mb-1 side-card border-0">
+              <div class="row g-0">
+                     <div class="col-md-4">
+                        <img src="{{post.image.url}}" class="img-fluid rounded-start side-card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">{{post.title}}</h6>
+                          <p class="card-text"><small class="text-muted">{{post.dateline}}</small></p>
+                        </div>
+                    </div>
+               </div>
+            </div>    
+         </li>
+
+          {% endfor %}   
+      
+      </ul>
+    </div>
+  </div> 

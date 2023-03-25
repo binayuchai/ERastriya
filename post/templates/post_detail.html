@@ -1,6 +1,29 @@
 {% extends 'base_html.html' %}
 {% load static %}
+{% block maincontent %}
+{% comment %} 
 
+    {% comment %} <small class="py">काठमाडाैं, फागुन १४</small>
+    <div class="first-news  gap-3">
+        <!-- details-page-ads -->
+        {% comment %} <section>
+        <div class="container">
+            <div class="ads">
+                <img width="100%" src="./img/hilltake.gif"/>
+            </div>
+        </div>{% endcomment %}
+        {% comment %} </section>
+         
+        <div class="container">
+            <div class="text-red m-3 p-2">
+            <h1>{{post.title}}</h1>
+            </div> {% endcomment %}
+
+        {% comment %} <img src="{{images}}" alt="" class="img-fluid" width="100%" height="30px"> 
+        <img src="{{post.image.url }}" alt="" class="img-fluid" width="100%" height="30px">
+        <div class="mt-2 p-3 text-justify">
+            {{post.content |safe}}
+        </div>
 {% block maincontent %}
     {% comment %} <small class="py">काठमाडाैं, फागुन १४</small>
     <div class="first-news  gap-3">
@@ -11,37 +34,81 @@
                 <img width="100%" src="./img/hilltake.gif"/>
             </div>
         </div>{% endcomment %}
-        </section>
+    
          
-        <div class="container">
+        {% comment %} <div class="container">
             <div class="text-red m-3 p-2">
             <h1>{{post.title}}</h1>
-            </div>
+            </div> {% endcomment %}
 
-        {% comment %} <img src="{{images}}" alt="" class="img-fluid" width="100%" height="30px"> {% endcomment %}
-        <img src="{{post.featured_image.url }}" alt="" class="img-fluid" width="100%" height="30px">
+        {% comment %} <img src="{{images}}" alt="" class="img-fluid" width="100%" height="30px"> 
+        <img src="{{post.image.url }}" alt="" class="img-fluid" width="100%" height="30px">
         <div class="mt-2 p-3 text-justify">
             {{post.content |safe}}
         </div>
         </div>
+        </div> {% endcomment %}
         
 
-        
 
-        <div class="text-center">
-        </div>
+ <!-- Banner news -->
+ <section class="block2 py mt-3 pt-3">
+  
+    <div class="container ">
+      <div class="box2">
+      <div class="flex">
+    <div class="samachar">
+        <h3>समाचार</h3>
+        <div class="share-button flex">
+            <h6 class="py">-Erastriya.com</h6>
+            <div class="icon">
+                <span>
+                
+                    <ul>
+                        <li class="share"><i class="bi bi-share"></i></li>
+                        <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
+                        <li><a href="https://www.Facebook.com/"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a></li>
+                        </ul>
+                    </span>
+            </div>
+        </div>        
+        <small class="py">काठमाडाैं, फागुन १४</small>
+        <div class="first-news  gap-3">
+        <!-- details-page-ads -->
         <section>
+        <div class="container">
+            <div class="ads">
+                <img width="100%" src="./img/hilltake.gif" class="img-fluid" />
+            </div>
+        </div>
+        </section>
+        <p>सत्ता गठबन्धनबनबाट बाहिरिएको राष्ट्रिय प्रजातन्त्र पार्टी (राप्रपा)भित्र असन्तुष्टि भुसको आगोझैँ बढ्दैछ । सरकारमा जाने वा नजाने भन्नेमै विवादित राप्रपाको केन्द्रीय कार्यसम्पादन समिति अहिले राष्ट्रपति चुनावमा भाग लिने कि नलिने भन्नेमा विभाजित छ । त्यही विवादका कारण १२ फागुनको केन्द्रीय कार्यसम्पादन समितिको बैठकले राष्ट्रपतिको चुनावमा समर्थक र प्रस्ताव नबस्ने निर्णय गरेको थियो ।
+        <br>
 
+        यसअघि एमाले अध्यक्ष केपी शर्मा ओलीसँग ट्युनिङ मिल्ने ठानिएका अध्यक्ष राजेन्द्र लिङ्देन एमाले उम्मेदवारको समर्थक वा प्रस्तावक बस्न सक्ने अनुमान गरिएको थियो । राप्रपाभित्र राष्ट्रपति चुनावको पक्षमा उभिन नहुने मत पनि रहेको छ । यो मतका पक्षधर राजावादी पार्टीले राष्ट्रपतिमा मतदान गर्न नहुने धारणा राखिरहेका छन् । यद्यपि, संविधानलाई स्वीकार गरेर संसदमा पुग्ने अनि त्यही संविधानअनुसार शपथ खाएर मन्त्री पनि हुने तर राष्ट्रपतिमा भाग लिन नहुने तर्क नसुहाउने अर्को पक्षको मत रहेको छ ।
+        <br>
+        <br>
+        खासगरी, पशुपतिशमशेर राणा, प्रकाशचन्द्र लोहनी, बुद्धिमान तामाङ, रवीन्द्र मिश्र, जगत गौचनलगायतका दर्जन नेताहरू राष्ट्रपतिको चुनावमा भाग लिन नहुने पक्षमा देखिएका हुन् । राप्रपा स्रोतका अनुसार यो मतमा महामन्त्री धवलशमशेर राणा पनि रहेका छन् । सांसद ज्ञानेन्द्र शाहीले पनि औपचारिक रूपमै राष्ट्रपतिमा मतदान गर्न नहुने बताइरहेका छन् । राप्रपाभित्र यस्तो मत विभाजनको अवस्था आउनुको खास कारण दुईवटा मानिएको छ ।
+        <br>
+        एक, अध्यक्ष लिङ्देनको कार्यशैली चित्त नबुझाएका र धोका पाएकाहरू । अर्थात्, महाधिवेशनमा सहयोग गरेका प्रकाशचन्द्र लोहनीलाई सांसद बनाउने आश्वासन दिएर पनि लिङ्देनले समानुपातिक सूचीमै दोस्रो नम्बरमा पारिदिए । अनि, संसदीय दलको नेता बनाइदिन्छु भनेर आर्थिक सहयोगसमेत लिएका पशुपतिशमशेर राणालाई दलको नेता हुनबाट रोके । यो परिघटनाले दुई शीर्ष नेता पहिलादेखि नै रुष्ट बनेका थिए । अनि, मन्त्री हुन चाहेका बुद्धिमान तामाङ, धवलशमेशर राणाहरू पनि अहिले अध्यक्ष लिङ्देनसँग असन्तुष्ट छन् ।
+        <br>
+        त्यसो त, चुनावमा पर्याप्त सहयोग नपाएको भन्दै रवीन्द्र मिश्र पनि असन्तुष्ट छन् । उनीहरू सबै अहिले राष्ट्रपतिको चुनावमा भाग लिन नहुने पक्षमा रहेका छन् । दोस्रो कारण चाहिँ पूर्वराजा ज्ञानेन्द्र शाहसँग बिग्रिँदो सम्बन्ध । पूर्वराजा ज्ञानेन्द्रसँग सम्बन्धमा चिसोपना आउन थालेपछि राप्रपाभित्र असन्तुष्टि देखिन थालेको हो ।</p>
+        <br>
+        <br>
+        <br>
+        <p>प्रकाशित मिति: आइतबार, फागुन १४, २०७९  ०७:५७</p>
+        <section>
             <div class="container">
                 <div class="ads">
-                    <img width="100%" src=""/>
+                    <img width="100%" src="./img/hilltake.gif" class="img-fluid" />
                 </div>
             </div>
             </section>
             <section class="py1">
             <div class="container">
                 <div class="ads">
-                    <img width="100%" src=""/>
+                    <img width="100%" src="./img/add1.gif"/>
                 </div>
             </div>
             </section>
@@ -145,15 +212,15 @@
                 </section>
 
         </div>
-        
-        
-    </div>
-    </div>
-    <!-- list of latest taja update  -->
-    <div class="LatestUpdate">
-    <h3>ताजा अपडेट </h3>
-    
-    <div class="card" style="width: 20rem;">
+
+
+        </div>
+        </div>
+        <!-- list of latest taja update  -->
+        <div class="LatestUpdate">
+        <h3>ताजा अपडेट </h3>
+
+        <div class="card" style="width: 20rem;">
         <img src="./img/1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h4 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h4>
@@ -171,14 +238,19 @@
             <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
             <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
         </ul>
-        
+
         </div>
-        
-    </div>
-    </div>
-</div>
-</div>
-    
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+</section>
+
+
 
 
 {% endblock maincontent %}   

@@ -15,12 +15,11 @@ class TagAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    # def image_tag(self, obj):
-    #     return format_html('<img src="{}" width="250" height="200" />'.format(obj.image.url))
+    def image_tag(self, obj):
+        return format_html('<img src="{}" width="250" height="200" />'.format(obj.image.url))
     
-    # image_tag.short_description = 'Image'
-
+    image_tag.short_description = 'Image'
     
-    list_display = ("title","Subtitle","summary","dateline","category","tags","reporter","created_at","modified_at",)
+    list_display = ("image_tag","title","dateline","category","tags","reporter")
     search_fields = ("title",)    
 

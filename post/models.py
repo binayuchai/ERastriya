@@ -3,6 +3,8 @@ from useraccount.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from ckeditor.widgets import CKEditorWidget
 from django.utils.html import escape
+import hashlib
+from django.core.files.storage import FileSystemStorage
 
 
 class TimeStampModel(models.Model):
@@ -33,7 +35,27 @@ class Status(models.TextChoices):
     PUBLISH = "publish", "PUBLISH"
     BLOCKED = "blocked", "BLOCKED"
     
+
+# def md5_checksum(file):
+#     with file.open('rb') as f:
+#         checksum = hashlib.md5(f.read()).hexdigest()
+#     return checksum
+
+
+# def unique_upload_to(instance, filename):
+#     if not instance.image:
+#         return filename
     
+#     storage = FileSystemStorage()
+#     checksum = md5_checksum(instance.image)
+#     existing_files = storage.listdir('post/images')[1]
+#     for name in existing_files:
+#         with storage.open(f'post/images/{name}') as f:
+#             if md5_checksum(f) == checksum:
+#                 return name
+#     return filename
+            
+
 class Post(TimeStampModel):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     tags = models.ForeignKey(Tag,on_delete=models.CASCADE)
@@ -43,7 +65,7 @@ class Post(TimeStampModel):
     summary = models.TextField()
     content = RichTextUploadingField(blank=True,null=True)
     dateline = models.DateField()
-    featured_image = models.ImageField(upload_to="post/images",blank=True,null=True)
+    image = models.ImageField(upload_to="post/images",blank=True,null=True)
     status = models.CharField(max_length=50,choices=Status.choices,default=Status.DRAFT)
 
 
@@ -51,10 +73,10 @@ class Post(TimeStampModel):
         return self.title
 
 
-    # def image_tag(self):
-    #     return u'<img src="%s" />' % escape("post/images")
-    # image_tag.short_description = 'Image'
-    # image_tag.allow_tags = True
+    def image_tag(self):
+        return u'<img src="%s" />' % escape("post/images")
+    image_tag.short_description = 'Image'
+    image_tag.allow_tags = True
        
 
     
