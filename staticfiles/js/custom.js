@@ -1,2 +1,2 @@
-// const sidebar = document.getElementById('content');
-// sidebar.appendChild()
+// let dashboard = document.getElementById('content');
+// dashboard.remove()

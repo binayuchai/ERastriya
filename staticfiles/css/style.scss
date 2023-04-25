@@ -234,10 +234,7 @@ nav{
    .second-news {
     margin-top: 10px;
    }
-   .box2{
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 15px;
-   }
+
    .rajniti{
     .first-news{
         p{
@@ -299,75 +296,93 @@ nav{
             display: inline-block;
     }
    }
-.footer{
-    background:#f4f2f2;
-    height: 200px;
-    .logo{
-        h4{
-            color:$sec;
-        }
-    }
-    .address{
-        h3{
-            color: #000;
-            
-        }
-        ul{
-            list-style: none;
-            li{
-                    
-                    color:#323232;
-                    text-decoration: none;
-                    
-                
-            }
-        }
-   
-    }
-    .useful-links{
-        ul{
-            list-style: none;
-            li{
-                a{
-                    text-decoration: none;
-                    color:#000;
-                    padding: 20px;
-                    
-                    
-                    }
-                    
-                }
-            }
-        }
-
-    }
-
-
-.bottom{
-    background: $brand;
-    line-height: 45px;
-    .copy-right{
-        color: #fff;
-    }
-    .socail-icon{
-        ul{
-            list-style: none;
-            li{
-                a{
-                    text-decoration: none;
-                    color: #fff;
-                    font-size: 26px;
-                    &:hover{
-                        box-shadow: 2px 2px 5px 3px rgba(239, 232, 232, 0.3);
-                        padding: 5px;
-                    }
-                    
-                }
-            }
-        }
+   footer{
     
+    background: $brand;
+    line-height:30px;
+    .contact{
+        h4{
+            color: #fff;
+        }
+        .address{
+            p{
+                color: #fff;
+            }
+        }
+        .social-media{
+            margin-left: -44px;
+            ul{
+                list-style: none;
+                li{
+                display: inline;
+                a{
+                    text-decoration: none;
+                    color:#fff;
+                    padding: 10px;
+                    &:hover{
+                        transform: translateZ(10px);
+                        color: $sec;
+                        font-size: 20px;
+                    }
+                }
+                }
+            }
+        }
+    }
+    /* css for Quick links */
+    .quick-link{
+        h4{
+            color: #fff;
+        }
+        .links{
+            margin-left: -30px;
+            ul{
+                list-style: none;
+                li{
+                    a{
+                        text-decoration: none;
+                        color:#fff;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+    .our-team{
+        h4{
+            color: #fff;
+        }
+        .owner{
+            margin-left: -30px;
+            ul{
+                list-style: none;
+                li{
+                    
+                        color: #fff;
+                        font-size: 17px;
+                        
+                
+
+                }
+            }
+        }
     }
 }
+/* end of footer section */
+/* start of bottom footer */
+.bottom{
+    background: $brand;
+    line-height: 50px;
+    
+    .copy-right{
+        p{
+            color: #fff;
+            text-align: center;
+            font-size: 17px;
+        }
+    }
+}
+
 .block-1{
     .first-news-1{
         h3{

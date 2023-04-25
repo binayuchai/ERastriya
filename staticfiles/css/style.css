@@ -3,16 +3,37 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  overflow-x: 0;
 }
 
 /* text color red */
-
-
-.container {
-  max-width: 1200px;
-  margin: auto;
+.text-color{
+  background: #DF0D00;
+  padding: .4rem .9rem;
+  color: #fff;
+  display: inline-block;
 }
 
+/* Card-Common */
+.card_common {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Resizing the image */
+
+.resize_img{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+
+/* Resizing the image ends */
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,6 +44,7 @@
 }
 
 .top {
+  width:100%;
   background: #0D47A1;
   line-height: 45px;
 }
@@ -122,9 +144,7 @@ nav .nav ul li a:hover {
   cursor: pointer;
 }
 
-.block2 .box2 {
-  border-bottom: 2px solid #ccc;
-}
+
 .block2 .samachar {
   width: 65%;
   height: auto;
@@ -145,7 +165,10 @@ nav .nav ul li a:hover {
 .block2 .LatestUpdate {
   width: 25%;
   height: auto;
+
+  
 }
+  
 .block2 .LatestUpdate .latest-news ul li a {
   text-decoration: none;
   font-size: 18px;
@@ -201,11 +224,11 @@ nav .nav ul li a:hover {
 .second-news {
   margin-top: 10px;
 }
-
+/* 
 .box2 {
   border-bottom: 2px solid #ccc;
   padding-bottom: 15px;
-}
+} */
 
 .rajniti .first-news p {
   font-size: 15px;
@@ -247,6 +270,10 @@ nav .nav ul li a:hover {
   padding: 5px 15px;
   color: #fff;
   display: inline-block;
+}
+.block4 .container .box2 {
+  border-bottom:0;
+  padding:0;
 }
 
 .footer {
@@ -303,6 +330,7 @@ nav .nav ul li a:hover {
 .block-1 .catName {
   text-align: center;
   border-bottom: 2px solid #ccc;
+  padding: 1.5rem 1.5rem;
 }
 .block-1 .catName h3 {
   background: #DF0D00;
@@ -381,7 +409,7 @@ nav .nav ul li a:hover {
   margin: auto;
 }
 
-.footer {
+/* .footer {
   width: 1200px;
   margin: auto;
 }
@@ -389,7 +417,7 @@ nav .nav ul li a:hover {
 .bottom {
   width: 1200px;
   margin: auto;
-}
+} */
 
 .first-news p {
   font-size: 20px;
@@ -493,7 +521,7 @@ nav .nav ul li a:hover {
 
 .side-card-img{
   width:100%;
-  height:6rem;
+  height:8rem;
 }
 
 .category-image{
@@ -506,3 +534,84 @@ nav .nav ul li a:hover {
 
 
 /* End Styling for news  */
+
+
+
+/* Css for footer */
+footer {
+  background: #0D47A1;
+  line-height: 30px;
+  /* css for Quick links */
+}
+footer .contact h4 {
+  color: #fff;
+}
+footer .contact .address p {
+  color: #fff;
+}
+footer .contact .social-media {
+  margin-left: -44px;
+}
+footer .contact .social-media ul {
+  list-style: none;
+}
+footer .contact .social-media ul li {
+  display: inline;
+}
+footer .contact .social-media ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+footer .contact .social-media ul li a:hover {
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  color: #DF0D00;
+  font-size: 20px;
+}
+footer .quick-link h4 {
+  color: #fff;
+}
+footer .quick-link .links {
+  margin-left: -30px;
+}
+footer .quick-link .links ul {
+  list-style: none;
+}
+footer .quick-link .links ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+}
+footer .our-team h4 {
+  color: #fff;
+}
+footer .our-team .owner {
+  margin-left: -30px;
+}
+footer .our-team .owner ul {
+  list-style: none;
+}
+footer .our-team .owner ul li {
+  color: #fff;
+  font-size: 17px;
+}
+.links ul li a{
+  cursor:pointer;
+}
+
+/* end of footer section */
+/* start of bottom footer */
+.bottom {
+  background: #0D47A1;
+  line-height: 50px;
+  text-align: center;
+
+
+}
+.bottom .copy-right span {
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+}
+

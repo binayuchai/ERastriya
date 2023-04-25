@@ -1,4 +1,4 @@
-{% extends 'base_html.html' %}
+ {% extends 'base_html.html' %}
 {% block maincontent %}
 {% load static %}
 
@@ -6,30 +6,27 @@
  <section class="block-1 py1">
   <div class="container">
       <div class="catName">
-          <h3>शिक्षा</h3>
+          <h3>शिक्षा  </h3>
       </div>
-      
-     <div class="first-news-1 py1 d-flex gap-5">
-      {% for edu  in education %}
-      <div class="card bg-dark">
-        {% if edu.image %}
-        <img src="{{ edu.image.url }}" class="card-img-top" alt="{{ edu.title }}" width="250" height="250">
-        {% endif %}
-        <div class="card-img-overlay align-items-end text-white">
-          <h5 class="card-title">{{ edu.title }}</h5>
-          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-          <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
+      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 mt-3 ">
+        {% for edu  in education|slice:":6" %}
 
-          <p class="card-text">Last updated 3 mins ago</p>
+        <div class="col">
+          <div class="card category-wise border-0">
+            {% if edu.image %}
+            <img src="{{ edu.image.url }}" class="card-img-top img-fluid category-image" alt="{{edu.title}}">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ edu.title }}</h5>
+              <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
+              <p class="card-text"><small class="text-muted">{{edu.dateline}}</small></p>
 
+            </div>
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
 
-      
-        
-
-     </div>
   </section>
   <section class="block-3 py1">
       <div class="container">
@@ -42,104 +39,27 @@
      <section class="block-2 py1">
       <div class="container flex">
           <div class="news-list-2">
+            {% if education.count > 5 %}
               <h3>थप समाचार</h3>
+              {% endif %}
+              {% for edu in page_obj|slice:"6:12" %}
               <div class="additinal-news">
-                  <div class="card mb-3" style="width:40rem;">
+                  <div class="card mb-3 border-0" style="width:40rem;">
                       <div class="row g-0">
                         <div class="col-md-4">
-                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                          <img src="{{ edu.image.url }}" style="height: 14rem;" class="img-fluid rounded-start" alt="{{ edu.title}}">
                         </div>
                         <div class="col-md-8">
                           <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <h5 class="card-title">{{edu.title}}</h5>
+                            <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
+                            <p class="card-text"><small class="text-muted">{{edu.dateline}}</small></p>
                           </div>
                         </div>
                       </div>
                     </div>
               </div>
-              <div class="additinal-news">
-                  <div class="card mb-3" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              <div class="additinal-news">
-                  <div class="card mb-3" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              <div class="additinal-news">
-                  <div class="card mb-3" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              <div class="additinal-news">
-                  <div class="card mb-3" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              <div class="additinal-news">
-                  <div class="card mb-3" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              
+              {% endfor %}
           </div>
           <!-- Latest Updates -->
        <div class="news-list-1">
@@ -148,6 +68,45 @@
        </div>
 
       </div>
+      <ul class="pagination justify-content-center mt-3 p-3">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1">first</a>
+        </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+          </li>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+          {% if page_obj.number == i %}
+            <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+          {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+     
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+          </li>
+          
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
+          </li>
+          {% comment %} <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages}}</a>
+          </li> {% endcomment %}
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&raquo;</a>
+          </li>
+        {% endif %}
+      </ul>
+ 
 
      </section>
      <!-- advertisement sections -->

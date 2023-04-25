@@ -1,8 +1,8 @@
 {% load static %}
   <!-- top part -->
-  <div class="top">
+  <div class="top text-light">
     <div class="container flex">
-      <div class="date"><iframe scrolling="no" border="0" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" src="https://www.ashesh.com.np/linknepali-time.php?time_only=no&font_color=333333&aj_time=yes&font_size=14&line_brake=0&api=502137n143" width="334" height="30" class="date_display"></iframe></div>
+      <div class="date"><iframe scrolling="no" border="0" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" src="https://www.ashesh.com.np/linknepali-time.php?time_only=no&font_color=ffffff&aj_time=yes&font_size=14&line_brake=0&api=502137n143" width="334" height="30" class="date_display"></iframe></div>
       <div class="social-icon">
         <ul>
           <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
@@ -46,8 +46,13 @@
       <!-- User module -->
       <div class="user">
         
-        <button class="btn">Search</button>
-        <button class="btn">English</button>
+        <div class="container-fluid my-2">
+          <form class="d-flex" role="search" action="{% url 'post:search_result' %}">
+            <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      
         {% comment %} <div class="dropdown d-inline">
           <ul class="dropdown-menu z-2">
             <li><a class="dropdown-item" href="#">Login</a></li>
@@ -57,7 +62,7 @@
           <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
           
         </div> {% endcomment %}
-        <button class="btn"><i class="bi bi-person-circle"></i></button>
+        {% comment %} <button class="btn"><i class="bi bi-person-circle"></i></button> {% endcomment %}
 
       </div>
     </div>

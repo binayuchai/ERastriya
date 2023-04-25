@@ -7,18 +7,18 @@
 <div class="container">
 
     <!-- Banner news -->
-    <section class="block1">
+    <section class="block1 my-4">
           <div class="container">
               <div class="box-1">
-                      <div class="advertisement">
+                      <div class="advertisement text-center">
                         <img src="{% static 'images/add1.gif' %}"/>
                       </div>
                       <div class="banner py">
                         <h3>गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h3>
                           
-                          <div class="author py"><h4>Erastriya</h4></div>
+                          <div class="author py"><h4 class="text-danger">Erastriya</h4></div>
                         
-                          <img class="img-fluid" style="width: 100%" src="{% static 'images/1.jpg' %}"/>
+                          <img class="img-fluid mt-4" style="width: 100%" src="{% static 'images/1.jpg' %}"/>
                         </div>
                       </div> 
                 </div>
@@ -29,36 +29,41 @@
     {% comment %}  Samachar {% endcomment %}
 
 
-    <section class="block2 mt-3">
+    <section class="block2 py-4">
     <div class="container">
-        <div class="container items-content">
+        <div class="container items-content box2">
           <div class="main-article">
-            <h3>समाचार</h3>
-            <div class="first-news wrapper">
+            {% if news %}
+
+            <h3 class="text-color">समाचार</h3>
+            <div class="first-news wrapper py-3">
                     {% for samachar in news|slice:":3" %}
 
                                     
                       <div class="card common-card border-0">
                         <a href="{% url 'post:detail' samachar.id %}" class="stretched-link"></a>
-                        <img src="{{ samachar.image.url }}" class="card-img-bottom card-img-size" alt="{{samachar.title}}" style="width:100%; height:60%;">
+                        <img src="{{ samachar.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{samachar.title}}" style="height:19rem;">
                         <div class="p-2">
                         <div class="card-title text-3">{{ samachar.title }}</div>
-                        <span class="">
                           <span class=""></span><span class="main-title"></span> {{samachar.dateline}}</span>
-                      </span>
                         </div>
 
                     </div>
                     
                   
                     {% endfor %}
+                    {% endif %}
+                    {% if news|length > 3 %}
+                    {% for big_news in news|slice:"3:4"%}
                       <div class="card card-style common-card border-0">
-                          <img src="{{ big_news.image.url }}" class="card-img-top img-fluid card-img-size" alt="{{big_news.title}}">
+                          <img src="{{ big_news.image.url }}" class="card-img-top img-fluid resize_img" alt="{{big_news.title}}">
                           <div class="card-body">
                             <h5 class="card-title">{{ big_news.title }}</h5>
                           </div>
                           <a href="{% url 'post:detail' big_news.id %}" class="stretched-link"></a>
                     </div> 
+                    {% endfor %}
+                    {% endif %}
                     
               
 
@@ -74,176 +79,103 @@
 
         </div>
       </div>
-      
-        
     </div>
 
     </section>
 
 
 
-    {% comment %} <section class="block2 mt-3">
-      <div class="container ">
-            <div class="box2 py-3">
-                <div class="flex">
-                    <div class="samachar row">
-                      <h3>समाचार</h3>
-                      <div class="col-6 d-flex align-items-center flex-direction-column">
-                            <div class="first-news d-flex mt-3">
-                                <div class="row">
-                                    {% for samachar in news|slice:":3" %}
-                                    <div class="col-md-2">
-                                      <div class="card" style="width: 17rem;">
-                                        <img src="{{ samachar.image.url }}" class="card-img-top img-fluid card-img-size" alt="{{samachar.title}}">
-                                        <div class="card-body">
-                                          <h5 class="card-title"><a href="details.html">{{ samachar.title }}</a></h5>
-                                        </div>
-                                      </div>
-                                    </div> 
-                                
-                                    {% endfor %}
-                                  </div>
-                              </div>
-                              {% comment %} <div class="card " style="width: 17rem;">
-                                <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-                                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-                                  <a href="{% url 'post:politics' %}" class="stretched-link"></a>
-                                </div>
-                              </div>
-                              <div class="card " style="width: 17rem;">
-                                <img src="{% static 'images/1.jpg' %}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-                                  <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-                                </div>
-                              </div>
-                            </div> {% endcomment %}
-                                {% comment %} {% if big_news %}
-                                <div class="col">
-                                    <div class="second-news">
-                                      <div class="card" style="width: 53rem;">
-                                        <img src="{{ big_news.image.url }}" class="card-img-top img-fluid" style="height: 25rem;" alt="{{ big_news.title }}">
-                                        <div class="card-body">
-                                          <h5 class="card-title">{{ big_news.title }}</h5>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div> 
-                                {% endif %}
-                          </div>
-                        <!-- list of latest taja update  -->
-                          <div class="LatestUpdate col-6">
-                              <h3>ताजा अपडेट </h3>      
-                              <div class="latest-news mt-3">
-                                <ul class="list-group">
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li> 
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li> 
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                  <li class="list-group-item">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</li>
-                                </ul>
-                              </div>
-                            </div>
+
+{% comment %} Politics Section {% endcomment %}
+    <section class="block3 py-4">  
+      <div class="container">
+        <div class="box2">  
+            <div class="rajniti">
+              {% if politics %}
+
+                <h3>राजनीति </h3>
+
+
+                <div class="first-news row row-cols-1 row-cols-md-4 g-5 py-3">
+                  {% for rajniti in politics|slice:":4" %}
+                  <div class="col">
+                    <div class="card border-0">
+                      <img src="{{ rajniti.image.url }}" class="card-img-top img-fluid" alt="{{ rajniti.title }}" style="height:19rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ rajniti.title }}</h5>
                       </div>
-                  </div>
-              </div>  
+                    </div>
+                 </div>
+                  {% endfor %}
+                  {% endif %}
+              
+                </div>
+                <div class="second-news ">
+                      {% if politics|length > 4%}
+                      {% for big_politics in politics|slice:"4:5" %}
+                      <div class="card border-0" style="max-width: 100%;">
+                        <img src="{{ big_politics.image.url }}" class="card-img-top img-fluid" style="height: 30rem;" alt="{{ big_politics.title }}">
+                        <div class="card-body border-0">
+                          <h2 class="card-title">{{big_politics.title}}</h2>
+                        </div>
+                      </div>
+                      {% endfor %}
+                      {% endif %}
+                </div>
+              </div>
+      
           </div>
-      </div>  
-    </section> {% endcomment %} 
+      </div>
+  
+    </section>
 
 
+{% comment %} Politics Section Ends {% endcomment %}
 
-    <section class="block3 py">  
+
+{% comment %} Laws Section{% endcomment %}
+
+  <section class="block4 py-4">  
     <div class="container">
       <div class="box2">  
-      <div class="rajniti py-3">
-          <h3>राजनीति </h3>
+          <div class="rajniti">
+            {% if laws %}
+              <h3>कानुन </h3>
 
-          <div class="first-news d-flex gap-5 mt-3">
-            {% for rajniti  in politics %}
-            <div class="card border-0" style="width: 18rem;">
-              <img src="{{ rajniti.image.url }}" class="card-img-top" alt="{{ rajniti.title }}" width="250" height="250">
-              <div class="card-body">
-                <h5 class="card-title">{{ rajniti.title }}</h5>
-                <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+              <div class="first-news row row-cols-1 row-cols-md-4 g-5 py-3">
+                  {% for law in laws|slice:":4" %}
+                  <div class="col">
+                    <div class="card border-0">
+                      <img src="{{ law.image.url }}" class="card-img-top" alt="{{ law.title }}" style="height:19rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ law.title }}</h5>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  {% endif %}
+            
               </div>
-            </div>
-            {% endfor %}
-        
-          </div>
-          <div class="second-news ">
-            <div class="card " style="width: 73rem;">
-              <img src="./img/1.jpg" class="card-img-top" style="height: 30rem;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-                <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
+              {% if laws|length > 4 %}
+              <div class="second-news ">
+                {% for law in laws|slice:"4:5"%}
+                <div class="card border-0" style="max-width:100%;">
+                  <img src="{{ law.image.url }}" class="card-img-top img-fluid" alt="{{ law.title }}">
+                  <div class="card-body border-0">
+                    <h2 class="card-title">{{ law.title }}</h2>
+                  </div>
+                </div>
+                {% endfor %}
               </div>
+              {% endif %}
             </div>
-          </div>
+    
         </div>
-      
-        </div>
-      </div>
     </div>
-    </section>
-    <section class="block4 py">  
-    <div class="container ">   
-    <div class="kanun-news">
-    <h3>कानुन</h3>
-    <div class="first-news d-flex gap-5">
-      <div class="card " style="width: 18rem;">
-        <img src="./img/1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-        </div>
-      </div>
-      <div class="card " style="width: 18rem;">
-        <img src="./img/1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-        </div>
-      </div>
-      <div class="card " style="width: 18rem;">
-        <img src="./img/1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-        </div>
-      </div>
-      <div class="card " style="width: 18rem;">
-        <img src="./img/1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-        </div>
-      </div>
-    </div>
-    <div class="second-news ">
-      <div class="card " style="width: 73rem;">
-        <img src="./img/1.jpg" class="card-img-top" style="height: 30rem;" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h5>
-          <p class="card-text">काठमाडौं । नेपाली कांग्रेसबाट भावी राष्ट्रपतिमा प्रस्तावित रामचन्द्र पौडेलले आफूमाथि संविधानको रक्षा र जनताको अधिकार संरक्षण गर्ने चुनौति आउन लागेको बताएका छन् ।.</p>
-        </div>
-      </div>
-    </div>
-    </div>   
-    </div>
-    </div>
-    </section>  
+  </section> 
+
 </div>
+{% comment %} Laws Section Section{% endcomment %}
 
 
 {% endblock maincontent %}

@@ -1,58 +1,9 @@
 {% extends 'base_html.html' %}
 {% load static %}
 {% block maincontent %}
-{% comment %} 
-
-    {% comment %} <small class="py">काठमाडाैं, फागुन १४</small>
-    <div class="first-news  gap-3">
-        <!-- details-page-ads -->
-        {% comment %} <section>
-        <div class="container">
-            <div class="ads">
-                <img width="100%" src="./img/hilltake.gif"/>
-            </div>
-        </div>{% endcomment %}
-        {% comment %} </section>
-         
-        <div class="container">
-            <div class="text-red m-3 p-2">
-            <h1>{{post.title}}</h1>
-            </div> {% endcomment %}
-
-        {% comment %} <img src="{{images}}" alt="" class="img-fluid" width="100%" height="30px"> 
-        <img src="{{post.image.url }}" alt="" class="img-fluid" width="100%" height="30px">
-        <div class="mt-2 p-3 text-justify">
-            {{post.content |safe}}
-        </div>
-{% block maincontent %}
-    {% comment %} <small class="py">काठमाडाैं, फागुन १४</small>
-    <div class="first-news  gap-3">
-        <!-- details-page-ads -->
-        {% comment %} <section>
-        <div class="container">
-            <div class="ads">
-                <img width="100%" src="./img/hilltake.gif"/>
-            </div>
-        </div>{% endcomment %}
-    
-         
-        {% comment %} <div class="container">
-            <div class="text-red m-3 p-2">
-            <h1>{{post.title}}</h1>
-            </div> {% endcomment %}
-
-        {% comment %} <img src="{{images}}" alt="" class="img-fluid" width="100%" height="30px"> 
-        <img src="{{post.image.url }}" alt="" class="img-fluid" width="100%" height="30px">
-        <div class="mt-2 p-3 text-justify">
-            {{post.content |safe}}
-        </div>
-        </div>
-        </div> {% endcomment %}
-        
-
 
  <!-- Banner news -->
- <section class="block2 py mt-3 pt-3">
+ <section class="block2 py">
   
     <div class="container ">
       <div class="box2">
@@ -72,185 +23,175 @@
                         </ul>
                     </span>
             </div>
-        </div>        
+        </div>
+        
         <small class="py">काठमाडाैं, फागुन १४</small>
         <div class="first-news  gap-3">
-        <!-- details-page-ads -->
-        <section>
-        <div class="container">
-            <div class="ads">
-                <img width="100%" src="./img/hilltake.gif" class="img-fluid" />
-            </div>
-        </div>
-        </section>
-        <p>सत्ता गठबन्धनबनबाट बाहिरिएको राष्ट्रिय प्रजातन्त्र पार्टी (राप्रपा)भित्र असन्तुष्टि भुसको आगोझैँ बढ्दैछ । सरकारमा जाने वा नजाने भन्नेमै विवादित राप्रपाको केन्द्रीय कार्यसम्पादन समिति अहिले राष्ट्रपति चुनावमा भाग लिने कि नलिने भन्नेमा विभाजित छ । त्यही विवादका कारण १२ फागुनको केन्द्रीय कार्यसम्पादन समितिको बैठकले राष्ट्रपतिको चुनावमा समर्थक र प्रस्ताव नबस्ने निर्णय गरेको थियो ।
-        <br>
-
-        यसअघि एमाले अध्यक्ष केपी शर्मा ओलीसँग ट्युनिङ मिल्ने ठानिएका अध्यक्ष राजेन्द्र लिङ्देन एमाले उम्मेदवारको समर्थक वा प्रस्तावक बस्न सक्ने अनुमान गरिएको थियो । राप्रपाभित्र राष्ट्रपति चुनावको पक्षमा उभिन नहुने मत पनि रहेको छ । यो मतका पक्षधर राजावादी पार्टीले राष्ट्रपतिमा मतदान गर्न नहुने धारणा राखिरहेका छन् । यद्यपि, संविधानलाई स्वीकार गरेर संसदमा पुग्ने अनि त्यही संविधानअनुसार शपथ खाएर मन्त्री पनि हुने तर राष्ट्रपतिमा भाग लिन नहुने तर्क नसुहाउने अर्को पक्षको मत रहेको छ ।
-        <br>
-        <br>
-        खासगरी, पशुपतिशमशेर राणा, प्रकाशचन्द्र लोहनी, बुद्धिमान तामाङ, रवीन्द्र मिश्र, जगत गौचनलगायतका दर्जन नेताहरू राष्ट्रपतिको चुनावमा भाग लिन नहुने पक्षमा देखिएका हुन् । राप्रपा स्रोतका अनुसार यो मतमा महामन्त्री धवलशमशेर राणा पनि रहेका छन् । सांसद ज्ञानेन्द्र शाहीले पनि औपचारिक रूपमै राष्ट्रपतिमा मतदान गर्न नहुने बताइरहेका छन् । राप्रपाभित्र यस्तो मत विभाजनको अवस्था आउनुको खास कारण दुईवटा मानिएको छ ।
-        <br>
-        एक, अध्यक्ष लिङ्देनको कार्यशैली चित्त नबुझाएका र धोका पाएकाहरू । अर्थात्, महाधिवेशनमा सहयोग गरेका प्रकाशचन्द्र लोहनीलाई सांसद बनाउने आश्वासन दिएर पनि लिङ्देनले समानुपातिक सूचीमै दोस्रो नम्बरमा पारिदिए । अनि, संसदीय दलको नेता बनाइदिन्छु भनेर आर्थिक सहयोगसमेत लिएका पशुपतिशमशेर राणालाई दलको नेता हुनबाट रोके । यो परिघटनाले दुई शीर्ष नेता पहिलादेखि नै रुष्ट बनेका थिए । अनि, मन्त्री हुन चाहेका बुद्धिमान तामाङ, धवलशमेशर राणाहरू पनि अहिले अध्यक्ष लिङ्देनसँग असन्तुष्ट छन् ।
-        <br>
-        त्यसो त, चुनावमा पर्याप्त सहयोग नपाएको भन्दै रवीन्द्र मिश्र पनि असन्तुष्ट छन् । उनीहरू सबै अहिले राष्ट्रपतिको चुनावमा भाग लिन नहुने पक्षमा रहेका छन् । दोस्रो कारण चाहिँ पूर्वराजा ज्ञानेन्द्र शाहसँग बिग्रिँदो सम्बन्ध । पूर्वराजा ज्ञानेन्द्रसँग सम्बन्धमा चिसोपना आउन थालेपछि राप्रपाभित्र असन्तुष्टि देखिन थालेको हो ।</p>
-        <br>
-        <br>
-        <br>
-        <p>प्रकाशित मिति: आइतबार, फागुन १४, २०७९  ०७:५७</p>
-        <section>
+            <!-- details-page-ads -->
+          <section>
             <div class="container">
                 <div class="ads">
-                    <img width="100%" src="./img/hilltake.gif" class="img-fluid" />
+                    <img width="100%" src="./img/hilltake.gif"/>
                 </div>
             </div>
-            </section>
-            <section class="py1">
-            <div class="container">
-                <div class="ads">
-                    <img width="100%" src="./img/add1.gif"/>
-                </div>
-            </div>
-            </section>
-            <!-- comment section -->
-            <div class="comment-area">
-            <div class="container">
-                <div class="comment py1">
-                <h3>प्रतिकिर्या </h3>
-                    <div class="box">
-                    <form >
-                        <div class="title"> <h4>Comment *</h4></div>
-                        
-                        <br>
-                        <input id="cmt"type="text"  required>
-                        <br>
-                        <label for="username"><h4>Username *</h4></label>
-                        <br>
-                        <input type="text" id="username" name="username" required><br>
-                        <label for="email"><h4>Email *</h4></label>
-                        <input type="text" id="email" name="email" required>
-                        <br>
-                        <button>POST</button>
-                        
-                    </form>
+          </section>
+          <div class="img py1"><img width='850rem'src="./img/1.jpg"/></div>
+          <p>सत्ता गठबन्धनबनबाट बाहिरिएको राष्ट्रिय प्रजातन्त्र पार्टी (राप्रपा)भित्र असन्तुष्टि भुसको आगोझैँ बढ्दैछ । सरकारमा जाने वा नजाने भन्नेमै विवादित राप्रपाको केन्द्रीय कार्यसम्पादन समिति अहिले राष्ट्रपति चुनावमा भाग लिने कि नलिने भन्नेमा विभाजित छ । त्यही विवादका कारण १२ फागुनको केन्द्रीय कार्यसम्पादन समितिको बैठकले राष्ट्रपतिको चुनावमा समर्थक र प्रस्ताव नबस्ने निर्णय गरेको थियो ।
+            <br>
 
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="additinal-news py1">
-            <h3>थप समाचार </h3>
-            <div class="card mb-3" style="width:40rem;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                        <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="additinal-news">
-                <div class="card mb-3" style="width:40rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
+            यसअघि एमाले अध्यक्ष केपी शर्मा ओलीसँग ट्युनिङ मिल्ने ठानिएका अध्यक्ष राजेन्द्र लिङ्देन एमाले उम्मेदवारको समर्थक वा प्रस्तावक बस्न सक्ने अनुमान गरिएको थियो । राप्रपाभित्र राष्ट्रपति चुनावको पक्षमा उभिन नहुने मत पनि रहेको छ । यो मतका पक्षधर राजावादी पार्टीले राष्ट्रपतिमा मतदान गर्न नहुने धारणा राखिरहेका छन् । यद्यपि, संविधानलाई स्वीकार गरेर संसदमा पुग्ने अनि त्यही संविधानअनुसार शपथ खाएर मन्त्री पनि हुने तर राष्ट्रपतिमा भाग लिन नहुने तर्क नसुहाउने अर्को पक्षको मत रहेको छ ।
+            <br>
+            <br>
+            खासगरी, पशुपतिशमशेर राणा, प्रकाशचन्द्र लोहनी, बुद्धिमान तामाङ, रवीन्द्र मिश्र, जगत गौचनलगायतका दर्जन नेताहरू राष्ट्रपतिको चुनावमा भाग लिन नहुने पक्षमा देखिएका हुन् । राप्रपा स्रोतका अनुसार यो मतमा महामन्त्री धवलशमशेर राणा पनि रहेका छन् । सांसद ज्ञानेन्द्र शाहीले पनि औपचारिक रूपमै राष्ट्रपतिमा मतदान गर्न नहुने बताइरहेका छन् । राप्रपाभित्र यस्तो मत विभाजनको अवस्था आउनुको खास कारण दुईवटा मानिएको छ ।
+            <br>
             
-            <div class="additinal-news">
-                <div class="card mb-3" style="width:40rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-            <div class="additinal-news">
-                <div class="card mb-3" style="width:40rem;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
-                            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
+            एक, अध्यक्ष लिङ्देनको कार्यशैली चित्त नबुझाएका र धोका पाएकाहरू । अर्थात्, महाधिवेशनमा सहयोग गरेका प्रकाशचन्द्र लोहनीलाई सांसद बनाउने आश्वासन दिएर पनि लिङ्देनले समानुपातिक सूचीमै दोस्रो नम्बरमा पारिदिए । अनि, संसदीय दलको नेता बनाइदिन्छु भनेर आर्थिक सहयोगसमेत लिएका पशुपतिशमशेर राणालाई दलको नेता हुनबाट रोके । यो परिघटनाले दुई शीर्ष नेता पहिलादेखि नै रुष्ट बनेका थिए । अनि, मन्त्री हुन चाहेका बुद्धिमान तामाङ, धवलशमेशर राणाहरू पनि अहिले अध्यक्ष लिङ्देनसँग असन्तुष्ट छन् ।
+            <br>
+            त्यसो त, चुनावमा पर्याप्त सहयोग नपाएको भन्दै रवीन्द्र मिश्र पनि असन्तुष्ट छन् । उनीहरू सबै अहिले राष्ट्रपतिको चुनावमा भाग लिन नहुने पक्षमा रहेका छन् । दोस्रो कारण चाहिँ पूर्वराजा ज्ञानेन्द्र शाहसँग बिग्रिँदो सम्बन्ध । पूर्वराजा ज्ञानेन्द्रसँग सम्बन्धमा चिसोपना आउन थालेपछि राप्रपाभित्र असन्तुष्टि देखिन थालेको हो ।</p>
+            <br>
+            <br>
+            <br>
+            <p>प्रकाशित मिति: आइतबार, फागुन १४, २०७९  ०७:५७</p>
             <section>
                 <div class="container">
                     <div class="ads">
                         <img width="100%" src="./img/hilltake.gif"/>
                     </div>
                 </div>
-                </section>
+              </section>
+              <section class="py1">
+                <div class="container">
+                    <div class="ads">
+                        <img width="100%" src="./img/add1.gif"/>
+                    </div>
+                </div>
+              </section>
+              <!-- comment section -->
+              <div class="comment-area">
+                <div class="container">
+                  <div class="comment py1">
+                    <h3>प्रतिकिर्या </h3>
+                      <div class="box">
+                        <form >
+                          <div class="title"> <h4>Comment *</h4></div>
+                         
+                          <br>
+                          <input id="cmt"type="text"  required>
+                          <br>
+                          <label for="username"><h4>Username *</h4></label>
+                          <br>
+                          <input type="text" id="username" name="username" required><br>
+                          <label for="email"><h4>Email *</h4></label>
+                          <input type="text" id="email" name="email" required>
+                          <br>
+                          <button>POST</button>
+                          
+                        </form>
 
-        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              {% comment %} <!-- details page additional news -->
+              <div class="additinal-news py1">
+                <h3>थप समाचार </h3>
+                <div class="card mb-3" style="width:40rem;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                          <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="additinal-news">
+                    <div class="card mb-3" style="width:40rem;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                              <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                
+                <div class="additinal-news">
+                    <div class="card mb-3" style="width:40rem;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                              <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="additinal-news">
+                    <div class="card mb-3" style="width:40rem;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./img/1.jpg" style="height: 14rem;"class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h5>
+                              <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू ........</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                
+            </div>
+          
+         
+        </div> {% endcomment %}
+      </div>
+      <!-- list of latest taja update  -->
+      
 
-
-        </div>
-        </div>
-        <!-- list of latest taja update  -->
         <div class="LatestUpdate">
-        <h3>ताजा अपडेट </h3>
+          <!-- advertisememt details page -->
+            <div class="latest-ads py1">
+              <img src="./img/manaslu.jpg" width="100%"/>
+            </div>
+            <div class="latest-ads py1">
+              <img src="./img/manaslu.jpg" width="100%"/>
+            </div>
 
-        <div class="card" style="width: 20rem;">
-        <img src="./img/1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h4 class="card-title"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></h4>
-            <p class="card-text">नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू .......... ।</p>
+            <!-- end of details page advertisement -->
+            <div class="news-list-1">
+              {% include 'latestnews.html' %}
+      
+             </div>
+
+
+            
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-            <li class="list-group-item"><a href="details.html">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a></li>
-        </ul>
-
-        </div>
-
-        </div>
-        </div>
-        </div>
-        </div>
-
-
-
-</section>
-
-
+     </div>
+    </div>
+  </div>
+      
+  
+  
+ </section>
 
 
 {% endblock maincontent %}   

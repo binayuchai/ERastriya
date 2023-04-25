@@ -1,0 +1,78 @@
+/* Responsive code for all pages */
+@media (max-width: 480px) {
+    /* responsive top part */
+    .top .flex {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      text-align: center;
+    }
+    /* responsive of top logo and ads */
+    header .flex {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      text-align: center;
+    }
+    header .flex .logo {
+      padding: 10px;
+      border-bottom: 1px solid #DF0D00;
+    }
+    header .flex .ads img {
+      width: 100%;
+    }
+    .block1 .box-1 .advertisement img {
+      width: 100%;
+    }
+    .block2 .box2 .flex {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+    .block2 .box2 .flex .samachar {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+    .block2 .box2 .flex .samachar .first-news {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+    .block2 .box2 .flex .samachar .first-news .card {
+      width: 100%;
+    }
+    .block2 .box2 .flex .samachar .second-news {
+      width: 100%;
+    }
+  }
+  /* responsive for tablet */
+  @media (max-width: 768px) {
+    .top .flex {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      text-align: center;
+    }
+    /* responsive of top logo and ads */
+    header .flex {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      text-align: center;
+    }
+    header .flex .logo {
+      padding: 10px;
+      border-bottom: 1px solid #DF0D00;
+    }
+    header .flex .ads img {
+      width: 100%;
+    }
+  }/*# sourceMappingURL=style.css.map */

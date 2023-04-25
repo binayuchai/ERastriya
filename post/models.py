@@ -5,6 +5,7 @@ from ckeditor.widgets import CKEditorWidget
 from django.utils.html import escape
 import hashlib
 from django.core.files.storage import FileSystemStorage
+from django.urls import reverse
 
 
 class TimeStampModel(models.Model):
@@ -72,11 +73,16 @@ class Post(TimeStampModel):
     def __str__(self):
         return self.title
 
-
+    
     def image_tag(self):
         return u'<img src="%s" />' % escape("post/images")
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
-       
+
+
+    def get_absolute_url(self):
+        return reverse('post:detail', kwargs={'pk': self.pk})
+    # def get_absolute_url(self):
+    #     return reverse('detail_view', args=[str(self.id)])
 
     
