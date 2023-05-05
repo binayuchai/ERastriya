@@ -1,29 +1,30 @@
 {% extends 'base_html.html' %}
 {% block maincontent %}
 {% load static %}
+{% load humanize %}
 
  <!-- category news -->
- <section class="block-1 py1">
+<section class="block-1 py1">
   <div class="container">
-      <div class="catName">
-          <h3>राजनीति  </h3>
-      </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 mt-3 ">
-        {% for post_politics in page_obj|slice:":6" %}
+        <div class="catName">
+            <h3 class="text_header">राजनीति  </h3>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3 ">
+          {% for post_politics in page_obj|slice:":6" %}
 
-        <div class="col">
-          <div class="card category-wise border-0">
-            <img src="{{post_politics.image.url}}" class="card-img-top img-fluid category-image" alt="{{post_politics.title}}">
-            <div class="card-body">
-              <h5 class="card-title">{{post_politics.title}}</h5>
-              <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
-              <p class="card-text"><small class="text-muted">{{post_politics.dateline}}</small></p>
+          <div class="col">
+            <div class="card category-wise border-0">
+              <img src="{{post_politics.image.url}}" class="card-img-top img-fluid category-image" alt="{{post_politics.title}}" style="object-fit:cover;">
+              <div class="card-body">
+                <h5 class="card-title">{{post_politics.title}}</h5>
+                <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
+                <p class="card-text"><small class="text-muted">{{post_politics.dateline|timesince }}</small></p>
 
+              </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
      {% comment %} <div class="first-news-1 py1 d-flex gap-5">
       {% for politic in politics|slice:":6" %}
        <div class="card" style="width: 25rem;">
@@ -40,122 +41,124 @@
       {% endfor %}  
         
      </div> {% endcomment %}
-  </section>
-  <section class="block-3 py1">
-      <div class="container">
-          <div class="ads">
-              <img src="./img/add.gif"/>
-          </div>
+    </div>
+</section>
+<section class="block-3 py1">
+    <div class="container">
+      <div class="ads">
+          <img src="./img/add.gif"/>
       </div>
-     </section>
-  <!-- Additional news -->
-     <section class="block-2 py1">
-      <div class="container flex">
-          <div class="news-list-2">
-            {% if politics.count > 5 %}
-              <h3>थप समाचार</h3>
-              {% endif %}
+    </div>
+</section>
+<!-- Additional news -->
+<section class="block-2 py1">
+  <div class="container category_additional">
+      <div class="container news-list-2">
 
-              {% for post_politics in page_obj|slice:"6:12" %}
-              <div class="additinal-news">
-                  <div class="card mb-3 border-0" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="{{ post_politics.image.url }}" style="height: 14rem;" class="img-fluid rounded-start" alt="{{ post_politics.title}}">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">{{post_politics.title}}</h5>
-                            <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
-                            <p class="card-text"><small class="text-muted">{{post_politics.dateline}}</small></p>
-                          </div>
-                        </div>
+         {% if politics.count > 5 %}
+          <h3 class="text_header">थप समाचार</h3>
+          {% endif %}
+
+          {% for post_politics in page_obj|slice:"6:12" %}
+          <div class="additinal-news">
+              <div class="card mb-3 border-0" style="width:40rem; max-width:100%;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{{ post_politics.image.url }}"  class="img-fluid rounded-start" alt="{{ post_politics.title}}" style="object-fit:cover;height:10rem;">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{post_politics.title}}</h5>
+                        <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
+                        <p class="card-text"><small class="text-muted">{{post_politics.dateline}}</small></p>
                       </div>
                     </div>
-              </div>
-              {% endfor %}
-          </div>
-          <!-- Latest Updates -->
-       <div class="news-list-1">
+                  </div>
+                </div>
+           </div>
+          {% endfor %}
+       </div>
+      <!-- Latest Updates -->
+        <div class="news-list-1">
         {% include 'latestnews.html' %}
 
-       </div>
+        </div>
 
-      </div>
-      <ul class="pagination justify-content-center mt-3 p-3">
-        {% if page_obj.has_previous %}
-        <li class="page-item">
-          <a class="page-link" href="?page=1">first</a>
-        </li>
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-          </li>
-        {% else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="#">&laquo;</a>
-          </li>
-        {% endif %}
-        {% for i in page_obj.paginator.page_range %}
-          {% if page_obj.number == i %}
-            <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
-          {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
-            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-          {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-     
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-          </li>
-          
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
-          </li>
-          {% comment %} <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages}}</a>
-          </li> {% endcomment %}
-        {% else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="#">&raquo;</a>
-          </li>
-        {% endif %}
-      </ul>
+  </div>
+  <ul class="pagination justify-content-center mt-3 p-3">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page=1">first</a>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+    {% endif %}
+    {% for i in page_obj.paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+      {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+      </li>
       
-      {% comment %} {% if paginator.num_pages > 1 %}
-    <div class="pagination justify-content-center mt-3 p-3">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; First</a>
-            <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Previous</a>
-        {% endif %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
+      </li>
+      {% comment %} <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages}}</a>
+      </li> {% endcomment %}
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+    {% endif %}
+  </ul>
 
-        {% for page in pagination_range %}
-            {% if page_obj.number == page %}
-                <span class="page-link current-page">{{ page }}</span>
-            {% else %}
-                <a href="?page={{ page }}" class="page-link">{{ page }}</a>
-            {% endif %}
-        {% endfor %}
+  {% comment %} {% if paginator.num_pages > 1 %}
+  <div class="pagination justify-content-center mt-3 p-3">
+    {% if page_obj.has_previous %}
+        <a href="?page=1">&laquo; First</a>
+        <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Previous</a>
+    {% endif %}
 
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}" class="page-link">&rsaquo; Next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">&raquo; Last</a>
+    {% for page in pagination_range %}
+        {% if page_obj.number == page %}
+            <span class="page-link current-page">{{ page }}</span>
+        {% else %}
+            <a href="?page={{ page }}" class="page-link">{{ page }}</a>
         {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">&rsaquo; Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">&raquo; Last</a>
+    {% endif %}
+  </div>
+  {% endif %} {% endcomment %}
+
+</section>
+
+<!-- advertisement sections -->
+<section class="block-3 py1">
+<div class="container">
+    <div class="ads">
+        <img src="./img/add.gif"/>
     </div>
-{% endif %} {% endcomment %}
-
-     </section>
-     <!-- advertisement sections -->
-     <section class="block-3 py1">
-      <div class="container">
-          <div class="ads">
-              <img src="./img/add.gif"/>
-          </div>
-      </div>
-     </section>
-    
+</div>
+</section>
 
 
- </section>
+
 
 
 {% endblock maincontent %}

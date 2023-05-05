@@ -3,7 +3,7 @@ from post.models import Category,Post,Tag
 from django.utils.html import format_html
 from django.urls import reverse
 from django.utils.http import urlencode
-
+from imagekit.admin import AdminThumbnail
 # Register your models here.
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -14,6 +14,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ("tags","created_at","modified_at",)
     search_fields = ("tags",)
+
 
 
 @admin.register(Post)
@@ -31,7 +32,10 @@ class PostAdmin(admin.ModelAdmin):
     
 
     image_tag.short_description = 'Image'
+
     
-    list_display = ("image_tag","title","dateline","category","tags","reporter","view_post")
+    list_display = ("image_tag","title","dateline","category","tags","reporter","view_post",)
     search_fields = ("title",)    
+
+
 

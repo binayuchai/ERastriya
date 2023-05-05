@@ -1,0 +1,33 @@
+img{
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:cover;
+  }
+
+.LatestUpdate_post{
+  overflow-y: hidden;
+}
+
+
+.reporter-icon{
+  float:left;
+  margin-right:.8rem;
+}
+.reporter-icon i{
+  font-size:1.2rem;
+
+}
+.reporter-title span,.card-body span{
+  display:block;
+  font-weight: 700;
+}
+.share-button{
+  float:right;
+  
+}
+
+.additional_img{
+  height:10rem !important;
+  object-fit: cover;
+
+}

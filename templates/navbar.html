@@ -31,8 +31,11 @@
 
   <!-- Navigation -->
   <nav id="nav-bar">
-    <div class="container flex">
-      <div class="nav">
+    <div class="container">
+      <div class="nav nav_bar" id="nav">
+        <div class="close-btn" id="close-btn">
+          <i class="fa-solid fa-xmark" style="color: #ffffff;" onclick="closeNav()"></i>
+        </div>
         <ul>
           <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>गृहपृष्ट</a></li>
           <li><a href="{% url 'post:news' %}">समाचार </a></li>
@@ -42,28 +45,35 @@
           <li><a href="{% url 'post:education' %}">शिक्षा </a></li>
           <li><a href="others.html">अन्य </a></li>
         </ul>
-      </div>
-      <!-- User module -->
-      <div class="user">
-        
-        <div class="container-fluid my-2">
-          <form class="d-flex" role="search" action="{% url 'post:search_result' %}">
-            <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
-        </div>
-      
-        {% comment %} <div class="dropdown d-inline">
-          <ul class="dropdown-menu z-2">
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">Signup</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-          </ul>
-          <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
+        <!-- User module -->
+        <div id="user">
           
-        </div> {% endcomment %}
-        {% comment %} <button class="btn"><i class="bi bi-person-circle"></i></button> {% endcomment %}
-
+          <div class="my-2 px-4">
+            {% comment %} <form class="d-flex form-inline my-2 my0lg" role="search" action="{% url 'post:search_result' %}">
+              <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form> {% endcomment %}
+            <form class="form-inline my-2 my-lg-0 d-flex" action="{% url 'post:search_result' %}">
+              <input class="form-control mr-sm-2 form-group-sm" type="search" placeholder="Search" aria-label="Search" name="q">
+              <button class="btn my-2 my-sm-0 search-btn" type="submit">Search</button>
+            </form>
+          </div>
+        
+          {% comment %} <div class="dropdown d-inline">
+            <ul class="dropdown-menu z-2">
+              <li><a class="dropdown-item" href="#">Login</a></li>
+              <li><a class="dropdown-item" href="#">Signup</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
+            
+          </div> {% endcomment %}
+          {% comment %} <button class="btn"><i class="bi bi-person-circle"></i></button> {% endcomment %}
+  
+        </div>
+      </div>
+      <div class="toggle-button m-2 pt-2">
+        <i class="fa-solid fa-bars" style="color: #ffffff;" onclick="openNav()"></i>
       </div>
     </div>
    </nav>

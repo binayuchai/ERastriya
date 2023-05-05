@@ -21,6 +21,7 @@ $sec:#DF0D00;
     line-height: 45px;
     
 }
+
 // .category-wise{
 //     .category-image{
 //         width:23.75rem;
@@ -58,7 +59,7 @@ nav{
     position: relative;
     background: $brand;
     line-height: 45px;
-    width: 1200px;
+    width: 100%;
     margin: auto;
     .nav{
         ul{
@@ -152,13 +153,7 @@ nav{
                 color: #000;
             }
         }
-        h3{
-            background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block;
-            
-        }
+
     
     }
     .LatestUpdate{
@@ -175,12 +170,7 @@ nav{
                 }
             }
         }
-        h3{
-            background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block;
-            }
+
         }
         .box{
             background: #ccc;
@@ -201,24 +191,13 @@ nav{
     .samachar{
         width: 75%;
         height: auto;
-        
-        h3{
-            background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block;
-        }
+  
     
     }
     .LatestUpdate{
         width: 25%;
         height: auto;
-        h3{
-            background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block;
-            }
+
         }
         .box{
             background: #ccc;
@@ -258,13 +237,7 @@ nav{
             }
         }
     }
-    h3{
-        background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block;
-            
-    }
+ 
    }
    .kanun-news{
     .first-news{
@@ -289,12 +262,7 @@ nav{
             }
         }
     }
-    h3{
-        background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block;
-    }
+   
    }
    footer{
     
@@ -419,12 +387,7 @@ nav{
             }
         }
     }
-        h3{
-            background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block; 
-        }
+
     }
     .news-list-1{
         
@@ -437,12 +400,7 @@ nav{
                 }
             
         }
-        h3{
-            background: #DF0D00;
-            padding: 5px 15px;
-            color: #fff;
-            display: inline-block; 
-        }
+
     }
 
 .block-3{
@@ -525,12 +483,9 @@ nav{
     }
 }
 .box{
-    width: 823px;
-    height: 445px;
-    background: #323232;
-    border-radius: 5px;
     form{
-        margin-top: 10px;
+        margin-top: .8rem;
+        padding:.4rem;
     }
     #cmt{
         width: 747px;

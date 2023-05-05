@@ -8,21 +8,21 @@
   <div class="container">
     {% if not record_found %}
         <div class="catName">
-            <h3>No Result</h3>
+            <h3 class="text_header">No Result</h3>
         </div>
     {% else %}
       <div class="catName">
-          <h3>{{query}}</h3>
+          <h3 class="text_header">{{query}}</h3>
       </div>
     {% endif %}
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 mt-3 ">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3">
         {% if record_found %}
         {% for result in results|slice:":6" %}
 
         <div class="col">
           <div class="card category-wise border-0">
             {% if result.image %}
-            <img src="{{ result.image.url }}" class="card-img-top img-fluid category-image" alt="{{result.title}}">
+            <img src="{{ result.image.url }}" class="card-img-top img-fluid category-image" alt="{{result.title}}" style="object-fit:cover;">
             {% endif %}
             <div class="card-body">
               <h5 class="card-title">{{ result.title }}</h5>
@@ -49,7 +49,7 @@
       <div class="container flex">
           <div class="news-list-2">
             {% if results.count > 5 %}
-              <h3>थप समाचार</h3>
+              <h3 class="text_header">थप समाचार</h3>
             {% endif %}
               {% for result in page_obj|slice:"6:12" %}
               <div class="additinal-news">

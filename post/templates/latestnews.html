@@ -1,24 +1,20 @@
-<div class="LatestUpdate text-right" style="width:100%;">
-    <h3>ताजा अपडेट </h3>  
+<div class="LatestUpdate" style="width:100%;">
+    <h3 class="text_header">ताजा अपडेट </h3>  
 
     <div class="latest-news py-3">
       <ul class="list-group">
           {% for post in posts|slice:":8" %}
-          <li class="list-group-item border-0">
+          <li class="list-group-item border-0 p-0" style="overflow:hidden;">
 
 
-            <div class="card mb-1 side-card border-0" style="max-width:20rem;">
-              <div class="row g-0">
-                     <div class="col-md-4">
-                        <img src="{{post.image.url}}" class="img-fluid rounded-start side-card-img" alt="..." >
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                          <h6 class="card-title">{{post.title}}</h6>
-                          <a href="{% url 'post:detail' post.id %}" class="stretched-link"></a>
+            <div class="mb-1 side-card border-0" style="max-width:100%;">
+              <a href="{% url 'post:detail' post.id %}" class="stretched-link"></a>
+                     <div class="latest-card" style="display:inline; ">
+                        <img src="{{post.image.url}}" class="img-fluid rounded-start side-card-img" alt="{{post.title}}" >
+                        <div class="latest-title exclude-title">
+                          <span>{{post.title}}</span>
                         </div>
                     </div>
-               </div>
             </div>    
          </li>
 

@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 from decouple import config
 from post.jazmin import JAZZMIN_SETTINGS
+from django.templatetags.static import static
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +47,10 @@ INSTALLED_APPS = [
     'post',
     'ckeditor',
     'ckeditor_uploader',
+    'imagekit',
+    'django.contrib.humanize',
+    'nepali',
+
 
 ]
 
@@ -146,10 +152,9 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 
 # # Use the MyAdminSite class as the default admin site
-# ADMIN_SITE = 'myadmin.MyAdminSite'

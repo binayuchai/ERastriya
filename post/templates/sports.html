@@ -7,15 +7,15 @@
  <section class="block-1 py1">
   <div class="container">
       <div class="catName">
-          <h3>खेलकुद</h3>
+          <h3 class="text_header">खेलकुद</h3>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 mt-3 ">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3">
         {% for sport  in sports|slice:":6" %}
 
         <div class="col">
           <div class="card category-wise border-0">
             {% if sport.image %}
-            <img src="{{ sport.image.url }}" class="card-img-top img-fluid category-image" alt="{{sport.title}}">
+            <img src="{{ sport.image.url }}" class="card-img-top img-fluid category-image" alt="{{sport.title}}" style="object-fit:cover;">
             {% endif %}
             <div class="card-body">
               <h5 class="card-title">{{ sport.title }}</h5>
@@ -41,7 +41,7 @@
       <div class="container flex">
           <div class="news-list-2">
             {% if sports.count > 5 %}
-              <h3>थप समाचार</h3>
+              <h3 class="text_header">थप समाचार</h3>
               {% endif %}
               {% for sport in page_obj|slice:"6:12" %}
               <div class="additinal-news">
@@ -67,7 +67,6 @@
         {% include 'latestnews.html' %}
 
        </div>
-
       </div>
       <ul class="pagination justify-content-center mt-3 p-3">
         {% if page_obj.has_previous %}

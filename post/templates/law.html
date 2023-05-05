@@ -6,14 +6,14 @@
  <section class="block-1 py1">
   <div class="container">
       <div class="catName">
-          <h3>कानुन  </h3>
+          <h3 class="text_header">कानुन  </h3>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 mt-3 ">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3 ">
         {% for law  in laws|slice:":6" %}
         <div class="col">
           <div class="card category-wise border-0">
             {% if law.image %}
-            <img src="{{ law.image.url }}" class="card-img-top img-fluid category-image" alt="{{law.title}}">
+            <img src="{{ law.image.url }}" class="card-img-top img-fluid category-image" alt="{{law.title}}" style="object-fit:cover;">
             {% endif %}
             <div class="card-body">
               <h5 class="card-title">{{ law.title }}</h5>
@@ -39,7 +39,7 @@
       <div class="container flex">
           <div class="news-list-2">
             {% if laws.count > 5%}
-              <h3>थप समाचार</h3>
+              <h3 class="text_header">थप समाचार</h3>
               {% endif %}
               {% for law in page_obj|slice:"6:12" %}
               <div class="additinal-news">

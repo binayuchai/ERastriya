@@ -7,15 +7,15 @@
  <section class="block-1 py1">
   <div class="container">
       <div class="catName">
-          <h3>समाचार</h3>
+          <h3 class="text_header">समाचार</h3>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4 mt-3 ">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3 ">
         {% for express_news in news|slice:":6" %}
 
         <div class="col">
           <div class="card category-wise border-0">
             {% if express_news.image %}
-            <img src="{{ express_news.image.url }}" class="card-img-top img-fluid category-image" alt="{{express_news.title}}">
+            <img src="{{ express_news.image.url }}" class="card-img-top img-fluid category-image" alt="{{express_news.title}}" style="object-fit:cover;">
             {% endif %}
             <div class="card-body border-0">
               <h5 class="card-title">{{ express_news.title }}</h5>
@@ -41,7 +41,7 @@
       <div class="container flex">
           <div class="news-list-2">
             {% if news.count > 5 %}
-              <h3>थप समाचार</h3>
+              <h3 class="text_header">थप समाचार</h3>
               {% endif %}
               {% for express_news in page_obj|slice:"6:12" %}
               <div class="additinal-news">

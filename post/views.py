@@ -69,6 +69,12 @@ def law_view(request):
 def detail_view(request,postid):
     posts = func_post()
     post_item = get_object_or_404(Post, id=postid)
+    post_category = post_item.category
+    additional_news  = list(Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category=post_category)).order_by('-created_at')[:5])
+    if post_item in additional_news:
+        additional_news.remove(post_item)
+
+        
     soup = BeautifulSoup(post_item.content, 'html.parser')
     images = soup.find_all('img')
     image_list =''
@@ -77,7 +83,8 @@ def detail_view(request,postid):
         image_list = src
 
     desc = soup.get_text()
-    context = {"post":post_item,"posts":posts,"images":image_list,"description":desc}
+
+    context = {"post":post_item,"posts":posts,"images":image_list,"description":desc,"current_url": request.build_absolute_uri(),"additional_news":additional_news}
     return render(request,"post_detail.html",context)
 
 

@@ -35,7 +35,7 @@
           <div class="main-article">
             {% if news %}
 
-            <h3 class="text-color">समाचार</h3>
+            <h3 class="text-color text_header">समाचार</h3>
             <div class="first-news wrapper py-3">
                     {% for samachar in news|slice:":3" %}
 
@@ -46,6 +46,8 @@
                         <div class="p-2">
                         <div class="card-title text-3">{{ samachar.title }}</div>
                           <span class=""></span><span class="main-title"></span> {{samachar.dateline}}</span>
+                          <a href="{% url 'post:detail' samachar.id %}" class="stretched-link"></a>
+
                         </div>
 
                     </div>
@@ -86,23 +88,25 @@
 
 
 
-{% comment %} Politics Section {% endcomment %}
+ {% comment %} Politics Section {% endcomment %}
     <section class="block3 py-4">  
       <div class="container">
         <div class="box2">  
             <div class="rajniti">
               {% if politics %}
 
-                <h3>राजनीति </h3>
+                <h3 class="text_header">राजनीति </h3>
 
 
-                <div class="first-news row row-cols-1 row-cols-md-4 g-5 py-3">
+                <div class="first-news row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 py-3">
                   {% for rajniti in politics|slice:":4" %}
                   <div class="col">
                     <div class="card border-0">
-                      <img src="{{ rajniti.image.url }}" class="card-img-top img-fluid" alt="{{ rajniti.title }}" style="height:19rem;">
+                      <img src="{{ rajniti.image.url }}" class="card-img-top img-fluid" alt="{{ rajniti.title }}" style="height:19rem; object-fit:cover;">
                       <div class="card-body">
                         <h5 class="card-title">{{ rajniti.title }}</h5>
+                        <a href="{% url 'post:detail' rajniti.id %}" class="stretched-link"></a>
+
                       </div>
                     </div>
                  </div>
@@ -114,9 +118,11 @@
                       {% if politics|length > 4%}
                       {% for big_politics in politics|slice:"4:5" %}
                       <div class="card border-0" style="max-width: 100%;">
-                        <img src="{{ big_politics.image.url }}" class="card-img-top img-fluid" style="height: 30rem;" alt="{{ big_politics.title }}">
+                        <img src="{{ big_politics.image.url }}" class="card-img-top img-fluid" style="height:auto;" alt="{{ big_politics.title }}">
                         <div class="card-body border-0">
                           <h2 class="card-title">{{big_politics.title}}</h2>
+                          <a href="{% url 'post:detail' big_politics.id %}" class="stretched-link"></a>
+
                         </div>
                       </div>
                       {% endfor %}
@@ -130,17 +136,17 @@
     </section>
 
 
-{% comment %} Politics Section Ends {% endcomment %}
+ {% comment %} Politics Section Ends {% endcomment %}
 
 
-{% comment %} Laws Section{% endcomment %}
+ {% comment %} Laws Section{% endcomment %}
 
   <section class="block4 py-4">  
     <div class="container">
       <div class="box2">  
           <div class="rajniti">
             {% if laws %}
-              <h3>कानुन </h3>
+              <h3 class="text_header">कानुन </h3>
 
               <div class="first-news row row-cols-1 row-cols-md-4 g-5 py-3">
                   {% for law in laws|slice:":4" %}
@@ -149,6 +155,8 @@
                       <img src="{{ law.image.url }}" class="card-img-top" alt="{{ law.title }}" style="height:19rem;">
                       <div class="card-body">
                         <h5 class="card-title">{{ law.title }}</h5>
+                        <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
+
                       </div>
                     </div>
                   </div>
@@ -163,6 +171,8 @@
                   <img src="{{ law.image.url }}" class="card-img-top img-fluid" alt="{{ law.title }}">
                   <div class="card-body border-0">
                     <h2 class="card-title">{{ law.title }}</h2>
+                    <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
+
                   </div>
                 </div>
                 {% endfor %}
