@@ -4,15 +4,15 @@
     <div class="latest-news py-3">
       <ul class="list-group">
           {% for post in posts|slice:":8" %}
-          <li class="list-group-item border-0 p-0" style="overflow:hidden;">
+          <li class="list-group-item border-0 p-0" style="overflow-y:hidden;">
 
 
-            <div class="mb-1 side-card border-0" style="max-width:100%;">
+            <div class="mb-1 side-card border-0" style="max-width:100%; overflow-y:hidden;">
               <a href="{% url 'post:detail' post.id %}" class="stretched-link"></a>
-                     <div class="latest-card" style="display:inline; ">
+                     <div class="latest-card">
                         <img src="{{post.image.url}}" class="img-fluid rounded-start side-card-img" alt="{{post.title}}" >
                         <div class="latest-title exclude-title">
-                          <span>{{post.title}}</span>
+                          <p>{{post.title}}</p>
                         </div>
                     </div>
             </div>    

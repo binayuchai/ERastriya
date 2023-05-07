@@ -63,6 +63,12 @@ def law_view(request):
     return render(request,"law.html",context)
 
 
+def other_view(request):
+    posts = func_post()
+    others  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='others')).order_by('-created_at')
+    page_obj = lisiting(request,others)
+    context = {"others":others,"posts":posts,"page_obj":page_obj}
+    return render(request,"others.html",context)
 
 
 
@@ -101,7 +107,6 @@ def search_result(request):
         result  = Post.objects.filter(status=Status.PUBLISH,title__icontains=query).order_by('-created_at')
         if result:
             page_obj = lisiting(request,result)
-            print(len(page_obj))
         else:
             record_found = False
         print(record_found)

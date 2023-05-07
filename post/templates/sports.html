@@ -1,126 +1,122 @@
 {% extends 'base_html.html' %}
 {% block maincontent %}
 {% load static %}
-
+{% load humanize %}
 
  <!-- category news -->
- <section class="block-1 py1">
+<section class="block-1 py1">
   <div class="container">
-      <div class="catName">
-          <h3 class="text_header">खेलकुद</h3>
-      </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3">
-        {% for sport  in sports|slice:":6" %}
+        <div class="catName">
+            <h3 class="text_header">खेलकुद  </h3>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3 ">
+          {% for sport in page_obj|slice:":6" %}
 
-        <div class="col">
-          <div class="card category-wise border-0">
-            {% if sport.image %}
-            <img src="{{ sport.image.url }}" class="card-img-top img-fluid category-image" alt="{{sport.title}}" style="object-fit:cover;">
-            {% endif %}
-            <div class="card-body">
-              <h5 class="card-title">{{ sport.title }}</h5>
-              <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
-              <p class="card-text"><small class="text-muted">{{sport.dateline}}</small></p>
+          <div class="col">
+            <div class="card category-wise border-0">
+              <img src="{{sport.image.url}}" class="card-img-top img-fluid category-image" alt="{{sport.title}}" style="object-fit:cover;">
+              <div class="card-body">
+                <h5 class="card-title">{{sport.title}}</h5>
+                <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
+                <p class="card-text"><small class="text-muted">{{sport.dateline|timesince }}</small></p>
 
+              </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-        {% endfor %}
-      </div>
 
-  </section>
-  <section class="block-3 py1">
-      <div class="container">
-          <div class="ads">
-              <img src="./img/add.gif"/>
-          </div>
+    </div>
+</section>
+<section class="block-3 py1">
+    <div class="container">
+      <div class="ads">
+          <img src="./img/add.gif"/>
       </div>
-     </section>
-  <!-- Additional news -->
-     <section class="block-2 py1">
-      <div class="container flex">
-          <div class="news-list-2">
-            {% if sports.count > 5 %}
-              <h3 class="text_header">थप समाचार</h3>
-              {% endif %}
-              {% for sport in page_obj|slice:"6:12" %}
-              <div class="additinal-news">
-                  <div class="card mb-3 border-0" style="width:40rem;">
-                      <div class="row g-0">
-                        <div class="col-md-4">
-                          <img src="{{ sport.image.url }}" style="height: 14rem;" class="img-fluid rounded-start" alt="{{ sport.title}}">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">{{sport.title}}</h5>
-                            <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
-                            <p class="card-text"><small class="text-muted">{{sport.dateline}}</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-              {% endfor %}
-          </div>
-          <!-- Latest Updates -->
-       <div class="news-list-1">
+    </div>
+</section>
+<!-- Additional news -->
+<section class="block-2 py1">
+  <div class="container category_additional">
+      <div class="container news-list-2">
+
+          {% for sport in page_obj|slice:"6:12" %}
+          <div class="additinal-news ">
+              <div class="card mb-3 border-0" style="max-width:100%;">
+                <div class="additional-card" style="max-width:100%;">
+                  <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
+                  <img src="{{sport.image.url}}" class="img-fluid rounded additional-card-img" alt="{{sport.title}}"  style="max-width:100%;">
+                  <div class="additional-title exclude-title">
+                    <h4>{{sport.title}}</h4>
+                    <p class="card-text"><small class="text-muted">{{sport.dateline}}</small></p>
+
+                  </div>
+                 </div>
+       
+                </div>
+           </div>
+          {% endfor %}
+       </div>
+      <!-- Latest Updates -->
+        <div class="news-list-1">
         {% include 'latestnews.html' %}
 
-       </div>
-      </div>
-      <ul class="pagination justify-content-center mt-3 p-3">
-        {% if page_obj.has_previous %}
-        <li class="page-item">
-          <a class="page-link" href="?page=1">first</a>
-        </li>
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
-          </li>
-        {% else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="#">&laquo;</a>
-          </li>
-        {% endif %}
-        {% for i in page_obj.paginator.page_range %}
-          {% if page_obj.number == i %}
-            <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
-          {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
-            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-          {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-     
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
-          </li>
-          
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
-          </li>
-          {% comment %} <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages}}</a>
-          </li> {% endcomment %}
-        {% else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="#">&raquo;</a>
-          </li>
-        {% endif %}
-      </ul>
- 
+        </div>
 
-     </section>
-     <!-- advertisement sections -->
-     <section class="block-3 py1">
-      <div class="container">
-          <div class="ads">
-              <img src="./img/add.gif"/>
-          </div>
-      </div>
-     </section>
-    
+  </div>
+  <ul class="pagination justify-content-center mt-3 p-3">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page=1">first</a>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+    {% endif %}
+    {% for i in page_obj.paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+      {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+      </li>
+      
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a>
+      </li>
+      {% comment %} <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{page_obj.paginator.num_pages}}</a>
+      </li> {% endcomment %}
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+    {% endif %}
+  </ul>
 
 
- </section>
+</section>
+
+<!-- advertisement sections -->
+<section class="block-3 py1">
+<div class="container">
+    <div class="ads">
+        <img src="./img/add.gif"/>
+    </div>
+</div>
+</section>
+
+
+
 
 
 {% endblock maincontent %}

@@ -31,18 +31,18 @@
 
     <section class="block2 py-4">
     <div class="container">
-        <div class="container items-content box2">
-          <div class="main-article">
-            {% if news %}
+        <div class="items-content ">
+          {% if news %}
+          <div class="main-article" >
 
             <h3 class="text-color text_header">समाचार</h3>
-            <div class="first-news wrapper py-3">
-                    {% for samachar in news|slice:":3" %}
+            <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                    {% for samachar in news|slice:":6" %}
 
-                                    
+                    <div class="col">                                   
                       <div class="card common-card border-0">
                         <a href="{% url 'post:detail' samachar.id %}" class="stretched-link"></a>
-                        <img src="{{ samachar.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{samachar.title}}" style="height:19rem;">
+                        <img src="{{ samachar.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{samachar.title}}">
                         <div class="p-2">
                         <div class="card-title text-3">{{ samachar.title }}</div>
                           <span class=""></span><span class="main-title"></span> {{samachar.dateline}}</span>
@@ -52,29 +52,21 @@
 
                     </div>
                     
-                  
+                  </div>
                     {% endfor %}
-                    {% endif %}
-                    {% if news|length > 3 %}
-                    {% for big_news in news|slice:"3:4"%}
-                      <div class="card card-style common-card border-0">
-                          <img src="{{ big_news.image.url }}" class="card-img-top img-fluid resize_img" alt="{{big_news.title}}">
-                          <div class="card-body">
-                            <h5 class="card-title">{{ big_news.title }}</h5>
-                          </div>
-                          <a href="{% url 'post:detail' big_news.id %}" class="stretched-link"></a>
-                    </div> 
-                    {% endfor %}
-                    {% endif %}
                     
-              
-
+                  </div>
+                  
+                  {% endif %}
+            <div class="advertisement">
+              <img src="{% static 'images/add1.gif' %}" class="img-fluid">
             </div>
-
-
           </div>
-          <div class="side-news">
+          <div class="side-news px-2">
             {% include 'latestnews.html' %}
+            <div class="advertisement">
+              <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+            </div>
             
 
           </div>
@@ -89,103 +81,231 @@
 
 
  {% comment %} Politics Section {% endcomment %}
-    <section class="block3 py-4">  
-      <div class="container">
-        <div class="box2">  
-            <div class="rajniti">
-              {% if politics %}
+ <section class="block2 py-4">
+  <div class="container">
+      <div class="items-content">
+        {% if politics %}
+        <div class="main-article">
 
-                <h3 class="text_header">राजनीति </h3>
+          <h3 class="text-color text_header">राजनीति</h3>
+          <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                  {% for rajniti in politics|slice:":6" %}
 
-
-                <div class="first-news row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 py-3">
-                  {% for rajniti in politics|slice:":4" %}
-                  <div class="col">
-                    <div class="card border-0">
-                      <img src="{{ rajniti.image.url }}" class="card-img-top img-fluid" alt="{{ rajniti.title }}" style="height:19rem; object-fit:cover;">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ rajniti.title }}</h5>
-                        <a href="{% url 'post:detail' rajniti.id %}" class="stretched-link"></a>
+                  <div class="col">                                   
+                    <div class="card common-card border-0">
+                      <a href="{% url 'post:detail' rajniti.id %}" class="stretched-link"></a>
+                      <img src="{{ rajniti.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{rajniti.title}}">
+                      <div class="p-2">
+                      <div class="card-title text-3">{{ rajniti.title }}</div>
+                      <span class="main-title"></span> {{rajniti.dateline}}</span>
 
                       </div>
-                    </div>
-                 </div>
+
+                  </div>
+                  
+                </div>
                   {% endfor %}
-                  {% endif %}
-              
+                  
                 </div>
-                <div class="second-news ">
-                      {% if politics|length > 4%}
-                      {% for big_politics in politics|slice:"4:5" %}
-                      <div class="card border-0" style="max-width: 100%;">
-                        <img src="{{ big_politics.image.url }}" class="card-img-top img-fluid" style="height:auto;" alt="{{ big_politics.title }}">
-                        <div class="card-body border-0">
-                          <h2 class="card-title">{{big_politics.title}}</h2>
-                          <a href="{% url 'post:detail' big_politics.id %}" class="stretched-link"></a>
-
-                        </div>
-                      </div>
-                      {% endfor %}
-                      {% endif %}
-                </div>
+                
+                
               </div>
-      
+              {% endif %}
+        <div class="side-news common-ads px-2">
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid">
           </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div>
+          
+
+        </div>
+
       </div>
-  
-    </section>
+    </div>
+  </div>
+
+  </section>
 
 
  {% comment %} Politics Section Ends {% endcomment %}
 
 
  {% comment %} Laws Section{% endcomment %}
+ <section class="block2 py-4">
+  <div class="container">
+      <div class="items-content box2">
+        {% if laws %}
+        <div class="main-article">
 
-  <section class="block4 py-4">  
-    <div class="container">
-      <div class="box2">  
-          <div class="rajniti">
-            {% if laws %}
-              <h3 class="text_header">कानुन </h3>
+          <h3 class="text-color text_header">कानुन</h3>
+          <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                  {% for law in laws|slice:":6" %}
 
-              <div class="first-news row row-cols-1 row-cols-md-4 g-5 py-3">
-                  {% for law in laws|slice:":4" %}
-                  <div class="col">
-                    <div class="card border-0">
-                      <img src="{{ law.image.url }}" class="card-img-top" alt="{{ law.title }}" style="height:19rem;">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ law.title }}</h5>
-                        <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
+                  <div class="col">                                   
+                    <div class="card common-card border-0">
+                      <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
+                      <img src="{{ law.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{law.title}}">
+                      <div class="p-2">
+                      <div class="card-title text-3">{{ law.title }}</div>
+                      <span class="main-title"></span> {{law.dateline}}</span>
 
                       </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                  {% endif %}
-            
-              </div>
-              {% if laws|length > 4 %}
-              <div class="second-news ">
-                {% for law in laws|slice:"4:5"%}
-                <div class="card border-0" style="max-width:100%;">
-                  <img src="{{ law.image.url }}" class="card-img-top img-fluid" alt="{{ law.title }}">
-                  <div class="card-body border-0">
-                    <h2 class="card-title">{{ law.title }}</h2>
-                    <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
 
                   </div>
+                  
                 </div>
-                {% endfor %}
+                  {% endfor %}
+                  
+              </div>
+                
+                
+         </div>
+              {% endif %}
+        <div class="side-news common-ads px-2">
+          {% comment %} <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid">
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div> {% endcomment %}
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+ 
+{% comment %} Laws Section Ends{% endcomment %}
+
+
+
+
+ {% comment %} Sports Section {% endcomment %}
+ <section class="block2 py-4">
+  <div class="container">
+      <div class="items-content box2" id="itemcontent">
+        {% if sports %}
+        <div class="main-article">
+
+          <h3 class="text-color text_header">राजनीति</h3>
+          <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                  {% for sport in sports|slice:":6" %}
+
+                  <div class="col">                                   
+                    <div class="card common-card border-0">
+                      <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
+                      <img src="{{ sport.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{sport.title}}">
+                      <div class="p-2">
+                      <div class="card-title text-3">{{ sport.title }}</div>
+                      <span class="main-title"></span> {{sport.dateline}}</span>
+
+                      </div>
+
+                  </div>
+                  
+                </div>
+                  {% endfor %}
+                  
+                </div>
+                
+                
               </div>
               {% endif %}
-            </div>
-    
+        <div class="side-news common-ads px-2">
+          {% comment %} <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid">
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div> {% endcomment %}
+          
+
         </div>
+
+      </div>
     </div>
-  </section> 
+  </div>
+
+  </section>
+
+
+ {% comment %} Sports Section Ends {% endcomment %}
+
+ 
+ {% comment %} Education Section {% endcomment %}
+ <section class="block2 py-4">
+   <div class="container">
+     <div class="items-content box2">
+        {% if education %}
+        <div class="main-article">
+
+          <h3 class="text-color text_header">राजनीति</h3>
+          <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                  {% for edu in education|slice:":6" %}
+
+                  <div class="col">                                   
+                    <div class="card common-card border-0">
+                      <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
+                      <img src="{{ edu.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{edu.title}}">
+                      <div class="p-2">
+                      <div class="card-title text-3">{{ edu.title }}</div>
+                      <span class="main-title"></span> {{edu.dateline}}</span>
+
+                      </div>
+
+                  </div>
+                  
+                </div>
+                  {% endfor %}
+                  
+                </div>
+                
+                
+              </div>
+              {% endif %}
+        <div class="side-news common-ads px-2">
+          {% comment %} <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid">
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div>
+          <div class="advertisement mb-4">
+            <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
+          </div>
+           {% endcomment %}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+ {% comment %} Politics Section Ends {% endcomment %}
+
 
 </div>
-{% comment %} Laws Section Section{% endcomment %}
+
+
 
 
 {% endblock maincontent %}

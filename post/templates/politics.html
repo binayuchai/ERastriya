@@ -25,22 +25,7 @@
           </div>
           {% endfor %}
         </div>
-     {% comment %} <div class="first-news-1 py1 d-flex gap-5">
-      {% for politic in politics|slice:":6" %}
-       <div class="card" style="width: 25rem;">
-          <img src="{{politic.image.url}}" class="card-img" alt="{{politic.title}}">
-          <div class="card-img-overlay align-items-end text-white">
-            <h3 class="card-title">{{politic.title}}</h3>
-        <p class="card-text"><small>{{politic.dateline}}</small></p>
-        <a href="{% url 'post:detail' politic.id %}" class="stretched-link"></a>
-          </div>
-        </div>  
-    
-          
-       
-      {% endfor %}  
-        
-     </div> {% endcomment %}
+
     </div>
 </section>
 <section class="block-3 py1">
@@ -55,25 +40,19 @@
   <div class="container category_additional">
       <div class="container news-list-2">
 
-         {% if politics.count > 5 %}
-          <h3 class="text_header">थप समाचार</h3>
-          {% endif %}
-
           {% for post_politics in page_obj|slice:"6:12" %}
-          <div class="additinal-news">
-              <div class="card mb-3 border-0" style="width:40rem; max-width:100%;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="{{ post_politics.image.url }}"  class="img-fluid rounded-start" alt="{{ post_politics.title}}" style="object-fit:cover;height:10rem;">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">{{post_politics.title}}</h5>
-                        <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
-                        <p class="card-text"><small class="text-muted">{{post_politics.dateline}}</small></p>
-                      </div>
-                    </div>
+          <div class="additinal-news ">
+              <div class="card mb-3 border-0" style="max-width:100%;">
+                <div class="additional-card" style="max-width:100%;">
+                  <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
+                  <img src="{{post_politics.image.url}}" class="img-fluid rounded additional-card-img" alt="{{post_politics.title}}"  style="max-width:100%;">
+                  <div class="additional-title exclude-title">
+                    <h4>{{post_politics.title}}</h4>
+                    <p class="card-text"><small class="text-muted">{{post_politics.dateline}}</small></p>
+
                   </div>
+                 </div>
+       
                 </div>
            </div>
           {% endfor %}
@@ -124,27 +103,6 @@
     {% endif %}
   </ul>
 
-  {% comment %} {% if paginator.num_pages > 1 %}
-  <div class="pagination justify-content-center mt-3 p-3">
-    {% if page_obj.has_previous %}
-        <a href="?page=1">&laquo; First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Previous</a>
-    {% endif %}
-
-    {% for page in pagination_range %}
-        {% if page_obj.number == page %}
-            <span class="page-link current-page">{{ page }}</span>
-        {% else %}
-            <a href="?page={{ page }}" class="page-link">{{ page }}</a>
-        {% endif %}
-    {% endfor %}
-
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}" class="page-link">&rsaquo; Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">&raquo; Last</a>
-    {% endif %}
-  </div>
-  {% endif %} {% endcomment %}
 
 </section>
 
