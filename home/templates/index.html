@@ -14,11 +14,11 @@
                         <img src="{% static 'images/add1.gif' %}"/>
                       </div>
                       <div class="banner py">
-                        <h3>गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h3>
+                        <h3 class="front-header">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h3>
                           
-                          <div class="author py"><h4 class="text-danger">Erastriya</h4></div>
+                          <div class="author py"><h4 class="text-danger">- Erastriya</h4></div>
                         
-                          <img class="img-fluid mt-4" style="width: 100%" src="{% static 'images/1.jpg' %}"/>
+                          <img class="img-fluid mt-4 main-img" src="{% static 'images/1.jpg' %}"/>
                         </div>
                       </div> 
                 </div>
@@ -44,9 +44,8 @@
                         <a href="{% url 'post:detail' samachar.id %}" class="stretched-link"></a>
                         <img src="{{ samachar.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{samachar.title}}">
                         <div class="p-2">
-                        <div class="card-title text-3">{{ samachar.title }}</div>
+                        <div class="card-title text-card">{{ samachar.title }}</div>
                           <span class=""></span><span class="main-title"></span> {{samachar.dateline}}</span>
-                          <a href="{% url 'post:detail' samachar.id %}" class="stretched-link"></a>
 
                         </div>
 
@@ -96,7 +95,7 @@
                       <a href="{% url 'post:detail' rajniti.id %}" class="stretched-link"></a>
                       <img src="{{ rajniti.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{rajniti.title}}">
                       <div class="p-2">
-                      <div class="card-title text-3">{{ rajniti.title }}</div>
+                      <div class="card-title text-card">{{ rajniti.title }}</div>
                       <span class="main-title"></span> {{rajniti.dateline}}</span>
 
                       </div>
@@ -151,7 +150,7 @@
                       <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
                       <img src="{{ law.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{law.title}}">
                       <div class="p-2">
-                      <div class="card-title text-3">{{ law.title }}</div>
+                      <div class="card-title text-card">{{ law.title }}</div>
                       <span class="main-title"></span> {{law.dateline}}</span>
 
                       </div>
@@ -209,7 +208,7 @@
                       <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
                       <img src="{{ sport.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{sport.title}}">
                       <div class="p-2">
-                      <div class="card-title text-3">{{ sport.title }}</div>
+                      <div class="card-title text-card">{{ sport.title }}</div>
                       <span class="main-title"></span> {{sport.dateline}}</span>
 
                       </div>
@@ -264,7 +263,7 @@
                       <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
                       <img src="{{ edu.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{edu.title}}">
                       <div class="p-2">
-                      <div class="card-title text-3">{{ edu.title }}</div>
+                      <div class="card-title text-card">{{ edu.title }}</div>
                       <span class="main-title"></span> {{edu.dateline}}</span>
 
                       </div>

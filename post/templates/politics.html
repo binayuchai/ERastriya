@@ -16,7 +16,7 @@
             <div class="card category-wise border-0">
               <img src="{{post_politics.image.url}}" class="card-img-top img-fluid category-image" alt="{{post_politics.title}}" style="object-fit:cover;">
               <div class="card-body">
-                <h5 class="card-title">{{post_politics.title}}</h5>
+                <h5 class="card-title text-card">{{post_politics.title}}</h5>
                 <a href="{% url 'post:detail' post_politics.id %}" class="stretched-link"></a>
                 <p class="card-text"><small class="text-muted">{{post_politics.dateline|timesince }}</small></p>
 

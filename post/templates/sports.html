@@ -16,7 +16,7 @@
             <div class="card category-wise border-0">
               <img src="{{sport.image.url}}" class="card-img-top img-fluid category-image" alt="{{sport.title}}" style="object-fit:cover;">
               <div class="card-body">
-                <h5 class="card-title">{{sport.title}}</h5>
+                <h5 class="card-title text-card">{{sport.title}}</h5>
                 <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
                 <p class="card-text"><small class="text-muted">{{sport.dateline|timesince }}</small></p>
 

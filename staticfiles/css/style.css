@@ -6,6 +6,35 @@
   overflow-x:hidden;
 }
 
+/* Logo Image starts */
+
+.logo img{
+  width:20vw;
+  height:auto;
+}
+/* Logo Image ends */
+
+
+/* Main Homepage image */
+.main-img{
+  width:100%;
+}
+
+
+/* Main Homepage image */
+
+
+/* Front Page Text */
+.front-header{
+  font-size:3.5vw !important;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* Front Page Text */
+
+
 /* Removing the overflow in titles  */
 .exclude-title{
   overflow-y: hidden;
@@ -93,13 +122,14 @@ nav {
 
 
 }
-.nav_bar{
+.nav{
   display:flex;
   justify-content: space-around;
   overflow-y: hidden;
 
 
 }
+
 nav .nav ul {
   list-style: none;
   overflow: hidden;
@@ -176,18 +206,17 @@ nav .nav ul li a {
 .block1 .box {
   border-bottom: 2px solid #ccc;
 }
-.block1 .banner h3 {
-  text-align: center;
-  font-size: 50px;
-  font-weight: bold;
-}
+
 .block1 .banner h3:hover {
   color: #DF0D00;
   cursor: pointer;
 }
 .block1 .banner .author {
   text-align: center;
-  font-size: 25px;
+}
+.author h4{
+  
+  font-size: 1.7vw;
 }
 .block1 .banner .author:hover {
   color: #DF0D00;
@@ -766,6 +795,10 @@ footer .our-team .owner ul li {
   object-fit: cover;
 }
 
+.text-card{
+  font-weight: 600 !important;
+  font-size:1.2rem;
+}
 
 
 /* Styling for Samachar in index page */

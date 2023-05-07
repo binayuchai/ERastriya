@@ -16,7 +16,7 @@
             <div class="card category-wise border-0">
               <img src="{{express_news.image.url}}" class="card-img-top img-fluid category-image" alt="{{express_news.title}}" style="object-fit:cover;">
               <div class="card-body">
-                <h5 class="card-title">{{express_news.title}}</h5>
+                <h5 class="card-title text-card">{{express_news.title}}</h5>
                 <a href="{% url 'post:detail' express_news.id %}" class="stretched-link"></a>
                 <p class="card-text"><small class="text-muted">{{express_news.dateline|timesince }}</small></p>
 
