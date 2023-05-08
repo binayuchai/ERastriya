@@ -43,7 +43,10 @@ class Status(models.TextChoices):
     PUBLISH = "publish", "PUBLISH"
     BLOCKED = "blocked", "BLOCKED"
     
-
+class Home_content(models.TextChoices):
+    YES = "yes", "YES"
+    NO = "no", "NO"
+    
 # def md5_checksum(file):
 #     with file.open('rb') as f:
 #         checksum = hashlib.md5(f.read()).hexdigest()
@@ -75,8 +78,8 @@ class Post(TimeStampModel):
     content = RichTextUploadingField(blank=True,null=True)
     dateline = models.DateField()
     image = models.ImageField(upload_to="images/",blank=True,null=True,unique=True)
+    home_content = models.CharField(max_length=50,choices=Home_content.choices,default=Home_content.NO,blank=True,null=True)
     status = models.CharField(max_length=50,choices=Status.choices,default=Status.DRAFT)
-    # file_hash = models.CharField(max_length=32,unique=True)
     image_hash = models.CharField(max_length=64, blank=True)
 
 

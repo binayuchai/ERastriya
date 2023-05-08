@@ -1,7 +1,7 @@
 {% extends 'base_html.html' %}
 {% block maincontent %}
 {% load static %}
-{% load humanize %}
+{% load nepalidatetime %}
 
  <!-- category news -->
 <section class="block-1 py1">
@@ -21,7 +21,7 @@
               <div class="card-body">
                 <h5 class="card-title text-card">{{edu.title}}</h5>
                 <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
-                <p class="card-text"><small class="text-muted">{{edu.dateline|timesince }}</small></p>
+                <p class="card-text"><small>{{edu.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>
 
               </div>
             </div>
@@ -51,7 +51,7 @@
                   <img src="{{edu.image.url}}" class="img-fluid rounded additional-card-img" alt="{{edu.title}}"  style="max-width:100%;">
                   <div class="additional-title exclude-title">
                     <h4>{{edu.title}}</h4>
-                    <p class="card-text"><small class="text-muted">{{edu.dateline}}</small></p>
+                    <p class="card-text"><small>{{edu.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>
 
                   </div>
                  </div>

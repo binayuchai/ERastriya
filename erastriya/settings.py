@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'imagekit',
     'django.contrib.humanize',
     'nepali',
+    'nepali_datetime',
 
 
 ]

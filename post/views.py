@@ -1,8 +1,9 @@
 from django.shortcuts import render,get_object_or_404
+from django.urls import reverse,reverse_lazy
 from post.models import Post,Status,Category
 from bs4 import BeautifulSoup
 from django.core.paginator import Paginator
-
+from nepali.datetime import nepalihumanize, nepalidatetime
 def func_post():
     posts = Post.objects.filter(status=Status.PUBLISH).order_by('-created_at')[:8]
     return posts
@@ -13,7 +14,7 @@ def lisiting(request,category_list):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return page_obj
-
+    
 
 
 
@@ -22,6 +23,12 @@ def politics_view(request):
     posts = func_post()
     politics  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='politics')).order_by('-created_at')
     page_obj = lisiting(request,politics)
+
+    # #Converting into nepali time and date
+    # date_time = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='politics')).order_by('-created_at').values_list('dateline',flat=True)
+    # print(date_time)
+
+
     context = {"politics":politics,"posts":posts,"page_obj":page_obj,"additional_range":range(7,13),"pagination_range":page_obj.paginator.get_elided_page_range(on_each_side=5, on_ends=2)}
     return render(request,"politics.html",context)
 
@@ -89,8 +96,9 @@ def detail_view(request,postid):
         image_list = src
 
     desc = soup.get_text()
+    share_url = request.build_absolute_uri(reverse_lazy('post:detail', args=[postid]))
 
-    context = {"post":post_item,"posts":posts,"images":image_list,"description":desc,"current_url": request.build_absolute_uri(),"additional_news":additional_news}
+    context = {"post":post_item,"posts":posts,"images":image_list,"description":desc,"current_url": request.build_absolute_uri(),"share_url":share_url,"additional_news":additional_news}
     return render(request,"post_detail.html",context)
 
 

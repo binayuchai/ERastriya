@@ -1,6 +1,8 @@
 {% extends 'base_html.html' %}
 
 {% load static %}
+{% load nepalidatetime %}
+
 {% block maincontent %}
 {% comment %} {% load my_filters %} {% endcomment %}
 
@@ -13,14 +15,20 @@
                       <div class="advertisement text-center">
                         <img src="{% static 'images/add1.gif' %}"/>
                       </div>
+                      {% if main_content %}
                       <div class="banner py">
-                        <h3 class="front-header">गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</h3>
+                        {% for home_content in main_content|slice:":1"%}
+                        <h3 class="front-header">{{home_content.title}}</h3>
                           
                           <div class="author py"><h4 class="text-danger">- Erastriya</h4></div>
-                        
-                          <img class="img-fluid mt-4 main-img" src="{% static 'images/1.jpg' %}"/>
+
+                          <img class="img-fluid mt-4 main-img" src="{{ home_content.image.url }}"/>
+                          {% endfor %}
+
                         </div>
+
                       </div> 
+                      {% endif %}
                 </div>
             </div>
     </section>
@@ -35,7 +43,7 @@
           {% if news %}
           <div class="main-article" >
 
-            <h3 class="text-color text_header">समाचार</h3>
+            <h3 class="text-color">समाचार</h3>
             <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
                     {% for samachar in news|slice:":6" %}
 
@@ -86,7 +94,7 @@
         {% if politics %}
         <div class="main-article">
 
-          <h3 class="text-color text_header">राजनीति</h3>
+          <h3 class="text-color">राजनीति</h3>
           <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
                   {% for rajniti in politics|slice:":6" %}
 
@@ -141,7 +149,7 @@
         {% if laws %}
         <div class="main-article">
 
-          <h3 class="text-color text_header">कानुन</h3>
+          <h3 class="text-color">कानुन</h3>
           <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
                   {% for law in laws|slice:":6" %}
 
@@ -199,7 +207,7 @@
         {% if sports %}
         <div class="main-article">
 
-          <h3 class="text-color text_header">राजनीति</h3>
+          <h3 class="text-color">खेलकुद</h3>
           <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
                   {% for sport in sports|slice:":6" %}
 
@@ -254,7 +262,7 @@
         {% if education %}
         <div class="main-article">
 
-          <h3 class="text-color text_header">राजनीति</h3>
+          <h3 class="text-color">शिक्षा</h3>
           <div class="first-news py-3 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
                   {% for edu in education|slice:":6" %}
 

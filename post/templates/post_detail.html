@@ -1,4 +1,5 @@
 {% extends 'base_html.html' %} {% load static %} {% block maincontent %}
+{% load nepalidatetime %}
 {% block stylesheet %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
@@ -11,26 +12,26 @@
           <div class="py-3 col-sm-12 col-md-12 col-lg-8">
             <h6 class="bg-danger p-2 d-inline text-light">{{post.category}}</h6>
 
-            <h1 class="my-4">{{post.title}}</h1>
+            <h1 class="my-4 detail-title">{{post.title}}</h1>
             <hr>
             <div class="headline-reporter my-4">
               <div class="reporter-detail">
                 <div class="reporter-icon"><i class="fa-regular fa-user" style="color: #9a9996; font-size:2.6rem;"></i></div>
                 <div class="reporter-title">
                   <span>{{post.reporter}}</span>
-                  <small>{{post.dateline}}</small>
+                  <small>{{post.dateline|nepalidate:"%A, %B %d, %Y" }}</small>
                 </div>
-
+                
               </div>
-                <div class="share-button ">
-                  <div id="fb-root"></div>
-                  {% with url=request.build_absolute_uri %}
-
-                  <div class="fb-share-button" data-href="{{ url }}" data-layout="" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>    
-                  {% endwith %}
-          
-                </div>
-           </div>
+              <div class="share-button">
+                <div class="sharethis-inline-share-buttons share-btn" data-url="{{ share_url }}"></div>                   
+                {% comment %} {% with url=request.build_absolute_uri %}
+                
+                <div class="fb-share-button" data-href="{{ url }}" data-layout="" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>    
+                {% endwith %} {% endcomment %}
+                
+              </div>
+            </div>
         
             <div class="first-news gap-3">
               <!-- details-page-ads -->
@@ -73,148 +74,7 @@
                     ></div>
                   </div>
               </div>
-              {% comment %}
-              <!-- details page additional news -->
-              <div class="additinal-news py1">
-                <h3>थप समाचार</h3>
-                <div class="card mb-3" style="width: 40rem">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img
-                        src="./img/1.jpg"
-                        style="height: 14rem"
-                        class="img-fluid rounded-start"
-                        alt="..."
-                      />
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">
-                          <a href="details.html"
-                            >गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा सुधार
-                            जरुरी छ : पूर्वराष्ट्रपति यादव</a
-                          >
-                        </h5>
-                        <p class="card-text">
-                          नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको
-                          च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू
-                          ........
-                        </p>
-                        <p class="card-text">
-                          <small class="text-muted"
-                            >Last updated 3 mins ago</small
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="additinal-news">
-                  <div class="card mb-3" style="width: 40rem">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img
-                          src="./img/1.jpg"
-                          style="height: 14rem"
-                          class="img-fluid rounded-start"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <a href="details.html"
-                              >गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा
-                              सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a
-                            >
-                          </h5>
-                          <p class="card-text">
-                            नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको
-                            च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू
-                            ........
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted"
-                              >Last updated 3 mins ago</small
-                            >
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="additinal-news">
-                  <div class="card mb-3" style="width: 40rem">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img
-                          src="./img/1.jpg"
-                          style="height: 14rem"
-                          class="img-fluid rounded-start"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <a href="details.html"
-                              >गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा
-                              सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a
-                            >
-                          </h5>
-                          <p class="card-text">
-                            नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको
-                            च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू
-                            ........
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted"
-                              >Last updated 3 mins ago</small
-                            >
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="additinal-news">
-                  <div class="card mb-3" style="width: 40rem">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img
-                          src="./img/1.jpg"
-                          style="height: 14rem"
-                          class="img-fluid rounded-start"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            <a href="details.html"
-                              >गणतन्त्रलाई सुदृढ गर्न राजनीतिक दलको व्यवहारमा
-                              सुधार जरुरी छ : पूर्वराष्ट्रपति यादव</a
-                            >
-                          </h5>
-                          <p class="card-text">
-                            नेकपा (एमाले)को सचिवालय बैठक सुरू भएको छ । ललितपुरको
-                            च्यासलस्थित एमाले केन्द्रीय कार्यालयमा बैठक सुरू
-                            ........
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted"
-                              >Last updated 3 mins ago</small
-                            >
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endcomment %}
+           
                </div>
                <div class="additinal-news py1">
                 <div><h3 class="text-color">थप समाचार</h3></div>
@@ -227,7 +87,8 @@
                       <div class="card-body">
                         <span class="card-title exclude-title">{{add_post.title}}</span>
                         <a href="{% url 'post:detail' add_post.id %}" class="stretched-link"></a>
-                        <p class="card-text"><small class="text-muted">{{add_post.dateline|timesince }}</small></p>
+
+                        <p class="card-text"><small class="text-muted">{{ add_post.dateline|nepalihumanize }}</small></p>
           
                       </div>
                     </div>

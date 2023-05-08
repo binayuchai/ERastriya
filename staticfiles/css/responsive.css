@@ -238,6 +238,20 @@ justify-content: start;
 
 /* Styling for Category's Additional div starts */
 
+@media only screen and (max-width: 992px){
+  .block-2{
+    padding:.3rem;
+  
+  }
+  .category_additional{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+  }
+
+  
+}
+
 
 @media only screen and (max-width: 480px){
   .block-2{

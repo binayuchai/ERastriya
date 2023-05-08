@@ -34,8 +34,8 @@ class PostAdmin(admin.ModelAdmin):
     image_tag.short_description = 'Image'
 
     
-    list_display = ("image_tag","title","dateline","category","tags","reporter","view_post",)
-    search_fields = ("title",)    
+    list_display = ("image_tag","title","dateline","category","tags","reporter","view_post")
+    search_fields = ("title","category")    
 
 
 
