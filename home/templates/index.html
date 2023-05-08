@@ -23,6 +23,7 @@
                           <div class="author py"><h4 class="text-danger">- Erastriya</h4></div>
 
                           <img class="img-fluid mt-4 main-img" src="{{ home_content.image.url }}"/>
+                          <a href="{% url 'post:detail' home_content.id %}" class="stretched-link"></a>
                           {% endfor %}
 
                         </div>

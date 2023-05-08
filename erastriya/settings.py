@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'imagekit',
-    'django.contrib.humanize',
     'nepali',
     'nepali_datetime',
 

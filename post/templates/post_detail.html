@@ -1,5 +1,6 @@
 {% extends 'base_html.html' %} {% load static %} {% block maincontent %}
 {% load nepalidatetime %}
+
 {% block stylesheet %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
@@ -87,8 +88,10 @@
                       <div class="card-body">
                         <span class="card-title exclude-title">{{add_post.title}}</span>
                         <a href="{% url 'post:detail' add_post.id %}" class="stretched-link"></a>
-
-                        <p class="card-text"><small class="text-muted">{{ add_post.dateline|nepalihumanize }}</small></p>
+                           
+                        <p class="card-text">
+                  
+                          <small class="text-muted">{{ add_post.dateline|nepalihumanize:172800 }}</small></p>
           
                       </div>
                     </div>
