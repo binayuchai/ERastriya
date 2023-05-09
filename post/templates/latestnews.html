@@ -10,7 +10,9 @@
             <div class="mb-1 side-card border-0" style="max-width:100%; overflow-y:hidden;">
               <a href="{% url 'post:detail' post.id %}" class="stretched-link"></a>
                      <div class="latest-card">
+                      {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid rounded-start side-card-img" alt="{{post.title}}" >
+                        {% endif %}
                         <div class="latest-title exclude-title">
                           <p>{{post.title}}</p>
                         </div>

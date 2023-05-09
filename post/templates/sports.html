@@ -14,7 +14,9 @@
 
           <div class="col">
             <div class="card category-wise border-0">
+              {% if sport.image %}
               <img src="{{sport.image.url}}" class="card-img-top img-fluid category-image" alt="{{sport.title}}" style="object-fit:cover;">
+              {% endif %}
               <div class="card-body">
                 <h5 class="card-title text-card">{{sport.title}}</h5>
                 <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
@@ -45,7 +47,9 @@
               <div class="card mb-3 border-0" style="max-width:100%;">
                 <div class="additional-card" style="max-width:100%;">
                   <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
+                  {% if sport.image %}
                   <img src="{{sport.image.url}}" class="img-fluid rounded additional-card-img" alt="{{sport.title}}"  style="max-width:100%;">
+                  {% endif %}
                   <div class="additional-title exclude-title">
                     <h4>{{sport.title}}</h4>
                     <p class="card-text"><small>{{sport.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>

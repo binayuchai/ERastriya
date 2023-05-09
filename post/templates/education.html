@@ -48,7 +48,9 @@
               <div class="card mb-3 border-0" style="max-width:100%;">
                 <div class="additional-card" style="max-width:100%;">
                   <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
+                  {% if edu.image %}
                   <img src="{{edu.image.url}}" class="img-fluid rounded additional-card-img" alt="{{edu.title}}"  style="max-width:100%;">
+                  {% endif %}
                   <div class="additional-title exclude-title">
                     <h4>{{edu.title}}</h4>
                     <p class="card-text"><small>{{edu.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>

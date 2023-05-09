@@ -14,7 +14,9 @@
 
           <div class="col">
             <div class="card category-wise border-0">
+              {% if law.image %}
               <img src="{{law.image.url}}" class="card-img-top img-fluid category-image" alt="{{law.title}}" style="object-fit:cover;">
+              {% endif %}
               <div class="card-body">
                 <h5 class="card-title text-card">{{law.title}}</h5>
                 <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
@@ -45,7 +47,9 @@
               <div class="card mb-3 border-0" style="max-width:100%;">
                 <div class="additional-card" style="max-width:100%;">
                   <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
+                  {% if law.image %}
                   <img src="{{law.image.url}}" class="img-fluid rounded additional-card-img" alt="{{law.title}}"  style="max-width:100%;">
+                  {% endif %}
                   <div class="additional-title exclude-title">
                     <h4>{{law.title}}</h4>
                     <p class="card-text"><small>{{law.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>

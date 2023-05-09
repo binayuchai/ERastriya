@@ -20,6 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('auth/', include('django.contrib.auth.urls')),  # include auth URLs
     path('ckeditor/',include('ckeditor_uploader.urls')),
     path('',include('home.urls', namespace="home")),
     path('post/',include('post.urls',namespace="post")),

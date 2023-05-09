@@ -26,8 +26,8 @@
 
 /* Front Page Text */
 .front-header{
-  font-size:3.5vw !important;
   text-align: center;
+  font-size:3rem;
   font-weight: bold;
 }
 
@@ -216,7 +216,7 @@ nav .nav ul li a {
 }
 .author h4{
   
-  font-size: 1.7vw;
+  font-size: 1.5rem;
 }
 .block1 .banner .author:hover {
   color: #DF0D00;
@@ -836,3 +836,10 @@ footer .our-team .owner ul li {
 
 
 /* Share button  */
+
+/* Homepage Timeshow */
+
+.text-muted{
+  margin-bottom: 0.8rem;
+}
+/* Homepage Timeshow */

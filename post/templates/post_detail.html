@@ -84,14 +84,16 @@
                    
                   <div class="col">
                     <div class="card category-wise border-0">
+                      {% if add_post.image %}
                       <img src="{{add_post.image.url}}" class="card-img-top img-fluid additional_img" alt="{{add_post.title}}">
+                      {% endif %}
                       <div class="card-body">
                         <span class="card-title exclude-title">{{add_post.title}}</span>
                         <a href="{% url 'post:detail' add_post.id %}" class="stretched-link"></a>
                            
                         <p class="card-text">
-                  
-                          <small class="text-muted">{{ add_post.dateline|nepalihumanize:172800 }}</small></p>
+                         {% load tz %}
+                          <small class="text-muted">{{ add_post.created_at|nepalihumanize:172800 }}</small></p>
           
                       </div>
                     </div>

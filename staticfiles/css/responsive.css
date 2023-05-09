@@ -85,10 +85,14 @@
   .items-content{
     display: flex;
     flex-direction: column;
+    gap:0;
   }
   .side-news .advertisement{
     text-align: center;
  }
+ .common-ads{
+  padding-top: 1rem;
+}
 
 
 
@@ -103,6 +107,8 @@
   /* Style for Post Detail Page */
 
   @media only screen and (max-width: 768px) {
+
+     
      .post-detail .LatestUpdate_post{
       width:100% !important;
     }
@@ -282,3 +288,16 @@ justify-content: start;
 
 /* Styling for Category's Additional div ends */
 
+@media only screen and (max-width: 480px){
+.front-header{
+  font-size: 1.5rem;
+}
+
+}
+
+@media only screen and (max-width: 768px){
+  .front-header{
+    font-size: 2.5rem;
+  }
+  
+  }

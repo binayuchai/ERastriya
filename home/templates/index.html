@@ -12,17 +12,18 @@
     <section class="block1 my-4">
           <div class="container">
               <div class="box-1">
-                      <div class="advertisement text-center">
+                      <div class="advertisement text-center pb-3">
                         <img src="{% static 'images/add1.gif' %}"/>
                       </div>
                       {% if main_content %}
                       <div class="banner py">
                         {% for home_content in main_content|slice:":1"%}
-                        <h3 class="front-header">{{home_content.title}}</h3>
+                        <h2 class="front-header">{{home_content.title}}</h2>
                           
-                          <div class="author py"><h4 class="text-danger">- Erastriya</h4></div>
-
+                          {% comment %} <div class="author py"><h4 class="text-danger">- Erastriya</h4></div> {% endcomment %}
+                          {% if home_content.image %}
                           <img class="img-fluid mt-4 main-img" src="{{ home_content.image.url }}"/>
+                          {% endif %}
                           <a href="{% url 'post:detail' home_content.id %}" class="stretched-link"></a>
                           {% endfor %}
 
@@ -51,10 +52,15 @@
                     <div class="col">                                   
                       <div class="card common-card border-0">
                         <a href="{% url 'post:detail' samachar.id %}" class="stretched-link"></a>
+                        {% if samachar.image %}
                         <img src="{{ samachar.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{samachar.title}}">
+                        {% endif %}
                         <div class="p-2">
                         <div class="card-title text-card">{{ samachar.title }}</div>
-                          <span class=""></span><span class="main-title"></span> {{samachar.dateline}}</span>
+                        {% load tz %}
+                        <small class="text-muted">
+                          {{ samachar.created_at|nepalihumanize:172800 }}
+                        </small>
 
                         </div>
 
@@ -102,12 +108,16 @@
                   <div class="col">                                   
                     <div class="card common-card border-0">
                       <a href="{% url 'post:detail' rajniti.id %}" class="stretched-link"></a>
+                      {% if rajniti.image %}
+
                       <img src="{{ rajniti.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{rajniti.title}}">
+                      {% endif %}
                       <div class="p-2">
                       <div class="card-title text-card">{{ rajniti.title }}</div>
-                      <span class="main-title"></span> {{rajniti.dateline}}</span>
-
-                      </div>
+                      <small class="text-muted">
+                        {{ rajniti.created_at|nepalihumanize:172800 }}
+                      </small>                      
+                    </div>
 
                   </div>
                   
@@ -119,7 +129,7 @@
                 
               </div>
               {% endif %}
-        <div class="side-news common-ads px-2">
+        <div class="side-news common-ads ">
           <div class="advertisement mb-4">
             <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid">
           </div>
@@ -157,11 +167,15 @@
                   <div class="col">                                   
                     <div class="card common-card border-0">
                       <a href="{% url 'post:detail' law.id %}" class="stretched-link"></a>
+                      {% if law.image %}
+
                       <img src="{{ law.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{law.title}}">
+                      {% endif %}
                       <div class="p-2">
                       <div class="card-title text-card">{{ law.title }}</div>
-                      <span class="main-title"></span> {{law.dateline}}</span>
-
+                      <small class="text-muted">
+                        {{ law.created_at|nepalihumanize:172800 }}
+                      </small>
                       </div>
 
                   </div>
@@ -215,11 +229,14 @@
                   <div class="col">                                   
                     <div class="card common-card border-0">
                       <a href="{% url 'post:detail' sport.id %}" class="stretched-link"></a>
+                      {% if sport.image %}
                       <img src="{{ sport.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{sport.title}}">
+                      {% endif %}
                       <div class="p-2">
                       <div class="card-title text-card">{{ sport.title }}</div>
-                      <span class="main-title"></span> {{sport.dateline}}</span>
-
+                      <small class="text-muted">
+                        {{ sport.created_at|nepalihumanize:172800 }}
+                      </small>
                       </div>
 
                   </div>
@@ -270,11 +287,14 @@
                   <div class="col">                                   
                     <div class="card common-card border-0">
                       <a href="{% url 'post:detail' edu.id %}" class="stretched-link"></a>
+                      {% if edu.image %}
                       <img src="{{ edu.image.url }}" class="card-img-bottom card-img-size img-fluid" alt="{{edu.title}}">
+                      {% endif %}
                       <div class="p-2">
                       <div class="card-title text-card">{{ edu.title }}</div>
-                      <span class="main-title"></span> {{edu.dateline}}</span>
-
+                      <small class="text-muted">
+                        {{ edu.created_at|nepalihumanize:172800 }}
+                      </small>
                       </div>
 
                   </div>
