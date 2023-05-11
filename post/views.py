@@ -79,6 +79,16 @@ def other_view(request):
 
 
 
+
+def international_view(request):
+    posts = func_post()
+    international  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='international')).order_by('-created_at')
+    page_obj = lisiting(request,international)
+    context = {"international":international,"posts":posts,"page_obj":page_obj}
+    return render(request,"international.html",context)
+
+
+
 def detail_view(request,postid):
     posts = func_post()
     post_item = get_object_or_404(Post, id=postid)

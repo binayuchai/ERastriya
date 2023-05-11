@@ -1,82 +1,110 @@
 {% load static %}
-  <!-- top part -->
-  <div class="top text-light">
-    <div class="container flex">
-      <div class="date"><iframe scrolling="no" border="0" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" src="https://www.ashesh.com.np/linknepali-time.php?time_only=no&font_color=ffffff&aj_time=yes&font_size=14&line_brake=0&api=502137n143" width="334" height="30" class="date_display"></iframe></div>
-      <div class="social-icon">
-        <ul>
-          <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
-          <li><a href="https://www.Facebook.com/"><i class="bi bi-facebook"></i></a></li>
-          <li><a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a></li>
-          </ul>
-      </div>
+<!-- top part -->
+<div class="top text-light">
+  <div class="container flex">
+    <div class="date">
+      <iframe
+        scrolling="no"
+        border="0"
+        frameborder="0"
+        marginwidth="0"
+        marginheight="0"
+        allowtransparency="true"
+        src="https://www.ashesh.com.np/linknepali-time.php?time_only=no&font_color=ffffff&aj_time=yes&font_size=14&line_brake=0&api=502137n143"
+        width="334"
+        height="30"
+        class="date_display"
+      ></iframe>
+    </div>
+    <div class="social-icon">
+      <ul>
+        <li>
+          <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
+        </li>
+        <li>
+          <a href="https://www.Facebook.com/"><i class="bi bi-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://www.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+        </li>
+      </ul>
     </div>
   </div>
+</div>
 
-  
-
-  <!-- logo and first ad section -->
-  <header>
-    <div class="container flex">
-      <div class="logo">
-        <img src="{% static 'images/logo.png' %}"/>
-      </div>
-      <div class="ads py">
-        <img src="{% static 'images/add.gif' %}"/>
-      </div>
+<!-- logo and first ad section -->
+<header>
+  <div class="container flex">
+    <div class="logo">
+      <img src="{% static 'images/logo.png' %}" />
     </div>
-  </header>
+    <div class="ads py">
+      <img src="{% static 'images/add.gif' %}" />
+    </div>
+  </div>
+</header>
 
-
-
-  <!-- Navigation -->
-  <nav id="nav-bar">
-    <div class="container">
-      <div class="nav nav_bar" id="nav">
-        <div class="close-btn" id="close-btn">
-          <i class="fa-solid fa-xmark" style="color: #ffffff;" onclick="closeNav()"></i>
-        </div>
-        <ul>
-          <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>गृहपृष्ट</a></li>
-          <li><a href="{% url 'post:news' %}">समाचार </a></li>
-          <li><a href="{% url 'post:politics' %}">राजनीति </a></li>
-          <li><a href="{% url 'post:law' %}">कानुन </a></li>
-          <li><a href="{% url 'post:sports' %}">खेलकुद </a></li>
-          <li><a href="{% url 'post:education' %}">शिक्षा </a></li>
-          {% comment %} <li>
+<!-- Navigation -->
+<nav id="nav-bar">
+  <div class="container">
+    <div class="nav nav_bar" id="nav">
+      <div class="close-btn" id="close-btn">
+        <i
+          class="fa-solid fa-xmark"
+          style="color: #ffffff"
+          onclick="closeNav()"
+        ></i>
+      </div>
+      <ul class="my-2">
+        <li>
+          <a href="/"><i class="fa fa-home" aria-hidden="true"></i>गृहपृष्ट</a>
+        </li>
+        <li><a href="{% url 'post:news' %}">समाचार </a></li>
+        <li><a href="{% url 'post:politics' %}">राजनीति </a></li>
+        <li><a href="{% url 'post:law' %}">कानुन </a></li>
+        <li><a href="{% url 'post:sports' %}">खेलकुद </a></li>
+        <li><a href="{% url 'post:education' %}">शिक्षा </a></li>
+        {% comment %}
+        <li>अन्य</li>
+        {% endcomment %}
+        <li>
+          <div class="dropdown-btn">
+            <button class="dropbtn" id="dropbtn">
               अन्य
-              
-            </li> {% endcomment %}
-            <li>
-              <div class="dropdown-btn">
-                <button class="dropbtn" id="dropbtn">अन्य
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div>
-                </div> 
-            </li>
-        </ul>
-        <!-- User module -->
-        <div id="user">
-          
-          <div class="my-2 px-4">
-          
-            <form class="form-inline my-2 my-lg-0 d-flex" action="{% url 'post:search_result' %}">
-              <input class="form-control mr-sm-2 form-group-sm" type="search" placeholder="Search" aria-label="Search" name="q">
-              <button class="btn my-2 my-sm-0 search-btn" type="submit">Search</button>
-            </form>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="{% url 'post:international' %}">अन्तर्राष्ट्रिय
+              </a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
           </div>
-
+        </li>
+      </ul>
+      <!-- User module -->
+      <div id="user">
+        <div class="my-2 px-4">
+          <form
+            class="form-inline my-2 my-lg-0 d-flex"
+            action="{% url 'post:search_result' %}"
+          >
+            <input
+              class="form-control mr-sm-2 form-group-sm"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              name="q"
+            />
+            <button class="btn my-2 my-sm-0 search-btn" type="submit">
+              Search
+            </button>
+          </form>
         </div>
       </div>
-      <div class="toggle-button m-2 pt-2 toggle">
-        <i class="fa-solid fa-bars " style="color: #ffffff;"></i>
-      </div>
-      
     </div>
-   </nav>
-   
+    <div class="toggle-button m-2 pt-2 toggle">
+      <i class="fa-solid fa-bars" style="color: #ffffff"></i>
+    </div>
+  </div>
+</nav>

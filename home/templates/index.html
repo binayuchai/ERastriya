@@ -18,16 +18,20 @@
                       {% if main_content %}
                       <div class="banner py">
                         {% for home_content in main_content|slice:":1"%}
-                        <h2 class="front-header">{{home_content.title}}</h2>
+                        <a href="{% url 'post:detail' home_content.id %}">
+                          <h2 class="front-header">{{home_content.title}}</h2>
+                        </a>
+                        {% comment %} <h2 class="front-header">{{home_content.title}}</h2> {% endcomment %}
                           
                           {% comment %} <div class="author py"><h4 class="text-danger">- Erastriya</h4></div> {% endcomment %}
                           {% if home_content.image %}
+                          <a href="{% url 'post:detail' home_content.id %}">
                           <img class="img-fluid mt-4 main-img" src="{{ home_content.image.url }}"/>
+                        </a>
+
                           {% endif %}
-                          <a href="{% url 'post:detail' home_content.id %}" class="stretched-link"></a>
                           {% endfor %}
 
-                        </div>
 
                       </div> 
                       {% endif %}
@@ -64,12 +68,12 @@
 
                         </div>
 
-                    </div>
+                      </div>
                     
-                  </div>
+                     </div>
                     {% endfor %}
                     
-                  </div>
+             </div>
                   
                   {% endif %}
             <div class="advertisement">
