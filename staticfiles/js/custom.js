@@ -10,6 +10,10 @@
 //     document.getElementById('close-btn').style.display = "none";
 // }
 
+let mydropdown_content = document.getElementById("myDropdown");
+document.getElementById('dropbtn').addEventListener('click',()=>{
+mydropdown_content.classList.toggle("show");
+})
 
 let toggleButton = document.querySelector('.toggle');
 let nav = document.querySelector('.nav');
@@ -17,3 +21,4 @@ let nav = document.querySelector('.nav');
 toggleButton.addEventListener('click', () => {
   nav.classList.toggle('active');
 });
+

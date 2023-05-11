@@ -6,6 +6,14 @@
   overflow-x:hidden;
 }
 
+
+/* Dropdown Menu */
+/* Style the dropdown button */
+
+
+/* Dropdown Menu */
+
+
 /* Logo Image starts */
 
 .logo img{
@@ -121,39 +129,81 @@ nav {
   overflow:hidden;
 
 
+
 }
 .nav{
   display:flex;
   justify-content: space-around;
-  overflow-y: hidden;
+  overflow: hidden;
+  align-items: center;
 
 
 }
 
-nav .nav ul {
+.nav ul {
   list-style: none;
   overflow: hidden;
 
+
 }
 nav .nav ul li {
-  display: inline;
+  display: inline-block;
   overflow: hidden;
+
+}
+.nav ul li .dropdown-btn .dropbtn{
+color:#fff;
+background-color: inherit;
+border:none;
+font-weight: 600;
+padding:0px 20px;
+
+cursor: pointer;
+transition: all 0.2s;
+
+
+}
+
+
+.dropdown-content{
+  display: none;
+  position:absolute;
+  min-width: 160px;
+  background-color: grey;
+  box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index:100000;
+}
+.show{
+  display:flex;
+  flex-direction: column;
+}
+
+
+#myDropdown a{
+  text-decoration: none;
+  color:#000;
+  background-color:#f4f2f2;
+  font-weight: 600;
+  transition: all 0.2s;
+
+}
+.dropdown-content a:hover{
+  background-color: #ddd;
 
 }
 nav .nav ul li a {
   text-decoration: none;
   color: #fff;
-  padding: 0px 20px;
   font-weight: 600;
   transition: all 0.2s;
-
+  padding: 0px 20px;
 
 }
 #nav ul li a:after,
 #nav ul li a:before {
   transition: all .5s;
 }
-#nav ul li a:hover {
+#nav ul li a:hover{
   /* border-bottom: 5px solid #DF0D00; */
   padding: .9rem 1.2rem;
   color: #DF0D00;
