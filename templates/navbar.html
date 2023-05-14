@@ -64,9 +64,7 @@
         <li><a href="{% url 'post:law' %}">कानुन </a></li>
         <li><a href="{% url 'post:sports' %}">खेलकुद </a></li>
         <li><a href="{% url 'post:education' %}">शिक्षा </a></li>
-        {% comment %}
-        <li>अन्य</li>
-        {% endcomment %}
+     
         <li>
           <div class="dropdown-btn">
             <button class="dropbtn" id="dropbtn">
@@ -76,15 +74,17 @@
             <div class="dropdown-content" id="myDropdown">
               <a href="{% url 'post:international' %}">अन्तर्राष्ट्रिय
               </a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="{% url 'post:scienceandtech' %}">बिज्ञान तथा प्रबिधि</a>
+              <a href="{% url 'post:business' %}">ब्यापार</a>
+              <a href="{% url 'post:entertainment' %}">मनोरञ्जन</a>
+
             </div>
           </div>
         </li>
       </ul>
       <!-- User module -->
       <div id="user">
-        <div class="my-2 px-4">
+        <div class="my-2 px-3">
           <form
             class="form-inline my-2 my-lg-0 d-flex"
             action="{% url 'post:search_result' %}"
@@ -97,7 +97,8 @@
               name="q"
             />
             <button class="btn my-2 my-sm-0 search-btn" type="submit">
-              Search
+              <i class="mr-0 fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+              
             </button>
           </form>
         </div>

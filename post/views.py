@@ -17,8 +17,6 @@ def lisiting(request,category_list):
     
 
 
-
-
 def politics_view(request):
     posts = func_post()
     politics  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='politics')).order_by('-created_at')
@@ -87,6 +85,26 @@ def international_view(request):
     context = {"international":international,"posts":posts,"page_obj":page_obj}
     return render(request,"international.html",context)
 
+def business_view(request):
+    posts = func_post()
+    businesses  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='business')).order_by('-created_at')
+    page_obj = lisiting(request,businesses)
+    context = {"businesses":businesses,"posts":posts,"page_obj":page_obj}
+    return render(request,"business.html",context)
+
+def scienceandtech_view(request):
+    posts = func_post()
+    scienceandtech  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='science and technology')).order_by('-created_at')
+    page_obj = lisiting(request,scienceandtech)
+    context = {"businesses":scienceandtech,"posts":posts,"page_obj":page_obj}
+    return render(request,"scienceandtech.html",context)
+
+def entertainment_view(request):
+    posts = func_post()
+    entertainment  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='entertainment')).order_by('-created_at')
+    page_obj = lisiting(request,entertainment)
+    context = {"businesses":entertainment,"posts":posts,"page_obj":page_obj}
+    return render(request,"entertainment.html",context)
 
 
 def detail_view(request,postid):

@@ -183,6 +183,7 @@
    justify-content: start;
    display:none;
    overflow-y: auto;
+   
   
 
   }
@@ -190,11 +191,11 @@
   .nav ul{
     position:relative;
     left:1px;
-    top:1rem;
+    top:5rem;
     display:flex;
     flex-direction: column;
     align-items: start;
-    padding-bottom: 10rem;
+    padding-left:1rem !important;
   }
   .nav ul li{
     padding-bottom:1.5rem;
@@ -203,18 +204,34 @@
 
   .dropdown-content{
     margin-bottom:3rem;
+    overflow-y: auto;
+    position:relative;
   }
   .toggle-button{
     display:inline-block;
   }
 
-  #user form{
-    display:flex;
-    flex-direction: column;
+  #user{
+    position: absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    
+}
 
+  #user form[type=text]{
+    font-size: .7rem;
+    line-height: .5;
+    padding:.2rem !important;
   }
   
-
+  .search-btn{
+    display:inline-block;
+   margin:0 !important;
+  }
+ .search-btn i{
+  font-size: 1rem;
+ }
   .nav.active{
     display:block;
 

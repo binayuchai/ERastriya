@@ -21,7 +21,10 @@ class TagAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     list_per_page = 10
     def image_tag(self, obj):
-        return format_html('<img src="{}" width="250" height="200" />'.format(obj.image.url))
+        if obj and obj.image:
+            return format_html('<img src="{}" width="250" height="200" />'.format(obj.image.url))
+        else:
+            return format_html('No images')
     
     def view_post(self, obj):
         url = reverse('post:detail', args=[obj.pk])

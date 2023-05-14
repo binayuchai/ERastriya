@@ -4,16 +4,15 @@ from erastriya.settings import MEDIA_ROOT
 from useraccount.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils.html import escape
-import hashlib
-from django.core.files.storage import FileSystemStorage
 from django.urls import reverse
-from django.core.files.base import ContentFile
 from PIL import Image
 import io
 import imagehash
 from django.core.files.uploadedfile import SimpleUploadedFile
 from io import BytesIO
 import os
+from embed_video.fields import EmbedVideoField
+
 
 class TimeStampModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -29,6 +28,11 @@ class Category(TimeStampModel):
 
     def __str__(self):
         return self.category
+    
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
 
 
 class Tag(TimeStampModel):
@@ -79,6 +83,7 @@ class Post(TimeStampModel):
     dateline = models.DateField()
     image = models.ImageField(upload_to="images/",blank=True,null=True,unique=True)
     home_content = models.CharField(max_length=50,choices=Home_content.choices,default=Home_content.NO,blank=True,null=True)
+    video = EmbedVideoField(blank=True,null=True)  # same like models.URLField()
     status = models.CharField(max_length=50,choices=Status.choices,default=Status.DRAFT)
     image_hash = models.CharField(max_length=64, blank=True)
 

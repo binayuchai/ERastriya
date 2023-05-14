@@ -1,5 +1,6 @@
 {% extends 'base_html.html' %} {% load static %} {% block maincontent %}
 {% load nepalidatetime %}
+{% load embed_video_tags %}
 
 {% block stylesheet %}
 {{ block.super }}
@@ -26,11 +27,7 @@
               </div>
               <div class="share-button">
                 <div class="sharethis-inline-share-buttons share-btn" data-url="{{ share_url }}"></div>                   
-                {% comment %} {% with url=request.build_absolute_uri %}
-                
-                <div class="fb-share-button" data-href="{{ url }}" data-layout="" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>    
-                {% endwith %} {% endcomment %}
-                
+      
               </div>
             </div>
         
@@ -47,6 +44,10 @@
 
               {% endcomment %}
                 <div class="text-justify">{{ post.content|safe }}</div>
+                <div class="text-center my-2">
+                  {% video post.video 'small' %}
+
+                </div>
               {% comment %} 
               <section>
                 <div class="container">

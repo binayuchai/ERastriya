@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'imagekit',
     'nepali',
     'nepali_datetime',
+    'Ads',
+    'embed_video',
 
 
 ]
@@ -158,3 +160,8 @@ JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 
 # # Use the MyAdminSite class as the default admin site
+
+
+# For Embeded Video 
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') 
+#  Add proxy_set_header X-Forwarded-Proto $scheme; to your Nginx site config file.
