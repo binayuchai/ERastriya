@@ -11,7 +11,7 @@ urlpatterns = [
     path('business',business_view,name="business"),
     path('entertainment',entertainment_view,name="entertainment"),
     path('science-technology',scienceandtech_view,name="scienceandtech"),
-    path('post-detail/<int:postid>/',detail_view,name="detail"),
+    path('post-detail/<int:id>/',detail_view,name="detail"),
     path('search/',search_result,name="search_result"),
     path('others',other_view,name="others"),
 

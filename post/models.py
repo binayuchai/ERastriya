@@ -50,25 +50,7 @@ class Status(models.TextChoices):
 class Home_content(models.TextChoices):
     YES = "yes", "YES"
     NO = "no", "NO"
-    
-# def md5_checksum(file):
-#     with file.open('rb') as f:
-#         checksum = hashlib.md5(f.read()).hexdigest()
-#     return checksum
 
-
-# def unique_upload_to(instance, filename):
-#     if not instance.image:
-#         return filename
-    
-#     storage = FileSystemStorage()
-#     checksum = md5_checksum(instance.image)
-#     existing_files = storage.listdir('post/images')[1]
-#     for name in existing_files:
-#         with storage.open(f'post/images/{name}') as f:
-#             if md5_checksum(f) == checksum:
-#                 return name
-#     return filename
 
           
 
@@ -103,89 +85,6 @@ class Post(TimeStampModel):
 
     def get_absolute_url(self):
         return reverse('post:detail', kwargs={'pk': self.pk})
-
-    
-    # def get_image_hash(self):
-    #     with open(os.path.join(MEDIA_ROOT, self.image.name), 'rb') as f:
-    #         image_bytes = f.read()
-    #         image_hash = str(imagehash.average_hash(Image.open(BytesIO(image_bytes))))
-    #     return image_hash
-
-
-
-    # def save(self, *args, **kwargs):
-    #      # Check if the image already exists in the database
-    #     if self.pk is None:
-    #         image_hash = self.get_image_hash()
-    #         if Post.objects.filter(image_hash=image_hash).exists():
-    #             return
-    #         self.image_hash = image_hash
-    #         print(image_hash)
-    #     super().save(*args, **kwargs)
-
-
-
-
-    # def get_absolute_url(self):
-    #     return reverse('detail_view', args=[str(self.id)])
-
-    # def save(self, *args, **kwargs):
-    #     # Check if the image file already exists in the database
-    #     file_hash = hashlib.md5(self.image_file.read()).hexdigest()
-    #     if Post.objects.filter(file_hash=file_hash).exists():
-    #         raise ValueError('Image already exists.')
-    #     self.file_hash = file_hash
-    #     super(Post,self).save(*args, **kwargs)
-
-    # def save(self, *args, **kwargs):
-    #         # generate hash of the image content
-    #         image_hash = hashlib.md5(self.image.read()).hexdigest()
-
-    #         # set file name to hash + extension of the uploaded file
-    #         file_name = f"{image_hash}.{self.image.name.split('.')[-1]}"
-
-    #         # save image with the new file name
-    #         self.image.save(file_name, ContentFile(self.image.read()), save=False)
-
-    #         super().save(*args, **kwargs)
-    # def save(self, *args, **kwargs):
-    #         # find all images in the content_with_images field
-    #     images = self.image.images
-
-    #     # loop through images and replace the file name with hash of content
-    #     for image in images:
-    #         image_hash = hashlib.md5(image.file.read()).hexdigest()
-    #         image.name = f"{image_hash}.{image.name.split('.')[-1]}"
-    #         # save image with the new file name
-    #         image.file.save(image.name, ContentFile(image.file.read()), save=False)
-
-    #     super().save(*args, **kwargs)
-    
-    # def save(self, *args, **kwargs):
-    # # find all images in the content_with_images field
-    #     images = self.image
-
-    #     # loop through images and set the upload_to parameter to images/
-    #     for image in images:
-    #         # compute the perceptual hash of the image content
-    #         image_content = image.read()
-    #         image_hash = str(imagehash.phash(Image.open(io.BytesIO(image_content))))
-            
-    #         # check if the image has already been uploaded
-    #         qs = Post.objects.filter(image_hash=image_hash)
-    #         if qs.exists():
-    #             # use the existing image instead of the uploaded one
-    #             self.content_with_images = self.content_with_images.replace(
-    #                 str(image), str(qs.first().content_with_images.url))
-    #         else:
-    #             # save the uploaded image and update its hash
-    #             image_name = self.upload_to(image.name)
-    #             image_file = SimpleUploadedFile(image_name, image_content)
-    #             self.content_with_images = self.content_with_images.replace(str(image), image_name)
-    #             self.image_hash = image_hash
-    #             self.content_with_images.storage.save(image_name, image_file)
-    #     super().save(*args, **kwargs)
-
 
 
 

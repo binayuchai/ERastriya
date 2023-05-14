@@ -107,9 +107,9 @@ def entertainment_view(request):
     return render(request,"entertainment.html",context)
 
 
-def detail_view(request,postid):
+def detail_view(request,id):
     posts = func_post()
-    post_item = get_object_or_404(Post, id=postid)
+    post_item = get_object_or_404(Post, id=id)
     post_category = post_item.category
     additional_news  = list(Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category=post_category)).order_by('-created_at')[:5])
     if post_item in additional_news:
@@ -124,7 +124,7 @@ def detail_view(request,postid):
         image_list = src
 
     desc = soup.get_text()
-    share_url = request.build_absolute_uri(reverse_lazy('post:detail', args=[postid]))
+    share_url = request.build_absolute_uri(reverse_lazy('post:detail', args=[id]))
 
     context = {"post":post_item,"posts":posts,"images":image_list,"description":desc,"current_url": request.build_absolute_uri(),"share_url":share_url,"additional_news":additional_news}
     return render(request,"post_detail.html",context)

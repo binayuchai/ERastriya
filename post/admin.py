@@ -38,6 +38,7 @@ class PostAdmin(admin.ModelAdmin):
 
     
     list_display = ("image_tag","title","dateline","category","tags","reporter","view_post")
+    exclude = ("image_hash",)
     search_fields = ("title","category")    
 
 
