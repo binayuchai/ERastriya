@@ -11,6 +11,16 @@
     </div>
 {% endblock %}
 
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        .jazzmin-logo-img {
+            background-image: url("{% static 'images/logo.png' %}");
+        }
+
+
+    </style>
+{% endblock %}
 {% block extra_js %}
     {{ block.super }}
     <script src="{% static 'js/custom.js' %}"></script>

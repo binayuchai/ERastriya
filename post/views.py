@@ -4,9 +4,11 @@ from post.models import Post,Status,Category
 from bs4 import BeautifulSoup
 from django.core.paginator import Paginator
 from nepali.datetime import nepalihumanize, nepalidatetime
+from Ads.models import Ads,AdCategory
 def func_post():
     posts = Post.objects.filter(status=Status.PUBLISH).order_by('-created_at')[:8]
     return posts
+    
 
 def lisiting(request,category_list):
     category_wise_list = category_list
@@ -106,9 +108,17 @@ def entertainment_view(request):
     context = {"businesses":entertainment,"posts":posts,"page_obj":page_obj}
     return render(request,"entertainment.html",context)
 
+def economy_view(request):
+    posts = func_post()
+    economy  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='economy')).order_by('-created_at')
+    page_obj = lisiting(request,economy)
+    context = {"economy":economy,"posts":posts,"page_obj":page_obj}
+    return render(request,"economy.html",context)
 
 def detail_view(request,id):
     posts = func_post()
+    content_upper_section = Ads.objects.filter(ads_category=AdCategory.objects.get(ads_category='content upper section'))
+    content_lower_section = Ads.objects.filter(ads_category=AdCategory.objects.get(ads_category='content lower section'))
     post_item = get_object_or_404(Post, id=id)
     post_category = post_item.category
     additional_news  = list(Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category=post_category)).order_by('-created_at')[:5])
@@ -126,7 +136,16 @@ def detail_view(request,id):
     desc = soup.get_text()
     share_url = request.build_absolute_uri(reverse_lazy('post:detail', args=[id]))
 
-    context = {"post":post_item,"posts":posts,"images":image_list,"description":desc,"current_url": request.build_absolute_uri(),"share_url":share_url,"additional_news":additional_news}
+    context = {
+        "post":post_item,
+        "posts":posts,"images":image_list,
+        "description":desc,
+        "current_url": request.build_absolute_uri(),
+        "share_url":share_url,
+        "additional_news":additional_news,
+        "upper_section":content_upper_section,
+        "lower_section":content_lower_section,
+        }
     return render(request,"post_detail.html",context)
 
 

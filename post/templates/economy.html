@@ -7,20 +7,20 @@
 <section class="block-1 py1">
   <div class="container">
         <div class="catName">
-            <h3 class="text_header">अन्य  </h3>
+            <h3 class="text_header"> अर्थ/बाणिज्य </h3>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-sm-2 row-cols-lg-3 g-4 mt-3 ">
-          {% for other in page_obj|slice:":6" %}
+          {% for eco in page_obj|slice:":6" %}
 
           <div class="col">
             <div class="card category-wise border-0">
-              {% if other.image %}
-              <img src="{{other.image.url}}" class="card-img-top img-fluid category-image" alt="{{other.title}}" style="object-fit:cover;">
+              {% if eco.image %}
+              <img src="{{eco.image.url}}" class="card-img-top img-fluid category-image" alt="{{eco.title}}" style="object-fit:cover;">
               {% endif %}
               <div class="card-body">
-                <h5 class="card-title text-card">{{other.title}}</h5>
-                <a href="{% url 'post:detail' other.id %}" class="stretched-link"></a>
-                <p class="card-text"><small>{{other.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>
+                <h5 class="card-title text-card">{{eco.title}}</h5>
+                <a href="{% url 'post:detail' eco.id %}" class="stretched-link"></a>
+                <p class="card-text"><small>{{eco.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>
 
               </div>
             </div>
@@ -30,29 +30,30 @@
 
     </div>
 </section>
-<section class="block-3 py1">
+{% comment %} <section class="block-3 py1">
     <div class="container">
       <div class="ads">
           <img src="./img/add.gif"/>
       </div>
     </div>
-</section>
+</section> {% endcomment %}
 <!-- Additional news -->
 <section class="block-2 py1">
   <div class="container category_additional">
       <div class="container news-list-2">
 
-          {% for other in page_obj|slice:"6:12" %}
+          {% for eco in page_obj|slice:"6:12" %}
           <div class="additinal-news ">
               <div class="card mb-3 border-0" style="max-width:100%;">
                 <div class="additional-card" style="max-width:100%;">
-                  <a href="{% url 'post:detail' other.id %}" class="stretched-link"></a>
-                  {% if other.image %}
-                  <img src="{{other.image.url}}" class="img-fluid rounded additional-card-img" alt="{{other.title}}"  style="max-width:100%;">
+                  <a href="{% url 'post:detail' eco.id %}" class="stretched-link"></a>
+                  {% if eco.image %}
+                  <img src="{{eco.image.url}}" class="img-fluid rounded additional-card-img" alt="{{eco.title}}"  style="max-width:100%;">
                   {% endif %}
                   <div class="additional-title exclude-title">
-                    <h4>{{other.title}}</h4>
-                    <p class="card-text"><small>{{other.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>
+                    <h4>{{eco.title}}</h4>
+                    <p class="card-text"><small>{{eco.dateline|nepalidate:"%A, %B %d, %Y" }}</small></p>
+                    <p>{{eco.summary}}</p>
 
                   </div>
                  </div>
@@ -111,13 +112,13 @@
 </section>
 
 <!-- advertisement sections -->
-<section class="block-3 py1">
+{% comment %} <section class="block-3 py1">
 <div class="container">
     <div class="ads">
         <img src="./img/add.gif"/>
     </div>
 </div>
-</section>
+</section> {% endcomment %}
 
 
 

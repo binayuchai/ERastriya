@@ -1,5 +1,5 @@
 from django.urls import path
-from post.views import politics_view, news_view, law_view, sports_view, education_view, detail_view, search_result, other_view, international_view, business_view, scienceandtech_view, entertainment_view
+from post.views import politics_view, news_view, law_view, sports_view, education_view, detail_view, search_result, other_view, international_view, business_view, scienceandtech_view, entertainment_view, economy_view
 app_name = "post"
 urlpatterns = [
     path('politics',politics_view,name="politics"),
@@ -9,11 +9,11 @@ urlpatterns = [
     path('education',education_view,name="education"),
     path('international/',international_view,name="international"),
     path('business',business_view,name="business"),
+    path('economy',economy_view,name="economy"),
     path('entertainment',entertainment_view,name="entertainment"),
     path('science-technology',scienceandtech_view,name="scienceandtech"),
     path('post-detail/<int:id>/',detail_view,name="detail"),
     path('search/',search_result,name="search_result"),
-    path('others',other_view,name="others"),
 
     
 ]

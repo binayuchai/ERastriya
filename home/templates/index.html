@@ -12,9 +12,9 @@
     <section class="block1 my-4">
           <div class="container">
               <div class="box-1">
-                      <div class="advertisement text-center pb-3">
+                      {% comment %} <div class="advertisement text-center pb-3">
                         <img src="{% static 'images/add1.gif' %}"/>
-                      </div>
+                      </div> {% endcomment %}
                       {% if main_content %}
                       <div class="banner py">
                         {% for home_content in main_content|slice:":1"%}
@@ -76,15 +76,15 @@
              </div>
                   
                   {% endif %}
-            <div class="advertisement mb-3">
+            {% comment %} <div class="advertisement mb-3">
               <img src="{% static 'images/add1.gif' %}" class="img-fluid">
-            </div>
+            </div> {% endcomment %}
           </div>
           <div class="side-news px-2">
             {% include 'latestnews.html' %}
-            <div class="advertisement">
+            {% comment %} <div class="advertisement">
               <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
-            </div>
+            </div> {% endcomment %}
             
 
           </div>
@@ -134,7 +134,7 @@
               </div>
               {% endif %}
         <div class="side-news common-ads ">
-          <div class="advertisement mb-4">
+          {% comment %} <div class="advertisement mb-4">
             <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid">
           </div>
           <div class="advertisement mb-4">
@@ -142,7 +142,7 @@
           </div>
           <div class="advertisement mb-4">
             <img src="{% static 'images/bill-hicks-mic-tap.gif' %}" class="img-fluid"/>
-          </div>
+          </div> {% endcomment %}
           
 
         </div>

@@ -163,5 +163,5 @@ JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 
 # For Embeded Video 
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https') 
 #  Add proxy_set_header X-Forwarded-Proto $scheme; to your Nginx site config file.

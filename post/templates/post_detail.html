@@ -12,7 +12,7 @@
   <div class="container">
       <div class="post-detail pb-4 row gap-4">
           <div class="py-3 col-sm-12 col-md-12 col-lg-8">
-            <h6 class="bg-danger p-2 d-inline text-light">{{post.category}}</h6>
+            <h6 class="bg-danger p-2 d-inline text-light">{{post.tags}}</h6>
 
             <h1 class="my-4 detail-title">{{post.title}}</h1>
             <hr>
@@ -33,16 +33,14 @@
         
             <div class="first-news gap-3">
               <!-- details-page-ads -->
-              {% comment %}
-              <section>
+              {% if upper_section %}
                 <div class="container">
                   <div class="ads">
                     <img width="100%" src="./img/hilltake.gif" />
                   </div>
                 </div>
-              </section>          <div class="news-list-1 mt-3">{% include 'latestnews.html' %}</div>
-
-              {% endcomment %}
+                {% endif %}
+              
                 <div class="text-justify">{{ post.content|safe }}</div>
                 <div class="text-center my-2 object-fit-contain px-2 ratio ratio-16x9">
                   {% video post.video 'small' %}
@@ -110,10 +108,7 @@
    
               <!-- advertisememt details page -->
               {% comment %} <div class="latest-ads py1">
-                <img src="./img/manaslu.jpg" width="100%" />
-              </div>
-              <div class="latest-ads py1">
-                <img src="./img/manaslu.jpg" width="100%" />
+                <img src="{{ url '' }}" width="100%" />
               </div> {% endcomment %}
 
               <!-- end of details page advertisement -->
