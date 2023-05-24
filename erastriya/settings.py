@@ -24,12 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e0l*p!0d+@y+sho00-wk1n(#=liyad#ov6=sz&)f=(qsp%gmqm'
+SECRET_KEY = config("KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['162.55.58.236','erastriya.com','www.erastriya.com']
+
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -88,11 +91,13 @@ WSGI_APPLICATION = 'erastriya.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases 
+# in development -->  'ENGINE': 'django.db.backends.postgresql',
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config("DB_NAME"),
         'USER': config("DB_USER"),
         'PASSWORD': config("DB_PASSWORD"),
@@ -136,12 +141,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS=[
-    BASE_DIR / "staticfiles",
-    # os.path.join(BASE_DIR, 'node_modules/jazzmin/static'),
+# in development 
+# STATIC_URL = 'static/'
+# STATICFILES_DIRS=[
+#     BASE_DIR / "staticfiles",
+#     # os.path.join(BASE_DIR, 'node_modules/jazzmin/static'),
 
-]
+# ]
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

@@ -16,6 +16,9 @@
     <link rel="manifest" href="{% static 'fav/site.webmanifest' %}">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+       <!-- Define a block for meta tags -->
+       {% block meta_tags %}
+       {% endblock %}
     {% block stylesheet %}
     <link rel="stylesheet" href="{% static 'css/bs.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">

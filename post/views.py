@@ -5,6 +5,10 @@ from bs4 import BeautifulSoup
 from django.core.paginator import Paginator
 from nepali.datetime import nepalihumanize, nepalidatetime
 from Ads.models import Ads,AdCategory
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from PIL import Image
+from io import BytesIO
+import sys
 def func_post():
     posts = Post.objects.filter(status=Status.PUBLISH).order_by('-created_at')[:8]
     return posts
@@ -133,9 +137,9 @@ def detail_view(request,id):
         src = img.get('src', '')
         image_list = src
 
+
     desc = soup.get_text()
     share_url = request.build_absolute_uri(reverse_lazy('post:detail', args=[id]))
-
     context = {
         "post":post_item,
         "posts":posts,"images":image_list,
@@ -145,6 +149,7 @@ def detail_view(request,id):
         "additional_news":additional_news,
         "upper_section":content_upper_section,
         "lower_section":content_lower_section,
+        "image_list":image_list,
         }
     return render(request,"post_detail.html",context)
 
@@ -158,13 +163,11 @@ def search_result(request):
 
     if 'q' in request.GET:
         query = request.GET.get('q')
-        print(query)
         result  = Post.objects.filter(status=Status.PUBLISH,title__icontains=query).order_by('-created_at')
         if result:
             page_obj = lisiting(request,result)
         else:
             record_found = False
-        print(record_found)
         if record_found:
             context = {"posts":posts,"results":result,"record_found":record_found,"query":query,"page_obj":page_obj,"pagination_range":page_obj.paginator.get_elided_page_range(on_each_side=5, on_ends=2)}
         else:

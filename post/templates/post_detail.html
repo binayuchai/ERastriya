@@ -1,7 +1,23 @@
-{% extends 'base_html.html' %} {% load static %} {% block maincontent %}
+{% extends 'base_html.html' %} {% load static %} 
+{% block title %}
+{{ post.title }}
+{% endblock title %}
+{% block meta_tags %}
+  <!-- Open Graph Protocol meta tags for Facebook -->
+  <meta property="og:url" content="{{current_url}}">
+  <meta property="og:title" content="{{post.title}}">
+  <meta property="og:image" content="{{image_list}}">
+  <meta property="og:description" content="{{post.summary}}">
+
+  <!-- Twitter Card meta tags for Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{post.title}}">
+  <meta name="twitter:image" content="{{image_list}}">
+  <meta name="twitter:description" content="{{post.summary}}">
+{% endblock %}
+{% block maincontent %}
 {% load nepalidatetime %}
 {% load embed_video_tags %}
-
 {% block stylesheet %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
@@ -26,7 +42,7 @@
                 
               </div>
               <div class="share-button">
-                <div class="sharethis-inline-share-buttons share-btn" data-url="{{ share_url }}"></div>                   
+                <div class="sharethis-inline-share-buttons share-btn" data-url="{{ share_url }}" data-title="{{ post.title }}" data-image="{{ image_list}}" data-description="{{ post.summary }}"></div>                   
       
               </div>
             </div>
@@ -36,7 +52,7 @@
               {% if upper_section %}
                 <div class="container">
                   <div class="ads">
-                    <img width="100%" src="./img/hilltake.gif" />
+                    <img width="100%" src="{{upper_section.image.url}}" />
                   </div>
                 </div>
                 {% endif %}
