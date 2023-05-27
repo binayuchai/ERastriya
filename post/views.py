@@ -8,7 +8,8 @@ from Ads.models import Ads,AdCategory
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from PIL import Image
 from io import BytesIO
-import sys
+from django.contrib.sites.shortcuts import get_current_site
+
 def func_post():
     posts = Post.objects.filter(status=Status.PUBLISH).order_by('-created_at')[:8]
     return posts
@@ -139,6 +140,11 @@ def detail_view(request,id):
 
 
     desc = soup.get_text()
+        # Retrieve the current domain name
+    current_site = get_current_site(request)
+
+    # Generate the absolute URL for the image
+    image_url = f"{request.scheme}://{current_site.domain}{image_list}"
     share_url = request.build_absolute_uri(reverse_lazy('post:detail', args=[id]))
     context = {
         "post":post_item,
@@ -150,6 +156,7 @@ def detail_view(request,id):
         "upper_section":content_upper_section,
         "lower_section":content_lower_section,
         "image_list":image_list,
+        "image_url":image_url,
         }
     return render(request,"post_detail.html",context)
 
