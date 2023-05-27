@@ -12,7 +12,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from io import BytesIO
 import os
 from embed_video.fields import EmbedVideoField
-
+import requests
 
 class TimeStampModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -85,6 +85,39 @@ class Post(TimeStampModel):
 
     def get_absolute_url(self):
         return reverse('post:detail', kwargs={'pk': self.pk})
+   
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # Find all <img> tags in the CKEditor content
+        img_tags = self.content.filter(tag='img')
+
+        for img_tag in img_tags:
+            # Get the image URL from the <img> tag
+            src = img_tag.attrs.get('src')
+
+            if src:
+                # Open the image from the URL
+                response = requests.get(src)
+                image = Image.open(BytesIO(response.content))
+
+                # Resize the image
+                min_size = (200, 200)
+                image.thumbnail(min_size)
+
+                # Save the resized image to a byte stream
+                resized_image_bytes = BytesIO()
+                image.save(resized_image_bytes, format='JPEG')
+                resized_image_bytes.seek(0)
+
+                # Update the <img> tag with the resized image data
+                img_tag.attrs['src'] = src
+                img_tag.attrs['data-image-original'] = src
+                img_tag.attrs['data-image-thumbnail'] = resized_image_bytes
+
+        # Save the modified CKEditor content back to the model field
+        self.content = str(self.content)
+        super().save(*args, **kwargs)
 
 
 
