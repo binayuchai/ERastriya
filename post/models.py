@@ -13,6 +13,8 @@ from io import BytesIO
 import os
 from embed_video.fields import EmbedVideoField
 import requests
+from bs4 import BeautifulSoup
+
 
 class TimeStampModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -88,12 +90,16 @@ class Post(TimeStampModel):
    
     def save(self, *args, **kwargs):
 
-        # Find all <img> tags in the CKEditor content
-        img_tags = self.content.filter(tag='img')
+        # Convert the CKEditor content to BeautifulSoup object
+        soup = BeautifulSoup(self.content, 'html.parser')
+       # Find all <img> tags in the CKEditor content
+        img_tags = soup.find_all('img')
+
 
         for img_tag in img_tags:
             # Get the image URL from the <img> tag
-            src = img_tag.attrs.get('src')
+            img_s = img_tag.get('src', '')
+            src = img_s            
 
             if src:
                 # Open the image from the URL
@@ -114,8 +120,8 @@ class Post(TimeStampModel):
                 img_tag.attrs['data-image-original'] = src
                 img_tag.attrs['data-image-thumbnail'] = resized_image_bytes
 
-        # Save the modified CKEditor content back to the model field
-        self.content = str(self.content)
+        # Convert the modified BeautifulSoup object back to HTML string
+        self.content = str(soup)
         super().save(*args, **kwargs)
 
 
