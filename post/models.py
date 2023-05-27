@@ -87,7 +87,6 @@ class Post(TimeStampModel):
         return reverse('post:detail', kwargs={'pk': self.pk})
    
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
 
         # Find all <img> tags in the CKEditor content
         img_tags = self.content.filter(tag='img')
