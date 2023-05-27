@@ -3,7 +3,7 @@
 {{ post.title }}
 {% endblock title %}
 {% block meta_tags %}
-  <meta property="og:url" content="{{current_url}}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
   <meta property="og:title" content="{{post.title}}">
   <meta property="og:image" content="{{image_list}}">
   <meta property="og:description" content="{{post.summary}}">

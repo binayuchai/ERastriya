@@ -87,42 +87,7 @@ class Post(TimeStampModel):
 
     def get_absolute_url(self):
         return reverse('post:detail', kwargs={'pk': self.pk})
-   
-    def save(self, *args, **kwargs):
 
-        # Convert the CKEditor content to BeautifulSoup object
-        soup = BeautifulSoup(self.content, 'html.parser')
-       # Find all <img> tags in the CKEditor content
-        img_tags = soup.find_all('img')
-
-
-        for img_tag in img_tags:
-            # Get the image URL from the <img> tag
-            img_s = img_tag.get('src', '')
-            src = img_s            
-
-            if src:
-                # Open the image from the URL
-                response = requests.get(src)
-                image = Image.open(BytesIO(response.content))
-
-                # Resize the image
-                min_size = (200, 200)
-                image.thumbnail(min_size)
-
-                # Save the resized image to a byte stream
-                resized_image_bytes = BytesIO()
-                image.save(resized_image_bytes, format='JPEG')
-                resized_image_bytes.seek(0)
-
-                # Update the <img> tag with the resized image data
-                img_tag.attrs['src'] = src
-                img_tag.attrs['data-image-original'] = src
-                img_tag.attrs['data-image-thumbnail'] = resized_image_bytes
-
-        # Convert the modified BeautifulSoup object back to HTML string
-        self.content = str(soup)
-        super().save(*args, **kwargs)
 
 
 
