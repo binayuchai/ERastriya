@@ -9,6 +9,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from PIL import Image
 from io import BytesIO
 from django.contrib.sites.shortcuts import get_current_site
+from django.views.decorators.cache import cache_control
 
 def func_post():
     posts = Post.objects.filter(status=Status.PUBLISH).order_by('-created_at')[:8]
@@ -120,6 +121,7 @@ def economy_view(request):
     context = {"economy":economy,"posts":posts,"page_obj":page_obj}
     return render(request,"economy.html",context)
 
+@cache_control(max_age=0, no_cache=True, no_store=True, must_revalidate=True)
 def detail_view(request,id):
     posts = func_post()
     content_upper_section = Ads.objects.filter(ads_category=AdCategory.objects.get(ads_category='content upper section'))
