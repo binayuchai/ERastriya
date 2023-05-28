@@ -138,7 +138,10 @@ def detail_view(request,id):
     image_list =''
     for img in images:
         src = img.get('src', '')
-        image_list = src
+        if src.endswith('.jpg') or src.endswith('.jpeg'):
+            image_list = src
+            break
+
 
 
     desc = soup.get_text()
