@@ -94,14 +94,61 @@ class Post(TimeStampModel):
     #    image.save(self.image.path,quality=60,optimize=True)
     #    return instance
     
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+
+    #     if self.image:
+    #         if self.image.path:  # Check if the image path exists
+    #             image = Image.open(self.image.path)
+    #             image.save(self.image.path, quality=60, optimize=True)
+
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+        super(Post,self).save(*args, **kwargs)
+
+        if self.content:
+            #Compress CKEditor image
+            self.compress_ckeditor_images()
 
         if self.image:
-            if self.image.path:  # Check if the image path exists
-                image = Image.open(self.image.path)
-                image.save(self.image.path, quality=60, optimize=True)
+            #Compress normal image
+            self.compress_normal_image()
 
 
+    def compress_ckeditor_images(self):
+
+        # Finding the image from ckeditor
+        if self.content:
+            # Regular expression to match CKEditor image tags
+            pattern = r'<img[^>]+src="([^">]+)"[^>]*>'
+
+            image_tags = re.findall(pattern,self.content)
+
+            for image_url in image_tags:
+                if image_url.lower().endswith('.jpg') or image_url.lower().endswith('.jpeg'):
+                    image_path = self.get_image_path(image_url)
+                    if image_path:
+                        self.compress_image(image_path)
+
+
+    def compress_normal_image(self):
+        #Compress the normal image
+        if self.image:
+            image_path = self.image.path
+            self.compress_image(image_path)
+
+    def get_image_path(self,image_url):
+         #Remove the protocol and domain from the image URL
+        # to get the relative path
+        relative_path = image_url.replace(settings.MEDIA_URL, "")
+
+        # Join the relative path with the base media root to get the full file path
+        full_path = os.path.join(settings.MEDIA_ROOT, relative_path)
+        return full_path
+    
+    def compress_image(self,image_path):
+        image = Image.open(image_path)
+        image.save(image_path,quality=60,optimize=True)
+
+        
 
     
