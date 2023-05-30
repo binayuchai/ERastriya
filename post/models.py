@@ -88,11 +88,19 @@ class Post(TimeStampModel):
 
     #compress the image 
 
+    # def save(self, *args, **kwargs):
+    #    instance = super(Post, self).save(*args, **kwargs)
+    #    image = Image.open(self.image.path)
+    #    image.save(self.image.path,quality=60,optimize=True)
+    #    return instance
+    
     def save(self, *args, **kwargs):
-       instance = super(Post, self).save(*args, **kwargs)
-       image = Image.open(self.image.path)
-       image.save(self.image.path,quality=60,optimize=True)
-       return instance
+        super().save(*args, **kwargs)
+
+        if self.image:
+            if self.image.path:  # Check if the image path exists
+                image = Image.open(self.image.path)
+                image.save(self.image.path, quality=60, optimize=True)
 
 
 
