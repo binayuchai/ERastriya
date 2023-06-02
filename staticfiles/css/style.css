@@ -38,8 +38,9 @@
   font-size:3rem;
   text-decoration: none !important;
   font-weight: bold;
-  overflow-y:hidden ;
+  overflow-y:hidden;
   color:#000;
+  padding-top: 1rem;
   
 }
 .front-header:hover{
@@ -726,6 +727,7 @@ footer {
 }
 footer .contact h4 {
   color: #fff;
+  overflow-y: hidden !important;
 }
 footer .contact .address p {
   color: #fff;
