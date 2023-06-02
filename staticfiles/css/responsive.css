@@ -17,7 +17,7 @@
       text-align: center;
     }
     header .flex .logo {
-      padding: 10px;
+      padding: .8rem;
       border-bottom: 1px solid #DF0D00;
     }
     header .flex .ads img {
@@ -52,6 +52,7 @@
     }
     .logo img{
       width:35vw !important;
+      height:auto;
     }
   }
   /* responsive for tablet */
