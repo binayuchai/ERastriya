@@ -50,10 +50,7 @@
     .block2 .box2 .flex .samachar .second-news {
       width: 100%;
     }
-    .logo img{
-      width:35vw !important;
-      height:auto;
-    }
+
   }
   /* responsive for tablet */
   @media (max-width: 768px) {
@@ -124,6 +121,10 @@
   }
   }
  @media only screen and (max-width: 480px) {
+  .logo img{
+    width:35vw !important;
+    height:auto;
+  }
     .post-detail .LatestUpdate_post{
       width:100% !important;
     }
