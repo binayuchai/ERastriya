@@ -17,7 +17,7 @@
 /* Logo Image starts */
 
 .logo img{
-  width:22vw;
+  width:22vw !important;
   height:auto;
 }
 /* Logo Image ends */
