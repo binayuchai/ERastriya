@@ -138,7 +138,7 @@ def detail_view(request,id):
     image_list =''
     for img in images:
         src = img.get('src', '')
-        if src.endswith('.jpg') or src.endswith('.jpeg'):
+        if src.endswith('.jpg') or src.endswith('.jpeg') or src.endswith('.jfif'):
             image_list = src
             break
 
