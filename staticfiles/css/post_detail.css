@@ -31,3 +31,7 @@ img{
   object-fit: cover;
 
 }
+
+.st-label{
+  overflow-y: hidden !important;
+}
