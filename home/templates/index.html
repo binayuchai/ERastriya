@@ -26,7 +26,7 @@
                           {% comment %} <div class="author py"><h4 class="text-danger">- Erastriya</h4></div> {% endcomment %}
                           {% if home_content.image %}
                           <a href="{% url 'post:detail' home_content.id %}">
-                          <img class="img-fluid mt-4 main-img" src="{{ home_content.image.url }}"/>
+                          <img class="img-fluid mt-4 main-img" src="{{ home_content.image.url }}" alt="{{home_content.title}}"/>
                         </a>
 
                           {% endif %}
