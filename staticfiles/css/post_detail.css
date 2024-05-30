@@ -35,3 +35,10 @@ img{
 .st-label{
   overflow-y: hidden !important;
 }
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  display: none;
+}
