@@ -43,7 +43,7 @@ img{
   display: none;
   z-index: 9999;
   border:none;
-  border-radius: 20%;
+  border-radius: 100%;
   color:white;
   font-size: 1.8rem;
   cursor: pointer;
