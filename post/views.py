@@ -85,6 +85,28 @@ def other_view(request):
 
 
 
+def literature_view(request):
+    posts = func_post()
+    literatures  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='literature')).order_by('-created_at')
+    page_obj = lisiting(request,literatures)
+    context = {"literatures":literatures,"posts":posts,"page_obj":page_obj}
+    return render(request,"literature.html",context)
+
+def religion_culture_view(request):
+    posts = func_post()
+    religion_culture  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='religion-culture')).order_by('-created_at')
+    page_obj = lisiting(request,religion_culture)
+    context = {"religion_culture":religion_culture,"posts":posts,"page_obj":page_obj}
+    return render(request,"religion_culture.html",context)
+
+
+def capital_market_view(request):
+    posts = func_post()
+    capital_market  = Post.objects.filter(status=Status.PUBLISH,category=Category.objects.get(category='capital market')).order_by('-created_at')
+    page_obj = lisiting(request,capital_market)
+    context = {"capital_market":capital_market,"posts":posts,"page_obj":page_obj}
+    return render(request,"capital_market.html",context)
+
 
 def international_view(request):
     posts = func_post()

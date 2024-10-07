@@ -172,6 +172,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
 
 
+APPEND_SLASH = True
+
 # # Use the MyAdminSite class as the default admin site
 
 
