@@ -766,6 +766,10 @@ footer{
   color:#0D47A1;
   font-weight: 500;
   }
+
+.quick-links-ul{
+  padding-left: 0 !important;
+}
 .quick-links-ul li a{
     text-decoration: none;
     color:grey;
