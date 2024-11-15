@@ -1,56 +1,140 @@
 
 <!-- footer part start from here -->
-<footer class="py-3">
-  <div class="container footer-wrapper">
-    <div class="contact py-1 ">
-      <h4>Contact Us</h4>
-      <div class="address py-1">
-        <p>Address: का म न पा ३२ काठमान्डौ </p>
-      <p>Phone: 9851344573</p>
-      <p>Email: erastriya555@gmail.com</p>
-      </div>
-      <div class="social-media pl-2">
-        <ul style="overflow-y:hidden !important;">
-          <li> <a href="https://www.facebook.com/profile.php?id=100070096502446"><i class="bi bi-facebook"></i></a></li>
-          <li> <a href="https://instagram.com/erastriya?igshid=NGExMmI2YTkyZg=="><i class="bi bi-instagram"></i></a></li>
-          <li> <a href="#"><i class="bi bi-whatsapp"></i></a></li>
-          <li> <a href="#"><i class="bi bi-tiktok"></i></a></li>
-          <li> <a href="https://twitter.com/erastriya?t=pqlC1lnpFObDPqLi5ZbT8A&s=09"><i class="bi bi-twitter"></i></a></li>
-        </ul>
-      </div>
-      
-    </div>
-    <div class="quick-link">
-      <h4>Quick Links</h4>
-      <div class="links">
-        <ul>
-          <li><a href="/">गृहपृष्ट</a></li>
-          <li><a href="{% url 'post:news' %}">समाचार </a></li>
-          <li><a href="{% url 'post:politics' %}">राजनीति </a></li>
-          <li><a href="{% url 'post:law' %}">कानुन </a></li>
-          <li><a href="{% url 'post:sports' %}">खेलकुद </a></li>
-          <li><a href="{% url 'post:education' %}">शिक्षा </a></li>
-          <li><a href="{% url 'post:literature' %}">साहित्य</a></li>
-          <li><a href="{% url 'post:religion_culture' %}">धर्म/ सस्कृति</a></li>
-          <li><a href="{% url 'post:capital_market' %}">पूंजी बाजार</a></li>
+{% load static %}
 
-        </ul>
-      </div>
-    </div>
-    <div class="our-team">
-      <h4>Our Team</h4>
-      <div class="owner">
-        <ul>
-          <li>Erastriya Media House</li>
-          <li><span class="fs-6">दर्ता नं.:306888/079/080</span></li>
-        </ul>
-      </div>
-    </div>
+<section class="mt-2">
 
-  </div>
-  <section class="bottom">
-   <div class="copy-right"> <span>&copy; 2023 Erastriya.com. All rights reserved.</span></div>
-  </section>
- </footer>
+
+  <footer class="text-start text-gray text-lg-start bg-white">
+
+    <!-- Grid container -->
+    <section class="container">
+      <!--Grid row-->
+      <div class="row mt-3">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 col-sm-12 mb-4 mb-md-0 pr-4 ml-2">
+          <div class="bg-white logo-footer">
+            <img
+              src="{% static 'images/logo.png' %}"
+              alt="erastriya logo"
+              loading="lazy"
+            />
+          </div>
+  
+          <div
+            class="ml-4 footer-about lh-base text-secondary text-start"
+          >
+            <p class="mb-0">Erastriya Media House</p>
+            <p class="mb-0">प्रेस काउन्सिल दर्ता नम्बर 4643-2080/081 A</p>
+            <p class="mb-0">सूचना विभाग दर्ता नम्बर 4651-2081/82</p>
+            <p class="mb-0">Anamnagar,Kathmandu</p>
+            <p class="mb-0">Email:erastriyamediahouse1@gmail.com</p>
+          </div>
+          {% comment %}
+          <hr />
+          {% endcomment %}
+  
+          <ul
+            class="d-flex  align-items-start color-secondary text-start footer-social-logo"
+          >
+  
+          <li> <a type="button" href="https://www.facebook.com/profile.php?id=100070096502446"><i class="bi bi-facebook fs-3 fs-md-1 fs-lg-2"></i></a></li>
+          <li> <a type="button" href="https://instagram.com/erastriya?igshid=NGExMmI2YTkyZg=="><i class="bi bi-instagram fs-3 fs-md-1 fs-lg-2"></i></a></li>
+          <li> <a type="button" href="https://youtube.com/@bollywoodjukebox65?si=p9bwXlVL-EdAjijm"><i class="bi bi-youtube fs-3 fs-md-1 fs-lg-2"></i></a></li>
+          <li> <a type="button" href="https://twitter.com/erastriya?t=pqlC1lnpFObDPqLi5ZbT8A&s=09"><i class="bi bi-twitter fs-3 fs-md-1 fs-lg-2"></i></a></li>
+            <!-- Facebook -->
+  
+          </ul>
+        </div>
+        <!--Grid column-->
+  
+        
+        <div class="col-lg-8 col-md-12 col-sm-12 mb-4 row pl-3">
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-md-0 text-start">
+            <h5 class="text-uppercase mb-1 pb-1 footer-text-color">
+              Quick Links
+            </h5>
+  
+            <ul class="quick-links-ul text-secondary">
+              <li class="mb-1">
+                <a href="/"
+                ><span class="footer-links">Home</span></a
+              >            </li>
+              <li class="mb-1">
+                <a href="{% url 'home:about' %}"
+                  ><span class="footer-links">About Us</span></a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="{% url 'home:advertisement_info' %}"
+                  ><span class="footer-links">Advertisement</span></a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="{% url 'home:contact' %}"
+                ><span class="footer-links">Contact Us</span></a
+              >            </li>
+            </ul>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-12 mb-4 mb-md-0 text-start ">
+            <h5 class="text-uppercase mb-1 footer-text-color">Our Team</h5>
+  
+            <div class="d-flex flex-column">
+              <div class="d-flex justify-content-between footer-team-partition">
+                <div class="text-start footer-team">
+                  <span class="text-secondary">Founder</span>
+                  <p class="fw-bolder">Bhairab Bahadur Rana</p>
+                </div>
+                <div class="text-start footer-team">
+                  <span class="text-secondary">Editor</span>
+                  <p class="fw-bolder">Rabi Rimal</p>
+                </div>
+              </div>
+  
+              <div class="d-flex justify-content-between footer-team-partition">
+                <div class="text-start footer-team">
+                  <span class="text-secondary">Multimedia</span>
+                  <p class="fw-bolder">Harish Bahadur Rana</p>
+                </div>
+                <div class="text-start footer-team">
+                  <span class="text-secondary">Reporter</span>
+                  <p class="fw-bolder">Sujan Sarki</p>
+                </div>
+              </div>
+  
+              <div class="d-flex justify-content-between footer-team-partition">
+                <div class="text-start footer-team">
+                  <span class="text-secondary">Marketing</span>
+                  <p class="fw-bolder">Shailendra Dhuwadi</p>
+                </div>
+                <div class="text-start footer-team">
+                  <span class="text-secondary">IT Support</span>
+                  <p class="fw-bolder">Arjun Uchai</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+    
+  
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <section class="text-center p-3 footer-bottom">
+      © 2023 Copyright:
+      <a class="text-white text-decoration-none pointer-event" href="https://erastriya.com/">ERastriya.com</a>
+    </section>
+    <!-- Copyright -->
+  </footer>
+  
+
+</section>
+
+<!-- End of .container -->
+
  <!-- end of footer -->
- <!-- end of bottom footer -->

@@ -16,3 +16,29 @@ def home_page(request):
     context = {"posts": posts,"politics":politics,"news":news,"laws":laws,"sports":sports,"education":education,"main_content":main_content}
     return render(request,"index.html",context)
 
+
+
+def about_view(request):
+    return render(request,"about.html")
+
+
+def get_latest_func():
+    from post.views import func_post
+    return func_post()
+
+
+
+def advertisement_view(request):
+    latest_func = get_latest_func()
+
+    return render(request,"advertisement.html",{"posts":latest_func})
+
+
+
+
+def contact_view(request):
+    latest_func = get_latest_func()
+
+    return render(request,"contact.html",{"posts":latest_func})
+
+

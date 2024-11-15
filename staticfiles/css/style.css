@@ -720,75 +720,84 @@ font-size: .9rem;
 
 
 /* Css for footer */
-footer {
-  background: #0D47A1;
-  line-height: 30px;
-  /* css for Quick links */
+footer{
+  line-height:1.875rem;
+  overflow-y: hidden;
 }
-footer .contact h4 {
-  color: #fff;
-  overflow-y: hidden !important;
+.logo-footer img{
+  width:13rem;
+  max-width:50vw;
+  height:auto;
 }
-footer .contact .address p {
-  color: #fff;
+.footer-about p{
+  /* font-size:1rem; */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
-footer .contact .social-media {
-  margin-left: -44px;
+.footer-social-logo{
+  padding-top: .8rem;
+  text-align: start;
+  padding-left: 0;
+  align-items: start;
 }
-footer .contact .social-media ul {
-  list-style: none;
-}
-footer .contact .social-media ul li {
-  display: inline;
-}
-footer .contact .social-media ul li a {
+.footer-social-logo li{
   text-decoration: none;
-  color: #fff;
-  padding: 10px;
-}
-footer .contact .social-media ul li a:hover {
-  -webkit-transform: translateZ(10px);
-          transform: translateZ(10px);
-  color: #DF0D00;
-  font-size: 20px;
-}
-footer .quick-link h4 {
-  color: #fff;
-}
-footer .quick-link .links {
-  margin-left: -30px;
-}
-footer .quick-link .links ul {
   list-style: none;
-}
-footer .quick-link .links ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 17px;
-}
-footer .our-team h4 {
-  color: #fff;
-}
-footer .our-team .owner {
-  margin-left: -30px;
-}
-footer .our-team .owner ul {
-  list-style: none;
-}
-footer .our-team .owner ul li {
-  color: #fff;
-  font-size: 17px;
-}
-.links ul li a{
-  cursor:pointer;
+  padding-right: 1rem;
+
+
 }
 
-.footer-wrapper{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-} 
+.footer-social-logo a i{
+  color:grey;
+  text-decoration: none;
+  font-size: 1.3rem;
 
+  
+}
+.footer-social-logo a i:hover{
+  color:red;
+  background-color: none;
+
+  
+}
+.footer-text-color{
+  color:#0D47A1;
+  font-weight: 500;
+  }
+.quick-links-ul li a{
+    text-decoration: none;
+    color:grey;
+    transition: all 0.2s;
+  
+  
+  }
+
+.footer-links{
+    cursor: pointer;
+    font-weight: 400;
+  }
+  
+.footer-links:hover{
+    color:red;
+  }
+
+
+  .footer-team p{
+    margin-bottom: 0 !important;
+  }
+  .footer-team-partition{
+    margin-bottom: .7rem;
+  }
+
+  
+  .footer-bottom{
+    background: #0D47A1;
+    color:white;
+ 
+ }
+  
 /* end of footer section */
 /* start of bottom footer */
 .bottom {
@@ -926,3 +935,12 @@ footer .our-team .owner ul li {
 /* Homepage Timeshow */
 
 
+
+
+/* Advertisement,Contact,About page */
+.static-title{
+  font-weight: 600 !important;
+
+
+
+}

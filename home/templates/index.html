@@ -2,7 +2,11 @@
 
 {% load static %}
 {% load nepalidatetime %}
-
+{% block meta_tags %}
+  <meta property="og:type" content="article">
+  <meta name="subject" content="erastriya">
+  <meta name="publisher" content="erastriya">  
+{% endblock %}
 {% block maincontent %}
 {% comment %} {% load my_filters %} {% endcomment %}
 

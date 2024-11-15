@@ -1,0 +1,64 @@
+{% extends 'base_html.html' %}
+{% load static %}
+{% block maincontent %}
+
+
+
+<section class="container my-4 pb-4">
+
+    <section class="row">
+
+        <section class="col-lg-8 col-md-6 col-sm-12">
+
+            <h1 class="fs-2 static-title">For Advertisement</h1>
+            <div class="py-4">
+                <h3 class="fs-5">Address: </h3>
+        
+                <span>
+                    Anamnagar,Kathmandu
+                </span>
+            </div>
+            <div class="py-4">
+                <h3 class="fs-5">Contact Details: </h3>
+                <p class="mt-3 mb-0">Mobile No: 9763445775, 9809563557</p>
+                <p>Email: aderastriya5@gmail.com</p>
+        
+        
+            </div>
+    
+    
+    
+        </section>
+    
+        <section class="col-lg-4 col-md-6 col-sm-12">
+                    <!-- list of latest taja update  -->
+    
+                    <div style="max-width:100%; ">
+    
+    
+       
+                        <!-- advertisememt details page -->
+                        {% comment %} <div class="latest-ads py1">
+                          <img src="{{ url '' }}" width="100%" />
+                        </div> {% endcomment %}
+          
+                        <!-- end of details page advertisement -->
+                        <div class="news-list-1 mt-3">{% include 'latestnews.html' %}</div>
+                    </div>
+            
+        </section>
+
+
+    </section>
+
+
+
+
+
+
+
+</section>
+
+
+
+{% endblock maincontent %}
